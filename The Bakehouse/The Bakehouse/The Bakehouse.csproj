@@ -57,9 +57,115 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\animate.css" />
+    <Content Include="css\camera.css" />
+    <Content Include="css\contact-form.css" />
+    <Content Include="css\google-map.css" />
+    <Content Include="css\grid.css" />
+    <Content Include="css\jquery.fancybox.css" />
+    <Content Include="css\style.css" />
+    <Content Include="Homepage.aspx" />
+    <Content Include="images\blank.gif" />
+    <Content Include="images\camera-loader.gif" />
+    <Content Include="images\fancybox_loading%402x.gif" />
+    <Content Include="images\fancybox_loading.gif" />
+    <Content Include="images\fancybox_overlay.png" />
+    <Content Include="images\fancybox_sprite%402x.png" />
+    <Content Include="images\fancybox_sprite.png" />
+    <Content Include="images\gmap_marker.png" />
+    <Content Include="images\gmap_marker_active.png" />
+    <Content Include="images\ie8-panel\warning_bar_0000_us.jpg" />
+    <Content Include="images\lazy-loader.gif" />
+    <Content Include="images\page-1_img01.jpg" />
+    <Content Include="images\page-1_img02.jpg" />
+    <Content Include="images\page-1_img03.jpg" />
+    <Content Include="images\page-1_img03_original.jpg" />
+    <Content Include="images\page-1_img04.jpg" />
+    <Content Include="images\page-1_img04_origianl.jpg" />
+    <Content Include="images\page-1_img04_original.jpg" />
+    <Content Include="images\page-1_img05.jpg" />
+    <Content Include="images\page-1_img05_original.jpg" />
+    <Content Include="images\page-1_img06.jpg" />
+    <Content Include="images\page-1_img06_original.jpg" />
+    <Content Include="images\page-1_img07.jpg" />
+    <Content Include="images\page-1_img07_original.jpg" />
+    <Content Include="images\page-1_img08.jpg" />
+    <Content Include="images\page-1_img08_original.jpg" />
+    <Content Include="images\page-1_img09.jpg" />
+    <Content Include="images\page-1_img09_original.jpg" />
+    <Content Include="images\page-1_img10.jpg" />
+    <Content Include="images\page-1_img10_original.jpg" />
+    <Content Include="images\page-1_img11.jpg" />
+    <Content Include="images\page-1_img11_original.jpg" />
+    <Content Include="images\page-1_img12.jpg" />
+    <Content Include="images\page-1_img13.jpg" />
+    <Content Include="images\page-1_img14.jpg" />
+    <Content Include="images\page-2_img01.jpg" />
+    <Content Include="images\page-2_img02.jpg" />
+    <Content Include="images\page-3_img01.jpg" />
+    <Content Include="images\page-3_img02.jpg" />
+    <Content Include="images\page-3_img03.jpg" />
+    <Content Include="images\page-3_img04.jpg" />
+    <Content Include="images\page-3_img05.jpg" />
+    <Content Include="images\page-3_img06.jpg" />
+    <Content Include="images\page-3_img07.jpg" />
+    <Content Include="images\page-4_img01.jpg" />
+    <Content Include="images\page-4_img02.jpg" />
+    <Content Include="images\page-4_img03.jpg" />
+    <Content Include="images\page-4_img04.jpg" />
+    <Content Include="images\page-4_img05.jpg" />
+    <Content Include="images\page-4_img06.jpg" />
+    <Content Include="images\page-4_img07.jpg" />
+    <Content Include="images\page-4_img08.jpg" />
+    <Content Include="images\page-4_img09.jpg" />
+    <Content Include="images\parallax01.jpg" />
+    <Content Include="images\parallax02.jpg" />
+    <Content Include="images\parallax03.jpg" />
+    <Content Include="images\parallax04.jpg" />
+    <Content Include="images\parallax05.jpg" />
+    <Content Include="images\select.png" />
+    <Content Include="images\slide01.jpg" />
+    <Content Include="images\slide01_thumb.jpg" />
+    <Content Include="images\slide02.jpg" />
+    <Content Include="images\slide02_thumb.jpg" />
+    <Content Include="images\slide03.jpg" />
+    <Content Include="images\slide03_thumb.jpg" />
+    <Content Include="images\TM_logo.png" />
+    <Content Include="js\camera.js" />
+    <Content Include="js\device.min.js" />
+    <Content Include="js\html5shiv.js" />
+    <Content Include="js\jquery-migrate-1.2.1.js" />
+    <Content Include="js\jquery.cookie.js" />
+    <Content Include="js\jquery.easing.1.3.js" />
+    <Content Include="js\jquery.equalheights.js" />
+    <Content Include="js\jquery.fancybox-buttons.js" />
+    <Content Include="js\jquery.fancybox-media.js" />
+    <Content Include="js\jquery.fancybox.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.mobile.customized.min.js" />
+    <Content Include="js\jquery.mobilemenu.js" />
+    <Content Include="js\jquery.mousewheel.min.js" />
+    <Content Include="js\jquery.rd-google-map.js" />
+    <Content Include="js\jquery.rd-parallax.js" />
+    <Content Include="js\jquery.simplr.smoothscroll.min.js" />
+    <Content Include="js\jquery.ui.totop.js" />
+    <Content Include="js\jquery.unveil.js" />
+    <Content Include="js\modal.js" />
+    <Content Include="js\script.js" />
+    <Content Include="js\superfish.js" />
+    <Content Include="js\TMForm.js" />
+    <Content Include="js\tmstickup.js" />
+    <Content Include="js\wow.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Homepage.aspx.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Homepage.aspx.designer.cs">
+      <DependentUpon>Homepage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +175,11 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
