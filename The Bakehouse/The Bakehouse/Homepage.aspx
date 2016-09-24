@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>The BakeHouse</title>
+    <title>The Bakehouse</title>
     <meta charset="utf-8"/>
     <meta name="format-detection" content="telephone=no"/>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/camera.css"/>
     <link rel="stylesheet" href="css/jquery.fancybox.css"/>
+    <link rel="stylesheet" href="css/contact-form.css"/>
 
     <script src="js/jquery.js"></script>
     <script src="js/jquery-migrate-1.2.1.js"></script>
@@ -54,7 +55,7 @@
 
             <div class="brand wow fadeIn">
                 <h1 class="brand_name">
-                    <a href="./">The Bakehouse</a>
+                    <a href="Homepage.aspx">The Bakehouse</a>
                 </h1>
             </div>
         </div>
@@ -110,21 +111,11 @@
                               CONTENT
     =========================================================-->
     <main>
+        <!-- Begin Gallery -->
         <section class="well">
             <div class="container">
-                <h2><em>Welcome</em>to Our Place</h2>
-                <div class="row">
-                    <div class="grid_6">
-                        <div class="img img__border"><div class="lazy-img" style="padding-bottom: 63.0282%;"><img data-src="images/page-1_img01.jpg" alt=""/></div></div>
-                        <p class="center indents-1">Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl auctor vel veliterol. sed,pharetra venenatis nulla. Vestibulum volutpat turpis ut massa commodo, quis aliquam massa facilisis.Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl auctor vel veliterol. sed,pharetra venenatis nulla.</p>
-                    </div>
-                    <div class="grid_6">
-                        <div class="img img__border"><div class="lazy-img" style="padding-bottom: 63.0282%;"><img data-src="images/page-1_img02.jpg" alt=""/></div></div>
-                        <p class="center indents-1">Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl auctor vel veliterol. sed,pharetra venenatis nulla. Vestibulum volutpat turpis ut massa commodo, quis aliquam massa facilisis.Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl auctor vel veliterol. sed,pharetra venenatis nulla.</p>
-                    </div>
-                </div>
-                <div class="decoration"><a href="#" class="btn">Read more</a></div>
-                <h2><em>Our</em>Cuisine</h2>
+                <h2><em>Conozca</em>Nuestra Cocina</h2>
+                <div class="decoration"></div>
             </div>            
             <div class="gallery">
                 <div class="gallery_col-1">
@@ -216,16 +207,105 @@
                 </div>
             </div>
         </section>
+        <!-- static gallery end -->
+
+        <!-- Contact start-->
         <section class="parallax parallax1" data-parallax-speed="-0.4">
             <div class="container">
-                <h2><em>Our </em>Experience</h2>
-                <p class="indents-2">Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl auctor vel veliterol. sed,pharetra venenatis nulla. Vestibulum volutpat turpis ut massa commodo, quis aliquam massa facilisis.Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl auctor vel veliterol. sed,pharetra venenatis nulla. Vestibulum volutpat turpis ut massa commodo, quis aliquam massa facilisis. Vestibulum volutpat turpis ut massa commodo, quis aliquam massa facilisis.Integer convallis orci </p>
-                <a href="#" class="btn">View full menu</a>
+                <h2><em>Contáctenos </em> O Haz Tus Pedidos</h2>
+                <section class="well well__offset-3">
+            <div class="container">
+                <div class="row box-3">
+                    <div class="grid_5">
+                        <h2>Escribenos</h2>
+                        <form id="contact-form" class='contact-form'>
+                            <div class="contact-form-loader"></div>
+                            <fieldset>
+                                <label class="name">
+                                    Nombre Completo:
+                                    <input type="text" name="name" placeholder="" value=""
+                                           data-constraints="@Required @JustLetters"/>                
+                                    <span class="empty-message">*This field is required.</span>
+                                    <span class="error-message">*This is not a valid name.</span>
+                                </label>
+                
+                                <label class="email">
+                                    E-mail:
+                                    <input type="text" name="email" placeholder="" value=""
+                                           data-constraints="@Required @Email"/>                
+                                    <span class="empty-message">*This field is required.</span>
+                                    <span class="error-message">*This is not a valid email.</span>
+                                </label>
+                
+                                <label class="Subject">
+                                    Sujeto:
+                                    <input type="text" name="phone" placeholder="" value=""
+                                           data-constraints="@Required"/>                
+                                    <span class="empty-message">*This field is required.</span>
+                                    <span class="error-message">*This is not a valid phone.</span>
+                                </label>
+                
+                                <label class="message">
+                                    Escribe tu mensaje o pedido:
+                                    <textarea name="message" placeholder=""
+                                              data-constraints='@Required @Length(min=20,max=999999)'></textarea>                
+                                    <span class="empty-message">*This field is required.</span>
+                                    <span class="error-message">*The message is too short.</span>
+                                </label>
+                
+                                <div class="btn-wr">
+                                    <a class="" href="#" data-type="reset">Borrar</a>
+                                    <a class="" href="#" data-type="submit">Enviar</a>
+                                </div>
+                            </fieldset>
+                            <div class="modal fade response-message">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                    aria-hidden="true">
+                                                &times;
+                                            </button>
+                                            <h4 class="modal-title">Modal title</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            Su mensaje ha sido enviado. Estaremos pronto en contacto.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>    
+                    <div class="preffix_1 grid_6">
+                        <h2>Información de Contacto</h2>
+                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur orci sed Curabitur vel lorem sit amet nulla ullamcorper fermentum. In vitae varius augue, eu consectetur ligula. Etiam dui eros, laoreet sit amet est vel</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur orci sed Curabitur vel lorem sit amet nulla ullamcorper fermentum. In vitae varius augue, eu consectetur ligula. Etiam dui eros, laoreet sit amet est vel, commodo venenatis eros.Lamus at magna non nunc tristique rhoncuseri tym.<br><br>Etiam dui eros, laoreet sit amet est vel, commodo venenatis eros.Lamus at magna non nunc tristique rhoncuseri tym. Etiam dui eros, laoreet sit amet est vel, commodo venenatis eros.Lamus at magna non nunc tristique.</p>
+                        <address class="address-2">
+                            <div class="address_container"><p>Tres Ríos, La Unión, Cartago. Residencial Sierras de la Unión,  casa H-13.</p></div>
+                            <dl>
+                                <dt>Teléfono:</dt> <dd>+506 87304841</dd> <br/>
+                                <dt>Fax:</dt> <dd>+1 800 899 9898</dd> <br/>
+                                <dt>E-mail:</dt> <br /> <dd><a href="https://www.google.com/gmail/">thebakehoueseglutenfree@gmail.com </a></dd>
+                            </dl>                        
+                        </address>
+                    </div>
+                </div>
             </div>
         </section>
+                <div class ="container">
+                    <h2><em>Nuestra Ubicación </em></h2>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d1965.1349591566457!2d-83.97631606134442!3d9.911463071932891!3m2!1i1024!2i768!4f13.1!4m6!3e0!4m0!4m3!3m2!1d9.9119768!2d-83.9745382!5e0!3m2!1ses!2scr!4v1474671669086" style="height:400px; width:100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                
+            </div>
+        </section>
+        <!-- Contact End -->
+
+
+        <!--About Us Start -->
         <section class="well well__offset-1 bg-1">
             <div class="container">
-                <h2><em>Our </em>Cooks</h2>
+                <h2><em>Conoce </em>Nuestros Cocineros</h2>
                 <div class="row row__offset-1">
                     <div class="grid_4">
                         <figure>
@@ -252,19 +332,80 @@
                         <p>Vestibulum volutpat turpis ut massa commodo, quis aliquam massa facilisis.Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl auctor vel veliterol. sed,pharetra venenatis nulla.</p>
                     </div>
                 </div>
-                <div class="decoration"><a href="#" class="btn">Read more</a></div>
+                <div class="decoration"> </div>
             </div>
         </section>
+        <!--About Us End -->
+
+        <!--Suscribe to Bakehouse start-->
         <section class="well well__offset-2">
             <div class="container center">
-                <h2><em>Make </em>a Reservation</h2>
-                <p class="indents-2">Fnteger convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl auctor vel veliterol. sed,pharetra venenatis nulla. Vestibulum volutpat turpis ut massa commodo, quis aliquam massa facilisis.Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl auctor vel veliterol.</p>
-                <address class="address-1">
-                    <dl><dt>Address:</dt> <dd>4578 Marmora Road, Glasgow DA04 89GR</dd></dl>
-                    <p><em>800 2345-6789</em></p>
-                </address>
+                <h2><em>Suscribete a The Bakehouse </em>Para que te des Cuneta de Todas Las Novedades</h2>
+                 <section class="well well__offset-3">
+            <div class="container">
+                <div class="row box-3">
+                    <div class="grid_5">
+                        <h2>Suscribete</h2>
+                        <form id="contact-form" class='contact-form'>
+                            <div class="contact-form-loader"></div>
+                            <fieldset>
+                                <label class="name">
+                                    Nombre Completo:
+                                    <input type="text" name="name" placeholder="" value=""
+                                           data-constraints="@Required @JustLetters"/>                
+                                    <span class="empty-message">*This field is required.</span>
+                                    <span class="error-message">*This is not a valid name.</span>
+                                </label>
+                
+                                <label class="email">
+                                    E-mail:
+                                    <input type="text" name="email" placeholder="" value=""
+                                           data-constraints="@Required @Email"/>                
+                                    <span class="empty-message">*This field is required.</span>
+                                    <span class="error-message">*This is not a valid email.</span>
+                                </label>
+                
+                                <label class="Subject">
+                                    Telefono (opcional):
+                                    <input type="text" name="phone" placeholder="" value=""
+                                           data-constraints="@Required"/>                
+                                    <span class="empty-message">*This field is required.</span>
+                                    <span class="error-message">*This is not a valid phone.</span>
+                                </label>
+                                <div class="btn-wr">
+                                    <a class="" href="#" data-type="reset">Cancelar</a>
+                                    <a class="" href="#" data-type="submit">Suscribirse</a>
+                                </div>
+                            </fieldset>
+                            <div class="modal fade response-message">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                    aria-hidden="true">
+                                                &times;
+                                            </button>
+                                            <h4 class="modal-title">Modal title</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            Te has suscrito con éxito. Estaremos en contacto. 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>    
+                    <div class="preffix_1 grid_6">
+                        <h2>Información de Suscripción</h2>
+                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur orci sed Curabitur vel lorem sit amet nulla ullamcorper fermentum. In vitae varius augue, eu consectetur ligula. Etiam dui eros, laoreet sit amet est vel</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur orci sed Curabitur vel lorem sit amet nulla ullamcorper fermentum. In vitae varius augue, eu consectetur ligula. Etiam dui eros, laoreet sit amet est vel, commodo venenatis eros.Lamus at magna non nunc tristique rhoncuseri tym.<br><br>Etiam dui eros, laoreet sit amet est vel, commodo venenatis eros.Lamus at magna non nunc tristique rhoncuseri tym. Etiam dui eros, laoreet sit amet est vel, commodo venenatis eros.Lamus at magna non nunc tristique.</p>
+                    </div>
+                </div>
             </div>
         </section>
+            </div>
+        </section>
+        <!--Suscribe to Bakehouse end-->
     </main>
 
     <!--========================================================
@@ -273,7 +414,7 @@
     <footer>
         <div class="container">
             <ul class="socials">
-                <li><a href="#" class="fa fa-facebook"></a></li>
+                <li><a href="https://www.facebook.com/TheBakehouseGlutenfree/?fref=ts" class="fa fa-facebook"></a></li>
                 <li><a href="#" class="fa fa-tumblr"></a></li>
                 <li><a href="#" class="fa fa-google-plus"></a></li>
             </ul>
