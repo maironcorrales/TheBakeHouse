@@ -8,28 +8,28 @@ namespace The_Bakehouse.Domain
     public class Subscriber
     {
         private int id;       
-        private string name;       
-        private string code;       
+        private string name;        
         private string email;        
         private int telephone;        
 
-        public Subscriber(int id, string name, string code, string email, int telephone)
+        //Constructor
+        public Subscriber(int id, string name, string email, int telephone)
         {
             this.id = id;
             this.name = name;
-            this.code = code;
             this.email = email;
             this.telephone = telephone;
         }
 
-        public Subscriber(string name, string code, string email, int telephone)
+        //Constructor
+        public Subscriber(string name, string email, int telephone)
         {
             this.name = name;
-            this.code = code;
             this.email = email;
             this.telephone = telephone;
         }
 
+        //Getters and Setters
         public int Id
         {
             get { return id; }
@@ -40,12 +40,6 @@ namespace The_Bakehouse.Domain
         {
             get { return name; }
             set { name = value; }
-        }
-
-        public string Code
-        {
-            get { return code; }
-            set { code = value; }
         }
 
         public string Email
