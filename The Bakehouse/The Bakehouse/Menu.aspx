@@ -4,13 +4,242 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+     <title>Menú</title>
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/grid.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-migrate-1.2.1.js"></script>
+
+    <!--[if lt IE 9]>
+    <html class="lt-ie9">
+    <div style=' clear: both; text-align:center; position: relative;'>
+        <a href="http://windows.microsoft.com/en-US/internet-explorer/..">
+            <img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820"
+                 alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."/>
+        </a> 
+    </div>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+ 
+    <script src='js/device.min.js'></script> 
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div>
+    <div class =" page">
+        <!--========================================================
+                              HEADER
+    =========================================================-->
+    <header>
+
+        <div id="stuck_container" class="stuck_container">
+            <div class="container">
+
+                <div class="brand">
+                    <h1 class="brand_name">
+                        <a href="menu.aspx">The Bakehouse</a>
+                    </h1>
+                </div>
+
+                <nav class="nav">
+                    <ul class="sf-menu">
+                        <li>
+                            <a href="./">Home</a>
+                        </li>
+                        <li>
+                            <a href="index-1.html">About</a>
+                            <ul>
+                                <li>
+                                    <a href="#">Quisque nulla</a>
+                                </li>
+                                <li>
+                                    <a href="#">Vestibulum libero</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">Lorem</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Dolor</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Sit amet</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Vivamus eget nibh</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="index-2.html">What We Do</a>
+                        </li>
+                        <li class="active">
+                            <a href="index-3.html">Menu</a>
+                        </li>
+                        <li>
+                            <a href="index-4.html">Contacts</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </header>
+        <form id="form1" runat="server">
+            <main>
+        <section class="well well__offset-3">
+            <div class="container">
+                <h2><em>Nuestro</em>Menú</h2>
+                <div class="row box-2">
+                    <!-- Este es el repeater que me sirve para poder tener los datos de los productos -->
+                    <asp:Repeater ID="productRepeater" runat ="server" OnItemDataBound="productRepeater_ItemDataBound">
+                        <ItemTemplate>
+                            <div class="grid_4">
+                                <div class="img"><div class="lazy-img"style="padding-bottom: 76.21621621621622%;" > <asp:Image ID="productImg" runat="server" /></div></div>
+                                <h3 runat ="server" id="productName"></h3>
+                                <p runat="server" id="productDescription"></p>
+                                <h3>Precio:₡ </h3><h3 runat="server" id="price"></h3>
+                                 <div class="btn-wr">
+                                    <asp:Button CssClass="button" ID="BuyBtn" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                     <!-- fin del repeater -->
+                     <!--A continuacion muestra de como se veria el producto final  -->
+                    <div class="grid_4">
+                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img data-src="images/page-4_img01.jpg" alt=""></div></div>
+                        <h3>Anteger convallis orci vel mi nelaoreet, at ornare lorem consequat. </h3>
+                        <p>Vestibulum volutpatturpis ut massa commodo, quis aliquam massa facilisis.Integer convavel miberto merlonelaoreet, at ornare lorem consequat.</p>
+                        <h3>Precio:₡ 2500</h3>
+                        <div class="btn-wr">
+                                    <asp:Button CssClass="button" ID="Button8" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
+                                </div>
+                    </div>
+                    <div class="grid_4">
+                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img data-src="images/page-4_img02.jpg" alt=""></div></div>
+                        <h3>Genteger convallis orci vel mi nelaoreet, at ornare lorem consequat.</h3>
+                        <p>Meestibulum volutpatturpis ut massa commodo, quis aliquam massa facilisis.Integer convavel miberto merlonelaoreet, at ornare lorem consequatre. </p>
+                        <p>Precio:₡ 2500</p>
+                        <asp:Button CssClass="button" ID="BuyBtn" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
+                    </div>
+                    <div class="grid_4">
+                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img data-src="images/page-4_img03.jpg" alt=""></div></div>
+                        <h3>Ternteger convallis orci vel mi nelaoreet, at ornare lorem consequat. </h3>
+                        <p>Testibulum volutpatturpis ut massa commodo, quis aliquam massa facilisis.Integer convavel miberto merlonelaoreet, at ornare lorem consequ.</p>
+                        <p>Precio:₡ 2500</p>
+                        <div class="btn-wr">
+                                    <asp:Button CssClass="button" ID="Button1" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
+                                </div>
+                    </div>
+                </div>
+                <div class="row box-2">
+                    <div class="grid_4">
+                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img data-src="images/page-4_img04.jpg" alt=""></div></div>
+                        <h3>Onteger convallis orci vel mi nelaoreet, at ornare lorem consequate. </h3>
+                        <p>Testibulum volutpatturpis ut massa commodo, quis aliquam massa facilisis.Integer convavel miberto merlonelaoreet, at ornare lorem consequa.</p>
+                        <p>Precio:₡ 2500</p>
+                        <div class="btn-wr">
+                                    <asp:Button CssClass="button" ID="Button2" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
+                                </div>
+                    </div>
+                    <div class="grid_4">
+                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img data-src="images/page-4_img05.jpg" alt=""></div></div>
+                        <h3>Fenteger convallis orci vel mi nelaoreet, at ornare lorem consequat. </h3>
+                        <p>Vestibulum volutp turpis ut massa commodo, quis aliquam massa facilisis.Vestibulum volutpat turpis ut massa commodo, quis aliquam massa facilisis.</p>
+                        <p>Precio:₡ 2500</p>
+                        <div class="btn-wr">
+                                    <asp:Button CssClass="button" ID="Button3" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
+                                </div>
+                    </div>
+                    <div class="grid_4">
+                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img data-src="images/page-4_img06.jpg" alt=""></div></div>
+                        <h3>Dernteger convallis orci vel mi nelaoreet, at ornare lorem consequat. </h3>
+                        <p>Testibulum volutpatturpis ut massa commodo, quis aliquam massa facilisis.Integer convavel miberto merlonelaoreet, at ornare lorem conseasellus era nisl. </p>
+                        <p>Precio:₡ 2500</p>
+                        <div class="btn-wr">
+                                    <asp:Button CssClass="button" ID="Button4" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
+                                </div>
+                    </div>
+                </div>
+                <div class="row box-2">
+                    <div class="grid_4">
+                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img data-src="images/page-4_img07.jpg" alt=""></div></div>
+                        <h3>Anteger convallis orci vel mi nelaoreet, at ornare lorem consequat. </h3>
+                        <p>Vestibulum volutpatturpis ut massa commodo, quis aliquam massa facilisis.Integer convavel miberto merlonelaoreet, at ornare lorem consequat.</p>
+                        <p>Precio:₡ 2500</p>
+                        <div class="btn-wr">
+                                    <asp:Button CssClass="button" ID="Button5" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
+                                </div>
+                    </div>
+                    <div class="grid_4">
+                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img data-src="images/page-4_img08.jpg" alt=""></div></div>
+                        <h3>Genteger convallis orci vel mi nelaoreet, at ornare lorem consequat.</h3>
+                        <p>Meestibulum volutpatturpis ut massa commodo, quis aliquam massa facilisis.Integer convavel miberto merlonelaoreet, at ornare lorem consequatre. </p>
+                        <p>Precio:₡ 2500</p>
+                        <div class="btn-wr">
+                                    <asp:Button CssClass="button" ID="Button6" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
+                                </div>
+                    </div>
+                    <div class="grid_4">
+                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img data-src="images/page-4_img09.jpg" alt=""></div></div>
+                        <h3>Ternteger convallis orci vel mi nelaoreet, at ornare lorem consequat. </h3>
+                        <p>Testibulum volutpatturpis ut massa commodo, quis aliquam massa facilisis.Integer convavel miberto merlonelaoreet, at ornare lorem consequ.</p>
+                        <p>Precio: ₡ 2500</p>
+                        <div class="btn-wr">
+                                    <asp:Button CssClass="button" ID="Button7" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
+                                </div>
+                    </div>
+                    <!--Fin de la demostracion  -->
+                </div>
+            </div>
+        </section>
+    </main>
     
-    </div>
     </form>
+        <!--========================================================
+                              FOOTER
+    =========================================================-->
+    <footer>
+        <div class="container">
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/TheBakehouseGlutenfree/?fref=ts" class="fa fa-facebook"></a></li>
+                <li><a href="#" class="fa fa-tumblr"></a></li>
+                <li><a href="#" class="fa fa-google-plus"></a></li>
+            </ul>
+            <div class="copyright">© <span id="copyright-year"></span> |
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+    <script src="js/script.js"></script>
+    <style>
+.button {
+    margin-top: 57px;
+  border: 1px solid #a95858;
+  display: inline-block;
+  font: 400 20px/20px 'Open Sans', sans-serif;
+  padding: 10px 24px;
+  color: #393328;
+}
+@media only screen and (max-width: 979px) {
+.button a {
+    margin-top: 10px;
+  }
+}
+a:hover {
+  color: #ffffff;
+  background: #a95858;
+}
+.button a + a {
+  margin-left: 20px;
+}
+</style>
 </body>
+
 </html>

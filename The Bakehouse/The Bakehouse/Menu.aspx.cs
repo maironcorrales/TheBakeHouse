@@ -13,5 +13,15 @@ namespace The_Bakehouse
         {
 
         }
+
+        protected void BuyBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void productRepeater_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+
+        }
     }
 }
