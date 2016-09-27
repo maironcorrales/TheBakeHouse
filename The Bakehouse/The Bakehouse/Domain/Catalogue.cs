@@ -5,7 +5,7 @@ using System.Web;
 
 namespace The_Bakehouse.Domain
 {
-    public class Menu
+    public class Catalogue
     {
         private int idProducto;
         private string name;
@@ -15,7 +15,7 @@ namespace The_Bakehouse.Domain
         private string photo; //Url de donde se encuentra la foto       
 
         //Constructor
-        public Menu(int idProducto, string name, string description, int price, int quantity, string photo)
+        public Catalogue(int idProducto, string name, string description, int price, int quantity, string photo)
         {
             this.idProducto = idProducto;
             this.name = name;
@@ -26,7 +26,7 @@ namespace The_Bakehouse.Domain
         }
 
         //Constructor
-        public Menu(string name, string description, int price, int quantity, string photo)
+        public Catalogue(string name, string description, int price, int quantity, string photo)
         {
             this.name = name;
             this.description = description;
@@ -36,7 +36,7 @@ namespace The_Bakehouse.Domain
         }
          
         //Constructor
-        public Menu(string name, string description, int price, string photo)
+        public Catalogue(string name, string description, int price, string photo)
         {
             this.name = name;
             this.description = description;

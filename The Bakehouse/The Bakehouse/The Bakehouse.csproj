@@ -175,7 +175,7 @@
     <Compile Include="Data\MenuData.cs" />
     <Compile Include="Domain\Administrator.cs" />
     <Compile Include="Domain\Bill.cs" />
-    <Compile Include="Domain\Menu.cs" />
+    <Compile Include="Domain\Catalogue.cs" />
     <Compile Include="Domain\Notification.cs" />
     <Compile Include="Domain\Sales.cs" />
     <Compile Include="Domain\Subscriber.cs" />
