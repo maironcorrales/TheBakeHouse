@@ -202,6 +202,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdministratorBusiness.cs" />
+    <Compile Include="Services\MenuBusiness.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">
