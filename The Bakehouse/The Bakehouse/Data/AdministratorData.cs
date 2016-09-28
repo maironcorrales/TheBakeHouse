@@ -69,7 +69,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("update administradores set nombre_usuario = @user, contraseña = @password, idAdministradores = @idAdmin");
+                MySqlCommand query = new MySqlCommand("update administradores set nombre_usuario = @user, contraseña = @password, idAdministradores = @idAdmin;", Conn);
                 query.Parameters.AddWithValue("@user", administrador.Username);
                 query.Parameters.AddWithValue("@password", administrador.Password);
                 query.Parameters.AddWithValue("@idAdmin", administrador.Id);
