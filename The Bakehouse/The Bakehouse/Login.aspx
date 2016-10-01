@@ -104,23 +104,23 @@
                         <div id="contact-form" class='contact-form'>
                             <fieldset>
                                 <label>Nombre de Usuario</label>
-                                    <input style="width:50%;text-align:center;" type="text" id="username" runat="server" value=""
+                                    <input style="width:50%;text-align:center;" type="text" id="usernameTxt" runat="server" value=""
                                            data-constraints="@Required @JustLetters"/>                
                                     <span class="empty-message">*This field is required.</span>
                                     <span class="error-message">*This is not a valid name.</span>
                 
                              <label>Contraseña</label>
-                                    <input style="width:50%;text-align:center; " type="password" id="password" runat="server"
+                                    <input style="width:50%;text-align:center; " type="password" id="passwordTxt" runat="server"
                                            data-constraints="@Required @JustLetters"/>                
                                     <span class="empty-message">*This field is required.</span>
                                     <span class="error-message">*This is not a valid name.</span>          
                 
                                 <div class="btn-wr">
-                                    <asp:Button runat="server" ID="loginBtn1" OnClick="loginBtn_ServerClick" Text ="Ingresar"></asp:Button>
+                                    <a runat="server" id="loginBtn" onserverclick="loginBtn_ServerClick">Ingresar</a>
                                 </div>
                             </fieldset>
                         </div>
-                    </div>    
+                    </div>     
                    
                 </div>
             </div>

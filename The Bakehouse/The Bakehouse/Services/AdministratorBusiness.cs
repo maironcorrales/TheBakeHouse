@@ -52,7 +52,7 @@ namespace The_Bakehouse.Services
         public bool LoginService(Administrator administrator) 
         {
             bool flag = false;
-            flag = data.verificateAdmin(administrator.Username, EncryptCredentials(administrator.Password));
+            flag = data.verificateAdmin(administrator.Username.ToString(), EncryptCredentials(administrator.Password));
             return flag;
         }
 

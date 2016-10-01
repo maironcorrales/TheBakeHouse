@@ -21,7 +21,9 @@ namespace The_Bakehouse
 
         protected void loginBtn_ServerClick(object sender, EventArgs e)
         {
-            Administrator admin = new Administrator("mairon", "123");
+            string user = usernameTxt.Value;
+            string pass = passwordTxt.ToString();
+            Administrator admin = new Administrator(user, pass);
             administratorBusiness.LoginService(admin);
         }
     }
