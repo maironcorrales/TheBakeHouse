@@ -171,8 +171,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\AdministratorData.cs" />
+    <Compile Include="Data\BillData.cs" />
     <Compile Include="Data\DBConnection.cs" />
     <Compile Include="Data\MenuData.cs" />
+    <Compile Include="Data\NotificationData.cs" />
     <Compile Include="Data\SubscriberData.cs" />
     <Compile Include="Domain\Administrator.cs" />
     <Compile Include="Domain\Bill.cs" />
