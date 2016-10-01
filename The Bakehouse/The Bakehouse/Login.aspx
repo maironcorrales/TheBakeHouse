@@ -93,6 +93,7 @@
     </header>
        
     <div>
+        <form runat="server" id="form1">
        <section class="parallax parallax1" data-parallax-speed="-0.4">
             <div class="container">
                 <h2><em>Login</em>De Administración</h2>
@@ -100,32 +101,34 @@
             <div class="container">
                 <div class="row box-2">
                     <div class="grid_12">
-                        <form id="contact-form" class='contact-form'>
-                            <div class="contact-form-loader"></div>
+                        <div id="contact-form" class='contact-form'>
                             <fieldset>
-                                    <input type="text" id="username" runat="server" placeholder="Nombre de Usuario" value=""
+                                <label>Nombre de Usuario</label>
+                                    <input style="width:50%;text-align:center;" type="text" id="username" runat="server" value=""
                                            data-constraints="@Required @JustLetters"/>                
                                     <span class="empty-message">*This field is required.</span>
                                     <span class="error-message">*This is not a valid name.</span>
                 
-                             
-                                    <input type="password" id="password" runat="server" placeholder="Contraseña"
+                             <label>Contraseña</label>
+                                    <input style="width:50%;text-align:center; " type="password" id="password" runat="server"
                                            data-constraints="@Required @JustLetters"/>                
                                     <span class="empty-message">*This field is required.</span>
                                     <span class="error-message">*This is not a valid name.</span>          
                 
                                 <div class="btn-wr">
-                                    <a class="" href="#" data-type="submit">Ingresar</a>
+                                    <asp:Button runat="server" ID="loginBtn1" OnClick="loginBtn_ServerClick" Text ="Ingresar"></asp:Button>
                                 </div>
                             </fieldset>
-                        </form>
+                        </div>
                     </div>    
                    
                 </div>
             </div>
         </section>
+                
             </div>
         </section>
+            </form>
     
     </div>
    
