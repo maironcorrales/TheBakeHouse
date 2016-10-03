@@ -14,7 +14,7 @@ namespace The_Bakehouse
         SubscriberBusiness subscriberService = new SubscriberBusiness();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            RestablishSpaces();
         }
 
         protected void suscribeBtn_ServerClick(object sender, EventArgs e)
@@ -24,11 +24,21 @@ namespace The_Bakehouse
                 phoneNumber = Convert.ToInt32(subscriberPhoneTxt.Value);
             subscriberMessage.InnerText = subscriberService.AddSubscriberService(subscriberNameTxt.Value,subscriberMailTxt.Value,phoneNumber);
             ModalPopupExtender.Show();
+            RestablishSpaces();
+            
         }
 
         protected void processbtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void RestablishSpaces() 
+        {
+            subscriberMailTxt.Value = "";
+            subscriberMessage.InnerText = "";
+            subscriberNameTxt.Value = "";
+            subscriberPhoneTxt.Value = "";
         }
     }
 }

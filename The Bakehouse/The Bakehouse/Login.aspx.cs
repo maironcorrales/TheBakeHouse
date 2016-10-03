@@ -26,7 +26,10 @@ namespace The_Bakehouse
             string pass = passwordTxt.Value;
             Administrator admin = new Administrator(user, pass);
             if (administratorBusiness.LoginService(admin))
+            {
+                Session["USER"] = user;
                 Response.Redirect("AdministrationPanel.apsx");
+            }
             else 
             {
                 messageLogin.InnerText = "El usuario o la contraseña son incorrectos.";
