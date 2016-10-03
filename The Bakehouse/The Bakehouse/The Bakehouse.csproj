@@ -211,6 +211,7 @@
     <Compile Include="Services\AdministratorBusiness.cs" />
     <Compile Include="Services\MailService.cs" />
     <Compile Include="Services\MenuBusiness.cs" />
+    <Compile Include="Services\SubscriberBusiness.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

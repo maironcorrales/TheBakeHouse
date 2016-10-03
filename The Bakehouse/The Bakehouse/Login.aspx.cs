@@ -23,9 +23,23 @@ namespace The_Bakehouse
         protected void loginBtn_ServerClick(object sender, EventArgs e)
         {
             string user = usernameTxt.Value;
-            string pass = passwordTxt.ToString();
+            string pass = passwordTxt.Value;
             Administrator admin = new Administrator(user, pass);
-            administratorBusiness.LoginService(admin);
+            if (administratorBusiness.LoginService(admin))
+            {
+                Session["USER"] = user;
+                Response.Redirect("AdministrationPanel.apsx");
+            }
+            else 
+            {
+                messageLogin.InnerText = "El usuario o la contraseña son incorrectos.";
+                ModalPopupExtender.Show();
+            }
+        }
+
+        protected void processbtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

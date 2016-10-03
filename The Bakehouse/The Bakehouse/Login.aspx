@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="The_Bakehouse.Login" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <!DOCTYPE html>
 
@@ -94,6 +95,7 @@
        
     <div>
         <form runat="server" id="form1">
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
        <section class="parallax parallax1" data-parallax-speed="-0.4">
             <div class="container">
                 <h2><em>Login</em>De Administración</h2>
@@ -117,6 +119,12 @@
                 
                                 <div class="btn-wr">
                                     <a runat="server" id="loginBtn" onserverclick="loginBtn_ServerClick">Ingresar</a>
+                                    <asp:Button runat="server" ID="processbtn" OnClick="processbtn_Click" Style="visibility:hidden;" />
+                                    <asp:Panel ID="Panel1" Style="display: none" CssClass="modalPopup" align="center" runat="server">
+                                    <p runat="server" id="messageLogin"></p>
+                                    <hr />
+                                    <a id="btnCancel">Aceptar</a>
+                                </asp:Panel>
                                 </div>
                             </fieldset>
                         </div>
@@ -124,6 +132,14 @@
                    
                 </div>
             </div>
+                    <asp:ModalPopupExtender ID="ModalPopupExtender" runat="server"
+                                        TargetControlID="processbtn"
+                                        CancelControlID="btnCancel"
+                                        PopupControlID="Panel1"
+                                        Drag="true"
+                                        BackgroundCssClass="modalBackground">
+                                    </asp:ModalPopupExtender>
+                    
         </section>
                 
             </div>
@@ -150,5 +166,23 @@
         </div>
     
     <script src="js/script.js"></script>
+    <style type="text/css">
+            .modalBackground {
+                background-color: Black;
+                filter: alpha(opacity=90);
+                opacity: 0.8;
+            }
+
+            .modalPopup {
+                background-color: #FFFFFF;
+                border-width: 3px;
+                border-style: solid;
+                border-color: black;
+                padding-top: 10px;
+                padding-left: 10px;
+                width: 300px;
+                height: 160px;
+            }
+        </style>
 </body>
 </html>
