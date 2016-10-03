@@ -17,7 +17,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("select * from menu", Conn);
+                MySqlCommand query = new MySqlCommand("SELECT * FROM menu", Conn);
                 Conn.Open();
                 MySqlDataReader reader = query.ExecuteReader();
                 while (reader.Read())
@@ -45,7 +45,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("insert into menu values(@name, @description, @price, @quantity, @photo);", Conn);
+                MySqlCommand query = new MySqlCommand("INSERT INTO menu(nombre, descripcion, precio, cantidad, foto) VALUES(@name, @description, @price, @quantity, @photo);", Conn);
                 query.Parameters.AddWithValue("@name", catalogue.Name);
                 query.Parameters.AddWithValue("@description", catalogue.Description);
                 query.Parameters.AddWithValue("@price", catalogue.Price);
@@ -74,7 +74,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("update menu set nombre = @name, descripcion = @description, precio = @price, cantidad = @quantity, foto = @photo where idProducto = @id;", Conn);
+                MySqlCommand query = new MySqlCommand("UPDATE menu SET nombre = @name, descripcion = @description, precio = @price, cantidad = @quantity, foto = @photo WHERE idProducto = @id;", Conn);
                 query.Parameters.AddWithValue("@name", catalogue.Name);
                 query.Parameters.AddWithValue("@description", catalogue.Description);
                 query.Parameters.AddWithValue("@price", catalogue.Price);
@@ -104,7 +104,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("delete from menu where idProducto = @id", Conn);
+                MySqlCommand query = new MySqlCommand("DELETE FROM menu WHERE idProducto = @id", Conn);
                 query.Parameters.AddWithValue("@id", id);
                 Conn.Open();
                 query.ExecuteNonQuery();

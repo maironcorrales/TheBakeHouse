@@ -9,8 +9,9 @@ namespace The_Bakehouse.Domain
     {
         private int idBill;
         private double amount;
-        private string date;       
+        private string date;
 
+        public Bill() { }
         //Constructor
         public Bill(int idBill, double amount, string date)
         {

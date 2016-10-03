@@ -171,6 +171,7 @@
     <Content Include="js\wow.js" />
     <Content Include="Login.aspx" />
     <Content Include="Menu.aspx" />
+    <Content Include="Tester.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -212,6 +213,13 @@
     <Compile Include="Services\MailService.cs" />
     <Compile Include="Services\MenuBusiness.cs" />
     <Compile Include="Services\SubscriberBusiness.cs" />
+    <Compile Include="Tester.aspx.cs">
+      <DependentUpon>Tester.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tester.aspx.designer.cs">
+      <DependentUpon>Tester.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

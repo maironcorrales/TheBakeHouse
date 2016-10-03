@@ -8,8 +8,9 @@ namespace The_Bakehouse.Domain
     public class Sales
     {
         private int idSale;       
-        private int idBill;        
+        private int idBill;
 
+        public Sales() { }
         //Constructor
         public Sales(int idSale, int idBill)
         {

@@ -16,7 +16,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("select * from administradores;", Conn);
+                MySqlCommand query = new MySqlCommand("SELECT * FROM administradores;", Conn);
                 Conn.Open();
                 MySqlDataReader reader = query.ExecuteReader();
                 while (reader.Read())
@@ -43,7 +43,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("insert into administradores values(@user, @pass);", Conn);
+                MySqlCommand query = new MySqlCommand("INSERT into administradores(nombre_usuario, contraseña) VALUES(@user, @pass);", Conn);
                 query.Parameters.AddWithValue("@user", administrator.Username);
                 query.Parameters.AddWithValue("@pass", administrator.Password);
                 Conn.Open();
@@ -69,7 +69,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("update administradores set nombre_usuario = @user, contraseña = @password, idAdministradores = @idAdmin;", Conn);
+                MySqlCommand query = new MySqlCommand("UPDATE administradores SET nombre_usuario = @user, contraseña = @password WHERE idAdministradores = @idAdmin;", Conn);
                 query.Parameters.AddWithValue("@user", administrador.Username);
                 query.Parameters.AddWithValue("@password", administrador.Password);
                 query.Parameters.AddWithValue("@idAdmin", administrador.Id);
@@ -95,7 +95,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("delete from administradores where idAdministradores = @idAdmin", Conn);
+                MySqlCommand query = new MySqlCommand("DELETE FROM administradores WHERE idAdministradores = @idAdmin", Conn);
                 query.Parameters.AddWithValue("@idAdmin", id);
                 Conn.Open();
                 query.ExecuteNonQuery();
@@ -119,7 +119,7 @@ namespace The_Bakehouse.Data
             int id = 0;
             try
             {
-                MySqlCommand query = new MySqlCommand("select idAdministradores from administradores where nombre_usuario = @user, contraseña = @pass;", Conn);
+                MySqlCommand query = new MySqlCommand("SELECT idAdministradores FROM administradores WHERE nombre_usuario = @user, contraseña = @pass;", Conn);
                 query.Parameters.AddWithValue("@user", username);
                 query.Parameters.AddWithValue("@pass", password);
                 Conn.Open();
@@ -146,7 +146,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("select nombre_usuario, contraseña from administradores where nombre_usuario = @user and contraseña = @pass;", Conn);
+                MySqlCommand query = new MySqlCommand("SELECT nombre_usuario, contraseña FROM administradores WHERE nombre_usuario = @user AND contraseña = @pass;", Conn);
                 query.Parameters.AddWithValue("@user", username);
                 query.Parameters.AddWithValue("@pass", password);
                 Conn.Open();

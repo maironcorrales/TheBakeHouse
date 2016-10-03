@@ -16,7 +16,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("select * from factura;", Conn);
+                MySqlCommand query = new MySqlCommand("SELECT * FROM factura;", Conn);
                 Conn.Open();
                 MySqlDataReader reader = query.ExecuteReader();
                 while (reader.Read())
@@ -44,7 +44,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("insert into factura values(@amount, @date);", Conn);
+                MySqlCommand query = new MySqlCommand("INSERT INTO factura(Monto, Fecha) VALUES(@amount, @date);", Conn);
                 query.Parameters.AddWithValue("@amount", bill.Amount);
                 query.Parameters.AddWithValue("@date", bill.Date);
                 Conn.Open();
@@ -71,9 +71,10 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("update factura set Monto = @amount, Fecha = @date;", Conn);
+                MySqlCommand query = new MySqlCommand("UPDATE factura SET Monto = @amount, Fecha = @date WHERE idFactura = @idBill;", Conn);
                 query.Parameters.AddWithValue("@amount", bill.Amount);
                 query.Parameters.AddWithValue("@date", bill.Date);
+                query.Parameters.AddWithValue("@idBill", bill.IdBill);
                 Conn.Open();
                 query.ExecuteNonQuery();
                 flag = true;
@@ -97,7 +98,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("delete from factura where idFactura = @id;", Conn);
+                MySqlCommand query = new MySqlCommand("DELETE FROM factura WHERE idFactura = @id;", Conn);
                 query.Parameters.AddWithValue("@id", id);
                 Conn.Open();
                 query.ExecuteNonQuery();

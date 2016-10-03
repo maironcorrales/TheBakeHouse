@@ -14,6 +14,8 @@ namespace The_Bakehouse.Domain
         private int quantity;
         private string photo; //Url de donde se encuentra la foto       
 
+
+        public Catalogue() { }
         //Constructor
         public Catalogue(int idProducto, string name, string description, int price, int quantity, string photo)
         {

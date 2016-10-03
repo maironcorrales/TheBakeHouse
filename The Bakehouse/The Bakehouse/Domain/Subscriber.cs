@@ -10,8 +10,9 @@ namespace The_Bakehouse.Domain
         private int id;       
         private string name;        
         private string email;        
-        private int telephone;        
+        private int telephone;
 
+        public Subscriber() { }
         //Constructor
         public Subscriber(int id, string name, string email, int telephone)
         {

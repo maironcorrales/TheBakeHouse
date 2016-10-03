@@ -9,8 +9,9 @@ namespace The_Bakehouse.Domain
     {
         private int idNotification;
         private string notificate;       
-        private bool seen;        
+        private bool seen;
 
+        public Notification() { }
         //Constructor
         public Notification(int idNotification, string notificate, bool seen)
         {

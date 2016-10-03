@@ -16,7 +16,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("select * from notificaciones;", Conn);
+                MySqlCommand query = new MySqlCommand("SELECT * FROM notificaciones;", Conn);
                 Conn.Open();
                 MySqlDataReader reader = query.ExecuteReader();
                 while (reader.Read())
@@ -45,7 +45,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("insert into notification values(@notification, @seen);", Conn);
+                MySqlCommand query = new MySqlCommand("INSERT into notificationes(notificacion, visto) VALUES(@notification, @seen);", Conn);
                 query.Parameters.AddWithValue("@notification", notification.Notificate);
                 query.Parameters.AddWithValue("@seen", notification.Seen);
                 Conn.Open();
@@ -71,7 +71,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("update notificaciones set notificacion = @notification, visto = @seen;", Conn);
+                MySqlCommand query = new MySqlCommand("UPDATE notificaciones SET notificacion = @notification, visto = @seen;", Conn);
                 query.Parameters.AddWithValue("@notification", notification.Notificate);
                 query.Parameters.AddWithValue("@seen", notification.Seen);
                 Conn.Open();
@@ -97,7 +97,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("delete from notificaciones where idNotificacion = id;", Conn);
+                MySqlCommand query = new MySqlCommand("DELETE FROM notificaciones WHERE idNotificacion = id;", Conn);
                 query.Parameters.AddWithValue("@id", idNot);
                 Conn.Open();
                 query.ExecuteNonQuery();

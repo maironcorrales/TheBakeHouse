@@ -9,8 +9,12 @@ namespace The_Bakehouse.Domain
     {
         private int idAdmin;
         private string username;
-        private string password;        
+        private string password;
 
+        public Administrator()
+        {
+
+        }
         //Constructor
         public Administrator(int id, string username, string password)
         {

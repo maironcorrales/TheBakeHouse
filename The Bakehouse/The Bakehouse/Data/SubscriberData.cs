@@ -16,7 +16,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("select * from suscriptores;", Conn);
+                MySqlCommand query = new MySqlCommand("SELECT * FROM suscriptores;", Conn);
                 Conn.Open();
                 MySqlDataReader reader = query.ExecuteReader();
                 while(reader.Read())
@@ -45,7 +45,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("select id_Suscriptor from suscriptores where nombre_suscriptor = @subs, email = @email;", Conn);
+                MySqlCommand query = new MySqlCommand("SELECT id_Suscriptor FROM suscriptores WHERE nombre_suscriptor = @subs, email = @email;", Conn);
                 query.Parameters.AddWithValue("@subs", subscriber);
                 query.Parameters.AddWithValue("@email", email);
                 Conn.Open();
@@ -72,7 +72,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("insert into suscriptores values(@subscriber,@email,@phone);", Conn);
+                MySqlCommand query = new MySqlCommand("INSERT INTO suscriptores(nombre_suscriptor, email, telefono) VALUES(@subscriber,@email,@phone);", Conn);
                 query.Parameters.AddWithValue("@subscriber", subscriber.Name);
                 query.Parameters.AddWithValue("@email", subscriber.Email);
                 query.Parameters.AddWithValue("@phone", subscriber.Telephone);
@@ -99,10 +99,11 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("update suscriptores set nombre_suscriptores = @susbcriber, email = @email, telefono = @phone;", Conn);
+                MySqlCommand query = new MySqlCommand("UPDATE suscriptores SET nombre_suscriptores = @susbcriber, email = @email, telefono = @phone WHERE id_Suscriptor = @id;", Conn);
                 query.Parameters.AddWithValue("@susbcriber", subscriber.Name);
                 query.Parameters.AddWithValue("@email", subscriber.Email);
                 query.Parameters.AddWithValue("@phone", subscriber.Telephone);
+                query.Parameters.AddWithValue("@id", subscriber.Id);
                 Conn.Open();
                 query.ExecuteNonQuery();
                 flag = true;
@@ -126,7 +127,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("delete from suscriptores where id_Suscriptor = @id;", Conn);
+                MySqlCommand query = new MySqlCommand("DELETE FROM suscriptores WHERE id_Suscriptor = @id;", Conn);
                 query.Parameters.AddWithValue("@id", id);
                 Conn.Open();
                 query.ExecuteNonQuery();
