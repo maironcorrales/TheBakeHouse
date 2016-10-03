@@ -1,4 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="The_Bakehouse.Homepage" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
 
 <!DOCTYPE html>
 
@@ -223,39 +225,39 @@
                             <fieldset>
                                 <label class="name">
                                     Nombre Completo:
-                                    <input type="text" name="name" placeholder="" value=""
+                                    <input type="text" runat="server" id="contactName" name="name" placeholder="" value=""
                                            data-constraints="@Required @JustLetters"/>                
-                                    <span class="empty-message">*This field is required.</span>
-                                    <span class="error-message">*This is not a valid name.</span>
+                                    <span class="empty-message">*Este campo es requerido.</span>
+                                    <span class="error-message">*Este no es un nombre válido.</span>
                                 </label>
                 
                                 <label class="email">
                                     E-mail:
-                                    <input type="text" name="email" placeholder="" value=""
+                                    <input type="text" runat="server" id="contactMail" name="email" placeholder="" value=""
                                            data-constraints="@Required @Email"/>                
-                                    <span class="empty-message">*This field is required.</span>
-                                    <span class="error-message">*This is not a valid email.</span>
+                                    <span class="empty-message">*Este campo es requerido.</span>
+                                    <span class="error-message">*Este no es un correo electrónico válido.</span>
                                 </label>
                 
                                 <label class="Subject">
                                     Sujeto:
-                                    <input type="text" name="phone" placeholder="" value=""
+                                    <input type="text" runat="server" id="contactSubject" name="phone" placeholder="" value=""
                                            data-constraints="@Required"/>                
-                                    <span class="empty-message">*This field is required.</span>
-                                    <span class="error-message">*This is not a valid phone.</span>
+                                    <span class="empty-message">*Este campo es requerido.</span>
+                                    <span class="error-message">*Este no es un teléfono válido.</span>
                                 </label>
                 
                                 <label class="message">
                                     Escribe tu mensaje o pedido:
-                                    <textarea name="message" placeholder=""
+                                    <textarea name="message" runat="server" id="contactMessage" placeholder=""
                                               data-constraints='@Required @Length(min=20,max=999999)'></textarea>                
-                                    <span class="empty-message">*This field is required.</span>
-                                    <span class="error-message">*The message is too short.</span>
+                                    <span class="empty-message">*Este campo es requerido.</span>
+                                    <span class="error-message">*El mensaje es demasiado corto.</span>
                                 </label>
                 
                                 <div class="btn-wr">
-                                    <a class="" href="#" data-type="reset">Borrar</a>
-                                    <a class="" href="#" data-type="submit">Enviar</a>
+                                    <a class="" href="#" data-type="reset">Borrar</a>                                    
+                                    <a class="" runat="server" id="btnSend" href="#" data-type="submit" OnClick="btnSend_Click">Enviar</a>
                                 </div>
                             </fieldset>
                             <div class="modal fade response-message">

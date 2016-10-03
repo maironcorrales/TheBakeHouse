@@ -209,6 +209,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdministratorBusiness.cs" />
+    <Compile Include="Services\MailService.cs" />
     <Compile Include="Services\MenuBusiness.cs" />
   </ItemGroup>
   <ItemGroup>
