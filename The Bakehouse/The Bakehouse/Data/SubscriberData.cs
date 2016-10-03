@@ -21,7 +21,7 @@ namespace The_Bakehouse.Data
                 MySqlDataReader reader = query.ExecuteReader();
                 while(reader.Read())
                 {
-                    Subscriber subscriber = new Subscriber(reader.GetString(0), reader.GetString(1), reader.GetInt32(2));
+                    Subscriber subscriber = new Subscriber(reader.GetString(0), reader.GetString(1), reader.GetString(2));
                     list.Add(subscriber);
                 }
 

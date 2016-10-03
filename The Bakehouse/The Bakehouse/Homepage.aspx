@@ -210,7 +210,7 @@
             </div>
         </section>
         <!-- static gallery end -->
-
+        <form runat="server" id="form1">
         <!-- Contact start-->
         <section class="parallax parallax1" data-parallax-speed="-0.4">
             <div class="container">
@@ -220,7 +220,7 @@
                 <div class="row box-3">
                     <div class="grid_5">
                         <h2>Escribenos</h2>
-                        <form id="contact-form" class='contact-form'>
+                        <div id="contact-form" class='contact-form'>
                             <div class="contact-form-loader"></div>
                             <fieldset>
                                 <label class="name">
@@ -276,7 +276,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>    
                     <div class="preffix_1 grid_6">
                         <h2>Información de Contacto</h2>
@@ -303,7 +303,7 @@
         </section>
         <!-- Contact End -->
 
-
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <!--About Us Start -->
         <section class="well well__offset-1 bg-1">
             <div class="container">
@@ -348,12 +348,12 @@
                 <div class="row box-3">
                     <div class="grid_5">
                         <h2>Suscribete</h2>
-                        <form id="contact-form" class='contact-form'>
+                        <div id="contact-form" class='contact-form'>
                             <div class="contact-form-loader"></div>
                             <fieldset>
                                 <label class="name">
                                     Nombre Completo:
-                                    <input type="text" name="name" placeholder="" value=""
+                                    <input type="text" id="nameTxt" runat="server"
                                            data-constraints="@Required @JustLetters"/>                
                                     <span class="empty-message">*This field is required.</span>
                                     <span class="error-message">*This is not a valid name.</span>
@@ -361,7 +361,7 @@
                 
                                 <label class="email">
                                     E-mail:
-                                    <input type="text" name="email" placeholder="" value=""
+                                    <input type="text" id="mailTxt" runat="server"
                                            data-constraints="@Required @Email"/>                
                                     <span class="empty-message">*This field is required.</span>
                                     <span class="error-message">*This is not a valid email.</span>
@@ -369,44 +369,43 @@
                 
                                 <label class="Subject">
                                     Telefono (opcional):
-                                    <input type="text" name="phone" placeholder="" value=""
+                                    <input type="text" id="phoneTxt" runat="server"
                                            data-constraints="@Required"/>                
                                     <span class="empty-message">*This field is required.</span>
                                     <span class="error-message">*This is not a valid phone.</span>
                                 </label>
                                 <div class="btn-wr">
                                     <a class="" href="#" data-type="reset">Cancelar</a>
-                                    <a class="" href="#" data-type="submit">Suscribirse</a>
+                                    <a class="" runat="server" id="SuscribeBtn" onserverclick="SuscribeBtn_ServerClick">Suscribirse</a>
+                                    <asp:Button runat="server" ID="processbtn" OnClick="processbtn_Click" Style="visibility:hidden;" />
+                                    <asp:Panel ID="Panel1" Style="display: none" CssClass="modalPopup" align="center" runat="server">
+                                    <p runat="server" id="suscribeMessage"></p>
+                                    <hr />
+                                    <a id="btnCancel">Aceptar</a>
+                                </asp:Panel>
                                 </div>
                             </fieldset>
-                            <div class="modal fade response-message">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                    aria-hidden="true">
-                                                &times;
-                                            </button>
-                                            <h4 class="modal-title">Modal title</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            Te has suscrito con éxito. Estaremos en contacto. 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                        
+                        </div>
                     </div>    
                     <div class="preffix_1 grid_6">
                         <h2>Información de Suscripción</h2>
                         <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur orci sed Curabitur vel lorem sit amet nulla ullamcorper fermentum. In vitae varius augue, eu consectetur ligula. Etiam dui eros, laoreet sit amet est vel</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur orci sed Curabitur vel lorem sit amet nulla ullamcorper fermentum. In vitae varius augue, eu consectetur ligula. Etiam dui eros, laoreet sit amet est vel, commodo venenatis eros.Lamus at magna non nunc tristique rhoncuseri tym.<br><br>Etiam dui eros, laoreet sit amet est vel, commodo venenatis eros.Lamus at magna non nunc tristique rhoncuseri tym. Etiam dui eros, laoreet sit amet est vel, commodo venenatis eros.Lamus at magna non nunc tristique.</p>
                     </div>
+                    <asp:ModalPopupExtender ID="ModalPopupExtender" runat="server"
+                        TargetControlID="processbtn"
+                        CancelControlID="btnCancel"
+                        PopupControlID="Panel1"
+                        Drag="true"
+                        BackgroundCssClass="modalBackground">
+                     </asp:ModalPopupExtender>
                 </div>
             </div>
         </section>
             </div>
         </section>
+            </form>
         <!--Suscribe to Bakehouse end-->
     </main>
 
@@ -428,5 +427,23 @@
 </div>
 
 <script src="js/script.js"></script>
+    <style type="text/css">
+            .modalBackground {
+                background-color: Black;
+                filter: alpha(opacity=90);
+                opacity: 0.8;
+            }
+
+            .modalPopup {
+                background-color: #FFFFFF;
+                border-width: 3px;
+                border-style: solid;
+                border-color: black;
+                padding-top: 10px;
+                padding-left: 10px;
+                width: 300px;
+                height: 160px;
+            }
+        </style>
 </body>
 </html>

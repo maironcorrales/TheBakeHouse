@@ -10,11 +10,11 @@ namespace The_Bakehouse.Domain
         private int id;       
         private string name;        
         private string email;        
-        private int telephone;
+        private string telephone;
 
         public Subscriber() { }
         //Constructor
-        public Subscriber(int id, string name, string email, int telephone)
+        public Subscriber(int id, string name, string email, string telephone)
         {
             this.id = id;
             this.name = name;
@@ -23,7 +23,7 @@ namespace The_Bakehouse.Domain
         }
 
         //Constructor
-        public Subscriber(string name, string email, int telephone)
+        public Subscriber(string name, string email, string telephone)
         {
             this.name = name;
             this.email = email;
@@ -49,7 +49,7 @@ namespace The_Bakehouse.Domain
             set { email = value; }
         }
 
-        public int Telephone
+        public string Telephone
         {
             get { return telephone; }
             set { telephone = value; }

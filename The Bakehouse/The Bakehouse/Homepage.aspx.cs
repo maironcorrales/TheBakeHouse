@@ -12,6 +12,7 @@ namespace The_Bakehouse
     public partial class Homepage : System.Web.UI.Page
     {
         MailService service = new MailService();
+        SubscriberBusiness subscriberBusiness = new SubscriberBusiness();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,6 +34,26 @@ namespace The_Bakehouse
             }
         }
 
+        protected void processbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void SuscribeBtn_ServerClick(object sender, EventArgs e)
+        {
+            if (phoneTxt.Value == null)
+                phoneTxt.Value = "0";
+            suscribeMessage.InnerText= subscriberBusiness.AddSubscriberService(nameTxt.Value, mailTxt.Value, phoneTxt.Value);
+            ModalPopupExtender.Show();
+            RestablishValues();
+        }
+
+        private void RestablishValues() 
+        {
+            phoneTxt.Value = "";
+            mailTxt.Value = "";
+            mailTxt.Value = "";
+        }
         
     }
 }

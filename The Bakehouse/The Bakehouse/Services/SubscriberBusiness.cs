@@ -19,7 +19,7 @@ namespace The_Bakehouse.Services
         }
 
         //add subscriber
-        public string AddSubscriberService(string name, string mail, int phoneNumber) 
+        public string AddSubscriberService(string name, string mail, string phoneNumber) 
         {
             string message = "";
             Subscriber subscriber = new Subscriber(name, mail, phoneNumber);
