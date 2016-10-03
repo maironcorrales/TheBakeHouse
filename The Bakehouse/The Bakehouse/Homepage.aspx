@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Homepage.aspx.cs" Inherits="The_Bakehouse.Homepage" %>
-
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -210,6 +210,8 @@
         <!-- static gallery end -->
 
         <!-- Contact start-->
+        <form runat="server" id="form1">
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <section class="parallax parallax1" data-parallax-speed="-0.4">
             <div class="container">
                 <h2><em>Contáctenos </em> O Haz Tus Pedidos</h2>
@@ -218,7 +220,7 @@
                 <div class="row box-3">
                     <div class="grid_5">
                         <h2>Escribenos</h2>
-                        <form id="contact-form" class='contact-form'>
+                        <div id="contact-form" class='contact-form'>
                             <div class="contact-form-loader"></div>
                             <fieldset>
                                 <label class="name">
@@ -274,7 +276,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>    
                     <div class="preffix_1 grid_6">
                         <h2>Información de Contacto</h2>
@@ -336,7 +338,7 @@
             </div>
         </section>
         <!--About Us End -->
-
+       
         <!--Suscribe to Bakehouse start-->
         <section class="well well__offset-2">
             <div class="container center">
@@ -346,54 +348,49 @@
                 <div class="row box-3">
                     <div class="grid_5">
                         <h2>Suscribete</h2>
-                        <form id="contact-form" class='contact-form'>
+                        <div id="contact-form" class='contact-form'>
                             <div class="contact-form-loader"></div>
                             <fieldset>
                                 <label class="name">
                                     Nombre Completo:
-                                    <input type="text" name="name" placeholder="" value=""
-                                           data-constraints="@Required @JustLetters"/>                
+                                    <input type="text" id="subscriberNameTxt" runat="server" data-constraints="@Required"/>                
                                     <span class="empty-message">*This field is required.</span>
                                     <span class="error-message">*This is not a valid name.</span>
                                 </label>
                 
                                 <label class="email">
                                     E-mail:
-                                    <input type="text" name="email" placeholder="" value=""
-                                           data-constraints="@Required @Email"/>                
+                                    <input type="text" data-constraints="@Required @Email" id="subscriberMailTxt" runat="server"/>                
                                     <span class="empty-message">*This field is required.</span>
                                     <span class="error-message">*This is not a valid email.</span>
                                 </label>
                 
                                 <label class="Subject">
                                     Telefono (opcional):
-                                    <input type="text" name="phone" placeholder="" value=""
+                                    <input type="text" id="subscriberPhoneTxt" runat="server"
                                            data-constraints="@Required"/>                
                                     <span class="empty-message">*This field is required.</span>
                                     <span class="error-message">*This is not a valid phone.</span>
                                 </label>
                                 <div class="btn-wr">
                                     <a class="" href="#" data-type="reset">Cancelar</a>
-                                    <a class="" href="#" data-type="submit">Suscribirse</a>
+                                    <a class="" href="#" id="suscribeBtn" onserverclick="suscribeBtn_ServerClick" runat="server">Suscribirse</a>
+                                    <asp:Button runat="server" ID="processbtn" OnClick="processbtn_Click" Style="visibility:hidden;" />
+                                    <asp:Panel ID="Panel1" Style="display: none" CssClass="modalPopup" align="center" runat="server">
+                                    <p runat="server" id="subscriberMessage"></p>
+                                    <hr />
+                                    <a id="btnCancel">Aceptar</a>
+                                </asp:Panel>
                                 </div>
                             </fieldset>
-                            <div class="modal fade response-message">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                    aria-hidden="true">
-                                                &times;
-                                            </button>
-                                            <h4 class="modal-title">Modal title</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            Te has suscrito con éxito. Estaremos en contacto. 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                            <asp:ModalPopupExtender ID="ModalPopupExtender" runat="server"
+                                        TargetControlID="processbtn"
+                                        CancelControlID="btnCancel"
+                                        PopupControlID="Panel1"
+                                        Drag="true"
+                                        BackgroundCssClass="modalBackground">
+                                    </asp:ModalPopupExtender>
+                        </div>
                     </div>    
                     <div class="preffix_1 grid_6">
                         <h2>Información de Suscripción</h2>
@@ -406,6 +403,7 @@
             </div>
         </section>
         <!--Suscribe to Bakehouse end-->
+             </form>
     </main>
 
     <!--========================================================
@@ -426,5 +424,23 @@
 </div>
 
 <script src="js/script.js"></script>
+        <style type="text/css">
+            .modalBackground {
+                background-color: Black;
+                filter: alpha(opacity=90);
+                opacity: 0.8;
+            }
+
+            .modalPopup {
+                background-color: #FFFFFF;
+                border-width: 3px;
+                border-style: solid;
+                border-color: black;
+                padding-top: 10px;
+                padding-left: 10px;
+                width: 300px;
+                height: 160px;
+            }
+        </style>
 </body>
 </html>
