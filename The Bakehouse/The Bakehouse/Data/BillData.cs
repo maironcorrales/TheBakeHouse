@@ -37,6 +37,35 @@ namespace The_Bakehouse.Data
             return list;
         }
 
+        // todays bills, hacer "cierre de caja"
+        public List<Bill> GettodaysBills(string date) 
+        {
+            List<Bill> list = new List<Bill>();
+            try
+            {
+                ConnectDB();
+                MySqlCommand query = new MySqlCommand("SELECT * FROM factura where fecha = @date;", Conn);
+                query.Parameters.AddWithValue("@date", date);
+                Conn.Open();
+                MySqlDataReader reader = query.ExecuteReader();
+                while (reader.Read())
+                {
+                    Bill bill = new Bill(reader.GetInt32(0), reader.GetDouble(1), reader.GetString(2));
+                    list.Add(bill);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                disconnectDB();
+                Conn.Close();
+            }
+            return list;
+        }
+
         //add a bill
         public bool addBill(Bill bill)
         {

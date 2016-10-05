@@ -211,8 +211,10 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdministratorBusiness.cs" />
+    <Compile Include="Services\BillBusiness.cs" />
     <Compile Include="Services\MailService.cs" />
     <Compile Include="Services\MenuBusiness.cs" />
+    <Compile Include="Services\NotificationBusiness.cs" />
     <Compile Include="Services\SubscriberBusiness.cs" />
     <Compile Include="Tester.aspx.cs">
       <DependentUpon>Tester.aspx</DependentUpon>

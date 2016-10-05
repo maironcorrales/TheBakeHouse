@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using The_Bakehouse.Data;
 using The_Bakehouse.Services;
+using The_Bakehouse.Domain;
 
 namespace The_Bakehouse
 {
@@ -13,6 +14,7 @@ namespace The_Bakehouse
     {
         MailService service = new MailService();
         SubscriberBusiness subscriberBusiness = new SubscriberBusiness();
+        NotificationBusiness notificationBusiness = new NotificationBusiness();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -43,16 +45,31 @@ namespace The_Bakehouse
         {
             if (phoneTxt.Value == null)
                 phoneTxt.Value = "0";
-            suscribeMessage.InnerText= subscriberBusiness.AddSubscriberService(nameTxt.Value, mailTxt.Value, phoneTxt.Value);
-            ModalPopupExtender.Show();
-            RestablishValues();
+            Notification notification = new Notification("Se ha realizado una nueva inscripcion al sitio.", false);
+            if (notificationBusiness.AddNotificationService(notification))
+            {
+                suscribeMessage.InnerText = subscriberBusiness.AddSubscriberService(nameTxt.Value, mailTxt.Value, phoneTxt.Value);
+                ModalPopupExtender.Show();
+                RestablishValues();
+            }
+            else 
+            {
+                suscribeMessage.InnerText = "Ha ocurrido un error, por favor intentelo má tarde";
+                ModalPopupExtender.Show();
+                RestablishValues();
+            }
         }
 
-        private void RestablishValues() 
+        private void RestablishValues()
         {
             phoneTxt.Value = "";
+            nameTxt.Value = "";
             mailTxt.Value = "";
-            mailTxt.Value = "";
+        }
+
+        protected void reset_ServerClick(object sender, EventArgs e)
+        {
+            RestablishValues();
         }
         
     }

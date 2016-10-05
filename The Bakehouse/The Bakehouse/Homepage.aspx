@@ -375,7 +375,7 @@
                                     <span class="error-message">*This is not a valid phone.</span>
                                 </label>
                                 <div class="btn-wr">
-                                    <a class="" href="#" data-type="reset">Cancelar</a>
+                                    <a class="" href="#" runat="server" onserverclick="reset_ServerClick" id="reset" data-type="reset">Cancelar</a>
                                     <a class="" runat="server" id="SuscribeBtn" onserverclick="SuscribeBtn_ServerClick">Suscribirse</a>
                                     <asp:Button runat="server" ID="processbtn" OnClick="processbtn_Click" Style="visibility:hidden;" />
                                     <asp:Panel ID="Panel1" Style="display: none" CssClass="modalPopup" align="center" runat="server">
