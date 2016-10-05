@@ -10,5 +10,10 @@ namespace The_Bakehouse.Services
     public class MenuBusiness
     {
         MenuData data = new MenuData();
+
+        public List<Catalogue> GetAllProductsInMenu() 
+        {
+            return data.getAllProduct();
+        }
     }
 }

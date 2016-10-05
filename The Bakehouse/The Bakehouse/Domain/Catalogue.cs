@@ -17,7 +17,7 @@ namespace The_Bakehouse.Domain
 
         public Catalogue() { }
         //Constructor
-        public Catalogue(int idProducto, string name, string description, int price, int quantity, string photo)
+        public Catalogue(int idProducto, string name, string description, int price, string photo, int quantity)
         {
             this.idProducto = idProducto;
             this.name = name;

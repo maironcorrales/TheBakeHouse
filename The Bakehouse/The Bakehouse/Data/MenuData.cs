@@ -22,7 +22,7 @@ namespace The_Bakehouse.Data
                 MySqlDataReader reader = query.ExecuteReader();
                 while (reader.Read())
                 {
-                    Catalogue catalogue = new Catalogue(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetString(5));
+                    Catalogue catalogue = new Catalogue(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetString(4), reader.GetInt32(5));
                     listProduct.Add(catalogue);
                 }
             }

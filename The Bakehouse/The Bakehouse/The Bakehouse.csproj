@@ -171,6 +171,7 @@
     <Content Include="js\wow.js" />
     <Content Include="Login.aspx" />
     <Content Include="Menu.aspx" />
+    <Content Include="MenuImages\donuts.png" />
     <Content Include="Tester.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>

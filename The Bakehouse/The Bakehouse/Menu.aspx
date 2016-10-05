@@ -10,6 +10,7 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="css/grid.css"/>
     <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/contact-form.css"/>
 
     <script src="js/jquery.js"></script>
     <script src="js/jquery-migrate-1.2.1.js"></script>
@@ -98,19 +99,21 @@
                     <asp:Repeater ID="productRepeater" runat ="server" OnItemDataBound="productRepeater_ItemDataBound">
                         <ItemTemplate>
                             <div class="grid_4">
-                                <div class="img"><div class="lazy-img"style="padding-bottom: 76.21621621621622%;" > <asp:Image ID="productImg" runat="server" /></div></div>
+                                <div class="img"><div class="lazy-img"style="padding-bottom: 76.21621621621622%;" > <img ID="productImg" runat="server" /></div></div>
                                 <h3 runat ="server" id="productName"></h3>
                                 <p runat="server" id="productDescription"></p>
-                                <h3>Precio:₡ </h3><h3 runat="server" id="price"></h3>
+                                <h3>Precio:₡ <h3 runat="server" id="price"></h3></h3>
+                                <div id="contact-form" class='contact-form' >
                                  <div class="btn-wr">
-                                    <asp:Button CssClass="button" ID="BuyBtn" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
+                                    <a id="BuyBtn" runat="server" onserverclick="BuyBtn_Click">Comprar</a>
+                                </div>
                                 </div>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
                      <!-- fin del repeater -->
                      <!--A continuacion muestra de como se veria el producto final  -->
-                    <div class="grid_4">
+                    <%--<div class="grid_4">
                         <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img data-src="images/page-4_img01.jpg" alt=""></div></div>
                         <h3>Anteger convallis orci vel mi nelaoreet, at ornare lorem consequat. </h3>
                         <p>Vestibulum volutpatturpis ut massa commodo, quis aliquam massa facilisis.Integer convavel miberto merlonelaoreet, at ornare lorem consequat.</p>
@@ -192,7 +195,7 @@
                         <div class="btn-wr">
                                     <asp:Button CssClass="button" ID="Button7" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
                                 </div>
-                    </div>
+                    </div>--%>
                     <!--Fin de la demostracion  -->
                 </div>
             </div>
@@ -218,28 +221,6 @@
 </div>
 
     <script src="js/script.js"></script>
-    <style>
-.button {
-    margin-top: 57px;
-  border: 1px solid #a95858;
-  display: inline-block;
-  font: 400 20px/20px 'Open Sans', sans-serif;
-  padding: 10px 24px;
-  color: #393328;
-}
-@media only screen and (max-width: 979px) {
-.button a {
-    margin-top: 10px;
-  }
-}
-a:hover {
-  color: #ffffff;
-  background: #a95858;
-}
-.button a + a {
-  margin-left: 20px;
-}
-</style>
 </body>
 
 </html>
