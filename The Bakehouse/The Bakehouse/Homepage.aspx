@@ -39,7 +39,7 @@
     =========================================================-->
     <header>
 
-        <div class="camera_container">
+        <div class="camera_container" id="Principal">
             <div id="camera" class="camera_wrap">
                 <div data-thumb="images/slide01_thumb.jpg" data-src="images/slide01.jpg">
                     <div class="camera_caption fadeIn">
@@ -67,42 +67,38 @@
                 <div class="nav_title"></div>
                 <a class="sf-menu-toggle fa fa-bars" href="#"></a>
                 <ul class="sf-menu">
-                    <li class="active">
-                        <a href="./">Home</a>
-                    </li>
                     <li>
-                        <a href="index-1.html">About</a>
+                        <a href="Homepage.aspx">Principal</a>
                         <ul>
                             <li>
-                                <a href="#">Quisque nulla</a>
+                                <a href="homepage.aspx#Principal">Inicio</a>
+                            </li>
+                             <li>
+                                <a href="homepage.aspx#Gallery">Conoce Nuestra Cocina</a>
+                                
+                            </li>
+                             <li>
+                                <a href="Homepage.aspx#ContactUs">Contáctenos</a>
+                             </li>
+                            <li>
+                                <a href="Homepage.aspx#Ubication">Nuestra Ubicacíon</a>
+                             </li>
+                             <li>
+                                 <a href="Homepage.aspx#AboutUs">Conocenos</a>
+                             </li>
+                             <li>
+                                 <a href="Homepage.aspx#SuscribeToTheBakehouse">Suscribete</a>
                             </li>
                             <li>
-                                <a href="#">Vestibulum libero</a>
-                                <ul>
-                                    <li>
-                                        <a href="#">Lorem</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Dolor</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Sit amet</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Vivamus eget nibh</a>
+                                <a href="Homepage.aspx#SocialMedia">Redes Sociales</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="index-2.html">What We Do</a>
+                        <a href="Menu.aspx">Menú</a>
                     </li>
                     <li>
-                        <a href="index-3.html">Menu</a>
-                    </li>
-                    <li>
-                        <a href="index-4.html">Contacts</a>
+                        <a href="Login.aspx">Administración</a>
                     </li>
                 </ul>
             </nav>            
@@ -114,7 +110,7 @@
     =========================================================-->
     <main>
         <!-- Begin Gallery -->
-        <section class="well">
+        <section class="well" id="Gallery">
             <div class="container">
                 <h2><em>Conozca</em>Nuestra Cocina</h2>
                 <div class="decoration"></div>
@@ -212,7 +208,7 @@
         <!-- static gallery end -->
         <form runat="server" id="form1">
         <!-- Contact start-->
-        <section class="parallax parallax1" data-parallax-speed="-0.4">
+        <section class="parallax parallax1" data-parallax-speed="-0.4" id="ContactUs">
             <div class="container">
                 <h2><em>Contáctenos </em> O Haz Tus Pedidos</h2>
                 <section class="well well__offset-3">
@@ -294,7 +290,7 @@
                 </div>
             </div>
         </section>
-                <div class ="container">
+                <div class ="container" id="Ubication">
                     <h2><em>Nuestra Ubicación </em></h2>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d1965.1349591566457!2d-83.97631606134442!3d9.911463071932891!3m2!1i1024!2i768!4f13.1!4m6!3e0!4m0!4m3!3m2!1d9.9119768!2d-83.9745382!5e0!3m2!1ses!2scr!4v1474671669086" style="height:400px; width:100%" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
@@ -305,7 +301,7 @@
 
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <!--About Us Start -->
-        <section class="well well__offset-1 bg-1">
+        <section class="well well__offset-1 bg-1" id="AboutUs">
             <div class="container">
                 <h2><em>Conoce </em>Nuestros Cocineros</h2>
                 <div class="row row__offset-1">
@@ -340,9 +336,9 @@
         <!--About Us End -->
 
         <!--Suscribe to Bakehouse start-->
-        <section class="well well__offset-2">
+        <section class="well well__offset-2" id="SuscribeToTheBakehouse">
             <div class="container center">
-                <h2><em>Suscribete a The Bakehouse </em>Para que te des Cuneta de Todas Las Novedades</h2>
+                <h2><em>Suscribete a The Bakehouse </em>Para que te des Cuenta de Todas Las Novedades</h2>
                  <section class="well well__offset-3">
             <div class="container">
                 <div class="row box-3">
@@ -413,7 +409,7 @@
                               FOOTER
     =========================================================-->
     <footer>
-        <div class="container">
+        <div class="container" id="SocialMedia">
             <ul class="socials">
                 <li><a href="https://www.facebook.com/TheBakehouseGlutenfree/?fref=ts" class="fa fa-facebook"></a></li>
                 <li><a href="#" class="fa fa-tumblr"></a></li>

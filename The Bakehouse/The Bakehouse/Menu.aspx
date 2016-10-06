@@ -47,42 +47,38 @@
                 <nav class="nav">
                     <ul class="sf-menu">
                         <li>
-                            <a href="./">Home</a>
-                        </li>
-                        <li>
-                            <a href="index-1.html">About</a>
-                            <ul>
-                                <li>
-                                    <a href="#">Quisque nulla</a>
-                                </li>
-                                <li>
-                                    <a href="#">Vestibulum libero</a>
-                                    <ul>
-                                        <li>
-                                            <a href="#">Lorem</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Dolor</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Sit amet</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Vivamus eget nibh</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="index-2.html">What We Do</a>
-                        </li>
-                        <li class="active">
-                            <a href="index-3.html">Menu</a>
-                        </li>
-                        <li>
-                            <a href="index-4.html">Contacts</a>
-                        </li>
+                        <a href="Homepage.aspx">Principal</a>
+                        <ul>
+                            <li>
+                                <a href="homepage.aspx#Principal">Inicio</a>
+                            </li>
+                             <li>
+                                <a href="homepage.aspx#Gallery">Conoce Nuestra Cocina</a>
+                                
+                            </li>
+                             <li>
+                                <a href="Homepage.aspx#ContactUs">Contáctenos</a>
+                             </li>
+                            <li>
+                                <a href="Homepage.aspx#Ubication">Nuestra Ubicacíon</a>
+                             </li>
+                             <li>
+                                 <a href="Homepage.aspx#AboutUs">Conocenos</a>
+                             </li>
+                             <li>
+                                 <a href="Homepage.aspx#SuscribeToTheBakehouse">Suscribete</a>
+                            </li>
+                            <li>
+                                <a href="Homepage.aspx#SocialMedia">Redes Sociales</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="Menu.aspx">Menú</a>
+                    </li>
+                    <li>
+                        <a href="Login.aspx">Administración</a>
+                    </li>
                     </ul>
                 </nav>
             </div>
