@@ -90,59 +90,6 @@ namespace The_Bakehouse.Data
                 Conn.Close();
             }
             return flag;
-        }
-        
-        //Se puede actualizar la factura?
-        //update the bill
-        public bool updateBill(Bill bill)
-        {
-            bool flag = false;
-            try
-            {
-                ConnectDB();
-                MySqlCommand query = new MySqlCommand("UPDATE factura SET Monto = @amount, Fecha = @date WHERE idFactura = @idBill;", Conn);
-                query.Parameters.AddWithValue("@amount", bill.Amount);
-                query.Parameters.AddWithValue("@date", bill.Date);
-                query.Parameters.AddWithValue("@idBill", bill.IdBill);
-                Conn.Open();
-                query.ExecuteNonQuery();
-                flag = true;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            finally
-            {
-                disconnectDB();
-                Conn.Close();
-            }
-            return flag;
-        }
-
-        //delete bill 
-        public bool deleteBill(int id)
-        {
-            bool flag = false;
-            try
-            {
-                ConnectDB();
-                MySqlCommand query = new MySqlCommand("DELETE FROM factura WHERE idFactura = @id;", Conn);
-                query.Parameters.AddWithValue("@id", id);
-                Conn.Open();
-                query.ExecuteNonQuery();
-                flag = true;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            finally
-            {
-                disconnectDB();
-                Conn.Close();
-            }
-            return flag;
-        }
+        }      
     }
 }

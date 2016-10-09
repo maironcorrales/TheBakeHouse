@@ -207,7 +207,7 @@
         </section>
         <!-- static gallery end -->
         <form runat="server" id="form1">
-        <!-- Contact start-->
+        <!-- Contact start Email-->
         <section class="parallax parallax1" data-parallax-speed="-0.4" id="ContactUs">
             <div class="container">
                 <h2><em>Contáctenos </em> O Haz Tus Pedidos</h2>
@@ -221,7 +221,7 @@
                             <fieldset>
                                 <label class="name">
                                     Nombre Completo:
-                                    <input type="text" runat="server" id="contactName" name="name" placeholder="" value=""
+                                    <input type="text" id="contactName" runat="server" name="name" 
                                            data-constraints="@Required @JustLetters"/>                
                                     <span class="empty-message">*Este campo es requerido.</span>
                                     <span class="error-message">*Este no es un nombre válido.</span>
@@ -229,7 +229,7 @@
                 
                                 <label class="email">
                                     E-mail:
-                                    <input type="text" runat="server" id="contactMail" name="email" placeholder="" value=""
+                                    <input type="text" id="contactMail" runat="server" name="email"
                                            data-constraints="@Required @Email"/>                
                                     <span class="empty-message">*Este campo es requerido.</span>
                                     <span class="error-message">*Este no es un correo electrónico válido.</span>
@@ -237,7 +237,7 @@
                 
                                 <label class="Subject">
                                     Sujeto:
-                                    <input type="text" runat="server" id="contactSubject" name="phone" placeholder="" value=""
+                                    <input type="text" id="contactSubject" runat="server" name="phone"
                                            data-constraints="@Required"/>                
                                     <span class="empty-message">*Este campo es requerido.</span>
                                     <span class="error-message">*Este no es un teléfono válido.</span>
@@ -245,33 +245,23 @@
                 
                                 <label class="message">
                                     Escribe tu mensaje o pedido:
-                                    <textarea name="message" runat="server" id="contactMessage" placeholder=""
-                                              data-constraints='@Required @Length(min=20,max=999999)'></textarea>                
+                                    <textarea name="message"  id="contactMessage" runat="server"
+                                              data-constraints='@Required'></textarea>                
                                     <span class="empty-message">*Este campo es requerido.</span>
                                     <span class="error-message">*El mensaje es demasiado corto.</span>
                                 </label>
                 
                                 <div class="btn-wr">
-                                    <a class="" href="#" data-type="reset">Borrar</a>                                    
-                                    <a class="" runat="server" id="btnSend" href="#" data-type="submit" OnClick="btnSend_Click">Enviar</a>
+                                    <a class="" href="#" runat="server" onserverclick="resetEmail_ServerClick" id="resetEmail" data-type="reset">Borrar</a>                                    
+                                    <a class="" runat="server" id="btnSendEmail" onserverclick="btnSendEmail_ServerClick">Enviar</a>
+                                    <asp:Button runat="server" id="processbtn2" OnClick="processbtn2_Click" Style="visibility:hidden;"/>
+                                    <asp:Panel ID="Panel2" Style="display:none" CssClass="modalPopup" align="center" runat="server">
+                                        <p runat="server" id="sendEmailMessage"></p>
+                                        <hr />
+                                        <a id="btnAccept">Aceptar</a>
+                                    </asp:Panel>
                                 </div>
                             </fieldset>
-                            <div class="modal fade response-message">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                    aria-hidden="true">
-                                                &times;
-                                            </button>
-                                            <h4 class="modal-title">Modal title</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            Su mensaje ha sido enviado. Estaremos pronto en contacto.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>    
                     <div class="preffix_1 grid_6">
@@ -287,6 +277,13 @@
                             </dl>                        
                         </address>
                     </div>
+                    <asp:ModalPopupExtender ID="ModalPopupExtender1" runat="server"
+                        TargetControlID="processbtn2"
+                        CancelControlID="btnAccept"
+                        PopupControlID="Panel2"
+                        Drag="true"
+                        BackgroundCssClass="modalBackground">
+                    </asp:ModalPopupExtender>
                 </div>
             </div>
         </section>

@@ -91,58 +91,5 @@ namespace The_Bakehouse.Data
             }
             return flag;
         }
-
-        //update subscriber
-        public bool updateSubscriber(Subscriber subscriber)
-        {
-            bool flag = false;
-            try
-            {
-                ConnectDB();
-                MySqlCommand query = new MySqlCommand("UPDATE suscriptores SET nombre_suscriptores = @susbcriber, email = @email, telefono = @phone WHERE id_Suscriptor = @id;", Conn);
-                query.Parameters.AddWithValue("@susbcriber", subscriber.Name);
-                query.Parameters.AddWithValue("@email", subscriber.Email);
-                query.Parameters.AddWithValue("@phone", subscriber.Telephone);
-                query.Parameters.AddWithValue("@id", subscriber.Id);
-                Conn.Open();
-                query.ExecuteNonQuery();
-                flag = true;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            finally
-            {
-                disconnectDB();
-                Conn.Close();
-            }
-            return flag;
-        }
-
-        //delete subscriber
-        public bool deleteSubscriber(int id)
-        {
-            bool flag = false;
-            try
-            {
-                ConnectDB();
-                MySqlCommand query = new MySqlCommand("DELETE FROM suscriptores WHERE id_Suscriptor = @id;", Conn);
-                query.Parameters.AddWithValue("@id", id);
-                Conn.Open();
-                query.ExecuteNonQuery();
-                flag = true;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-             finally 
-            {
-                disconnectDB();
-                Conn.Close();
-            }
-            return flag;
-        }
     }
 }

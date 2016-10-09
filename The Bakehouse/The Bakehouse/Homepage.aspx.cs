@@ -21,21 +21,6 @@ namespace The_Bakehouse
             
         }
 
-        protected void btnSend_Click(object sender, EventArgs e)
-        {
-            if (service.sendMail(contactMail.Value, contactMail.Value, contactSubject.Value, contactMessage.Value))
-            {
-                contactName.Value = "";
-                contactMail.Value = "";
-                contactSubject.Value = "";
-                contactMessage.Value = "";
-            }
-            else
-            {
-                Console.WriteLine("EMAIL NO ENVIADO");
-            }
-        }
-
         protected void processbtn_Click(object sender, EventArgs e)
         {
 
@@ -71,6 +56,41 @@ namespace The_Bakehouse
         {
             RestablishValues();
         }
-        
+
+        protected void processbtn2_Click(object sender, EventArgs e) { }
+
+        public void clearSpace()
+        {
+            contactName.Value = "";
+            contactMail.Value = "";
+            contactSubject.Value = "";
+            contactMessage.Value = "";
+        }
+
+        protected void resetEmail_ServerClick(object sender, EventArgs e)
+        {
+            clearSpace();
+        }
+
+        protected void btnSendEmail_ServerClick(object sender, EventArgs e)
+        {
+            if (service.sendMail(contactName.Value, contactMail.Value, contactSubject.Value, contactMessage.Value))
+            {
+                contactName.Value = "";
+                contactMail.Value = "";
+                contactSubject.Value = "";
+                contactMessage.Value = "";
+                sendEmailMessage.InnerText = "Su mensaje ha sido enviado!";
+                ModalPopupExtender1.Show();
+                clearSpace();
+            }
+            else
+            {
+                Console.WriteLine("EMAIL NO ENVIADO");
+                sendEmailMessage.InnerText = "Hubo un problema, vuelva a intentarlo";
+                ModalPopupExtender1.Show();
+                clearSpace();
+            }
+        }
     }
 }
