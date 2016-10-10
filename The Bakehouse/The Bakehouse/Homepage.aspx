@@ -236,7 +236,7 @@
                                 </label>
                 
                                 <label class="Subject">
-                                    Sujeto:
+                                    Asunto:
                                     <input type="text" id="contactSubject" runat="server" name="phone"
                                            data-constraints="@Required"/>                
                                     <span class="empty-message">*Este campo es requerido.</span>

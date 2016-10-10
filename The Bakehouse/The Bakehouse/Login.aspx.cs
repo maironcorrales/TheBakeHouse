@@ -28,7 +28,7 @@ namespace The_Bakehouse
             if (administratorBusiness.LoginService(admin))
             {
                 Session["USER"] = user;
-                Response.Redirect("AdministrationPanel.apsx");
+                Response.Redirect("AdministrationPanel.aspx");
             }
             else 
             {

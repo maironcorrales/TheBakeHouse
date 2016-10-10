@@ -70,6 +70,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdministrationPanel.aspx" />
     <Content Include="css\animate.css" />
     <Content Include="css\camera.css" />
     <Content Include="css\contact-form.css" />
@@ -78,6 +79,7 @@
     <Content Include="css\jquery.fancybox.css" />
     <Content Include="css\style.css" />
     <Content Include="Homepage.aspx" />
+    <Content Include="images\bell.png" />
     <Content Include="images\blank.gif" />
     <Content Include="images\camera-loader.gif" />
     <Content Include="images\fancybox_loading%402x.gif" />
@@ -176,6 +178,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministrationPanel.aspx.cs">
+      <DependentUpon>AdministrationPanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministrationPanel.aspx.designer.cs">
+      <DependentUpon>AdministrationPanel.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Data\AdministratorData.cs" />
     <Compile Include="Data\BillData.cs" />
     <Compile Include="Data\BillHasMenuData.cs" />
