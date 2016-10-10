@@ -16,7 +16,7 @@ namespace The_Bakehouse.Services
                 MailMessage mail = new MailMessage();
                 SmtpClient client = new SmtpClient();
                 mail.From = new MailAddress("danicormu@hotmail.com");
-                mail.To.Add(new MailAddress(email));
+                mail.To.Add(new MailAddress("danicormu@hotmail.com"));
                 mail.Subject = subject;
                 mail.Body = name + "<" + email + ">" + "\n" + message;
                 client.Port = 587;

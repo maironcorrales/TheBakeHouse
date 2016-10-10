@@ -178,6 +178,7 @@
   <ItemGroup>
     <Compile Include="Data\AdministratorData.cs" />
     <Compile Include="Data\BillData.cs" />
+    <Compile Include="Data\BillHasMenuData.cs" />
     <Compile Include="Data\DBConnection.cs" />
     <Compile Include="Data\MenuData.cs" />
     <Compile Include="Data\NotificationData.cs" />
@@ -185,6 +186,7 @@
     <Compile Include="Data\SubscriberData.cs" />
     <Compile Include="Domain\Administrator.cs" />
     <Compile Include="Domain\Bill.cs" />
+    <Compile Include="Domain\bill_has_menu.cs" />
     <Compile Include="Domain\Catalogue.cs" />
     <Compile Include="Domain\Notification.cs" />
     <Compile Include="Domain\Sales.cs" />
