@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdministrationPanel.aspx" />
+    <Content Include="AdminNotification.aspx" />
     <Content Include="css\animate.css" />
     <Content Include="css\camera.css" />
     <Content Include="css\contact-form.css" />
@@ -184,6 +185,13 @@
     </Compile>
     <Compile Include="AdministrationPanel.aspx.designer.cs">
       <DependentUpon>AdministrationPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminNotification.aspx.cs">
+      <DependentUpon>AdminNotification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminNotification.aspx.designer.cs">
+      <DependentUpon>AdminNotification.aspx</DependentUpon>
     </Compile>
     <Compile Include="Data\AdministratorData.cs" />
     <Compile Include="Data\BillData.cs" />

@@ -59,7 +59,7 @@
                                 
                             </li>
                              <li>
-                                <a href="NotificationAdministration.aspx">Notificaciones</a>
+                                <a href="AdminNotification.aspx">Notificaciones</a>
                              </li>
                             <li>
                                 <a href="BillingAdministration.aspx">Facturación</a>
@@ -70,7 +70,7 @@
                         <a href="Homepage.aspx">Cerrar Sesión</a>
                     </li>
                     <li>
-                        <a href="Login.aspx"><img src="images/bell.png" /></a>
+                        <a href="AdminNotification.aspx"><img src="images/notification.png" /></a>
                     </li>
                     </ul>
                 </nav>
@@ -136,10 +136,10 @@
                                 </label>
                                 <div class="btn-wr">
                                     <a class="" href="#" runat="server" onserverclick="reset_ServerClick" id="reset" data-type="reset">Cancelar</a>
-                                    <a class="" runat="server" id="SendBtn" onserverclick="SendBtn_ServerClick">Enviar</a>
+                                    <a class="" runat="server" id="btnSendToMaster" onserverclick="btnSendToMaster_ServerClick">Enviar</a>
                                     <asp:Button runat="server" ID="processbtn" OnClick="processbtn_Click" Style="visibility:hidden;" />
                                     <asp:Panel ID="Panel1" Style="display: none" CssClass="modalPopup" align="center" runat="server">
-                                        <p runat="server" id="suscribeMessage"></p>
+                                        <p runat="server" id="Message"></p>
                                         <hr />
                                         <a id="btnCancel">Aceptar</a>
                                     </asp:Panel>

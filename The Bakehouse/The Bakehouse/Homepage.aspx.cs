@@ -39,7 +39,7 @@ namespace The_Bakehouse
             }
             else 
             {
-                suscribeMessage.InnerText = "Ha ocurrido un error, por favor intentelo má tarde";
+                suscribeMessage.InnerText = "Ha ocurrido un error, por favor intentelo más tarde";
                 ModalPopupExtender.Show();
                 RestablishValues();
             }
