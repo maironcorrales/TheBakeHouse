@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -175,6 +176,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Menu.aspx" />
     <Content Include="MenuImages\donuts.png" />
+    <Content Include="MessageSuscriptor.aspx" />
     <Content Include="Tester.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -229,9 +231,17 @@
     <Compile Include="Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MessageSuscriptor.aspx.cs">
+      <DependentUpon>MessageSuscriptor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MessageSuscriptor.aspx.designer.cs">
+      <DependentUpon>MessageSuscriptor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdministratorBusiness.cs" />
     <Compile Include="Services\BillBusiness.cs" />
+    <Compile Include="Services\BillDetailBusiness.cs" />
     <Compile Include="Services\MailService.cs" />
     <Compile Include="Services\MenuBusiness.cs" />
     <Compile Include="Services\NotificationBusiness.cs" />

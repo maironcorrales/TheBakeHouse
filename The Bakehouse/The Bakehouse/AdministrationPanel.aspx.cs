@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using The_Bakehouse.Services;
 
 namespace The_Bakehouse
@@ -13,7 +8,8 @@ namespace The_Bakehouse
         MailService service = new MailService();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Session["USER"] == null)
+                Response.Redirect("Login.aspx");
         }
 
         protected void reset_ServerClick(object sender, EventArgs e)

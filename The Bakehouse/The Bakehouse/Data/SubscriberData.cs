@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using MySql.Data.MySqlClient;
 using The_Bakehouse.Domain;
 
@@ -21,7 +19,7 @@ namespace The_Bakehouse.Data
                 MySqlDataReader reader = query.ExecuteReader();
                 while(reader.Read())
                 {
-                    Subscriber subscriber = new Subscriber(reader.GetString(0), reader.GetString(1), reader.GetString(2));
+                    Subscriber subscriber = new Subscriber(reader.GetInt32(0),reader.GetString(1), reader.GetString(2), reader.GetString(3));
                     list.Add(subscriber);
                 }
 

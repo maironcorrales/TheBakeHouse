@@ -68,6 +68,9 @@
                                 </ul>
                             </li>
                             <li>
+                                <a href="MessageSuscriptor.aspx">Escribir A Suscriptores</a>
+                            </li>
+                            <li>
                                 <a href="Homepage.aspx">Cerrar Sesión</a>
                             </li>
                             <li>

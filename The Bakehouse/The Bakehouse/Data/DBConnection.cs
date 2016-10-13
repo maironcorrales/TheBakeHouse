@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using MySql.Data.MySqlClient;
 
 namespace The_Bakehouse.Data
@@ -9,8 +6,8 @@ namespace The_Bakehouse.Data
     public abstract class DBConnection
     {
         private MySqlConnection conn = null;
-        //protected String path = "Server = localhost; Database = TheBakehouse; UID = root; password = LinkinPark01;";
-        protected String path = "Server = localhost; Database = TheBakehouse; UID = root; password = student1994;";
+        protected String path = "Server = localhost; Database = TheBakehouse; UID = root; password = LinkinPark01;";
+        //protected String path = "Server = localhost; Database = TheBakehouse; UID = root; password = student1994;";
 
         protected MySqlConnection Conn
         {

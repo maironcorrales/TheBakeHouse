@@ -10,7 +10,7 @@
 namespace The_Bakehouse {
     
     
-    public partial class AdministrationPanel {
+    public partial class MessageSuscriptor {
         
         /// <summary>
         /// form1 control.
@@ -31,58 +31,40 @@ namespace The_Bakehouse {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// nameTxt control.
+        /// ContactSubject control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText nameTxt;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText ContactSubject;
         
         /// <summary>
-        /// mailTxt control.
+        /// contactSuscriberMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText mailTxt;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea contactSuscriberMessage;
         
         /// <summary>
-        /// subjectTxt control.
+        /// SendBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText subjectTxt;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor SendBtn;
         
         /// <summary>
-        /// contactMessage control.
+        /// CancelMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea contactMessage;
-        
-        /// <summary>
-        /// reset control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor reset;
-        
-        /// <summary>
-        /// btnSendToMaster control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor btnSendToMaster;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor CancelMessage;
         
         /// <summary>
         /// processbtn control.
@@ -103,13 +85,13 @@ namespace The_Bakehouse {
         protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
-        /// Message control.
+        /// message control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Message;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl message;
         
         /// <summary>
         /// ModalPopupExtender control.
