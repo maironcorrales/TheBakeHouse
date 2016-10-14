@@ -80,6 +80,7 @@
     <Content Include="css\grid.css" />
     <Content Include="css\jquery.fancybox.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\tableStyle.css" />
     <Content Include="Homepage.aspx" />
     <Content Include="images\bell.png" />
     <Content Include="images\blank.gif" />

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/grid.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/camera.css" />
+    <link rel="stylesheet" href="css/tableStyle.css"/>
     <link rel="stylesheet" href="css/jquery.fancybox.css" />
     <link rel="stylesheet" href="css/contact-form.css" />
 
@@ -29,15 +30,12 @@
 
     <script src='js/device.min.js'></script>
 </head>
-
 <body>
-
     <div class=" page">
         <!--========================================================
                               HEADER
     =========================================================-->
         <header>
-
             <div id="stuck_container" class="stuck_container">
                 <div class="container">
 
@@ -86,17 +84,37 @@
 
         <!-- Fin del header -->
 
-        <main>
-        <!-- Inicio del Fact-->
+      <main>
+        <!-- Inicio del Fact--
          <section class="parallax parallax1" data-parallax-speed="-0.4">
          </section>
         <!-- Fin del Fact del Fact-->
-            <form id="form1" runat="server">        
-             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-
-    
-            </form>
-      </main>
+      <form id="form1" runat="server">        
+      <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>                
+      <section class="well">     
+        <h2>Tus Notificaciones</h2>     
+        <div class="container">
+           <div id="content">
+                <table cellspacing="0">
+                    <tr><th>Notificacion</th><th>Individuo</th><th>Estado</th></tr>
+                    <tr><td>Se subscribio a TheBakeHouse</td><td>Mairon Corrales</td><td>Leido</td></tr>
+                    <tr><td>Le interesa un producto</td><td>Daniel Corrales</td><td>Sin Leer</td></tr>
+                </table>
+            </div>
+            <div class="button-action">
+                <div id="contact-form" class='contact-form'>
+                 <fieldset>
+                    <div class="btn-wr">  
+                        <a class="" href="#" runat="server" id="btnSinAccion" data-type="reset">Eliminar todas las notificaciones</a>                                    
+                        <a class="" runat="server" id="btnSendEmail">Enviar</a>              
+                    </div> 
+                 </fieldset>  
+                </div>
+            </div>            
+         </div>                 
+       </section>
+      </form>
+     </main>
         <!--========================================================
                               FOOTER
     =========================================================-->
