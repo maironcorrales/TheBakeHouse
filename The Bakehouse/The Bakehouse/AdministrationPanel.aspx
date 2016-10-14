@@ -42,7 +42,7 @@
 
                 <div class="brand">
                     <h1 class="brand_name">
-                        <a href="AdministrationPanel.aspx">Administracíon</a>
+                        <a href="AdministrationPanel.aspx">Administración</a>
                     </h1>
                 </div>
 

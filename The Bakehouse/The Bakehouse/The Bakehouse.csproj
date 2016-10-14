@@ -71,6 +71,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminAdministration.aspx" />
     <Content Include="AdministrationPanel.aspx" />
     <Content Include="AdminNotification.aspx" />
     <Content Include="css\animate.css" />
@@ -176,12 +177,20 @@
     <Content Include="js\wow.js" />
     <Content Include="Login.aspx" />
     <Content Include="Menu.aspx" />
+    <Content Include="MenuAdministration.aspx" />
     <Content Include="MenuImages\donuts.png" />
     <Content Include="MessageSuscriptor.aspx" />
     <Content Include="Tester.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminAdministration.aspx.cs">
+      <DependentUpon>AdminAdministration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminAdministration.aspx.designer.cs">
+      <DependentUpon>AdminAdministration.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdministrationPanel.aspx.cs">
       <DependentUpon>AdministrationPanel.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -231,6 +240,13 @@
     </Compile>
     <Compile Include="Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAdministration.aspx.cs">
+      <DependentUpon>MenuAdministration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuAdministration.aspx.designer.cs">
+      <DependentUpon>MenuAdministration.aspx</DependentUpon>
     </Compile>
     <Compile Include="MessageSuscriptor.aspx.cs">
       <DependentUpon>MessageSuscriptor.aspx</DependentUpon>
