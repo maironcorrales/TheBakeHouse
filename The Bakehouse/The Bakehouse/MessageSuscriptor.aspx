@@ -42,7 +42,7 @@
 
                 <div class="brand">
                     <h1 class="brand_name">
-                        <a href="AdministrationPanel.aspx">Mensagería</a>
+                        <a href="AdministrationPanel.aspx">Mensajería</a>
                     </h1>
                 </div>
 
@@ -55,7 +55,7 @@
                                 <a href="AdminAdministration.aspx">Administradores</a>
                             </li>
                              <li>
-                                <a href="MenuAdministration.aspx">Menú y Catalogo</a>
+                                <a href="MenuAdministration.aspx">Menú y Catálogo</a>
                                 
                             </li>
                              <li>
