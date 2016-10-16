@@ -31,13 +31,13 @@ namespace The_Bakehouse {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// Text1 control.
+        /// productName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText productName;
         
         /// <summary>
         /// price control.
@@ -103,13 +103,13 @@ namespace The_Bakehouse {
         protected global::System.Web.UI.WebControls.Panel Panel2;
         
         /// <summary>
-        /// sendEmailMessage control.
+        /// resultMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sendEmailMessage;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl resultMessage;
         
         /// <summary>
         /// uploadImageUser control.
@@ -121,6 +121,15 @@ namespace The_Bakehouse {
         protected global::System.Web.UI.HtmlControls.HtmlImage uploadImageUser;
         
         /// <summary>
+        /// Browse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor Browse;
+        
+        /// <summary>
         /// UploadImage control.
         /// </summary>
         /// <remarks>
@@ -128,6 +137,15 @@ namespace The_Bakehouse {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor UploadImage;
+        
+        /// <summary>
+        /// ImageUploader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload ImageUploader;
         
         /// <summary>
         /// ModalPopupExtender control.

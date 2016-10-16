@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Web;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using The_Bakehouse.Domain;
@@ -13,21 +15,39 @@ namespace The_Bakehouse
         MenuBusiness menuService = new MenuBusiness();
         private int i = 0;
         private List<Catalogue> productList;
+        HttpPostedFile fileToSave;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Browse.Attributes.Add("onclick", "document.getElementById('" + ImageUploader.ClientID + "').click();");
             productList = menuService.GetAllProductsInMenu();
             productRepeater.DataSource = productList;
             productRepeater.DataBind();
+            if (Session["IMAGE"] == null)
+                uploadImageUser.Attributes.Add("data-src", "images/placeholder.gif");
+            else
+                fileToSave = (HttpPostedFile)Session["IMAGE"];
         }
 
         protected void cancelBtn_ServerClick(object sender, EventArgs e)
         {
-
+            ClearSpaces();
         }
 
         protected void SaveProduct_ServerClick(object sender, EventArgs e)
         {
-
+            if (productName.Value != null && productDescription.Value != null && price.Value != null && amount.Value != null && fileToSave != null)
+            {
+                Catalogue product = new Catalogue(productName.Value, productDescription.Value, Convert.ToInt32(price.Value), Convert.ToInt32(amount.Value), "MenuImages/" + fileToSave.FileName);
+                resultMessage.InnerText = menuService.AddNewProductToMenuService(product);
+                ClearSpaces();
+                ModalPopupExtender.Show();
+                Response.Redirect("MenuAdministration.aspx");
+            }
+            else
+            {
+                resultMessage.InnerText = "Debe llenar todos los campos requeridos.";
+                ModalPopupExtender.Show();
+            }
         }
 
         protected void processbtn_Click(object sender, EventArgs e)
@@ -60,6 +80,33 @@ namespace The_Bakehouse
                 HtmlImage productImage = (HtmlImage)e.Item.FindControl("productImg");
                 productImage.Attributes.Add("data-src", productList.ElementAt(i).Photo);
                 i++;
+            }
+        }
+
+        private void ClearSpaces()
+        {
+            productName.Value = "";
+            price.Value = "";
+            productDescription.Value = "";
+            amount.Value = "";
+            Session["IMAGE"] = null;
+            uploadImageUser.Attributes.Add("data-src", "images/placeholder.gif");
+        }
+
+        protected void UploadImage_ServerClick(object sender, EventArgs e)
+        {
+            
+            if (!ImageUploader.HasFile)
+            {
+                resultMessage.InnerText = "Debe buscar y escoger una imagen primero.";
+                ModalPopupExtender.Show();
+            }
+            else
+            {
+                HttpPostedFile file = ImageUploader.PostedFile;
+                Session["IMAGE"] = file;
+                file.SaveAs(Server.MapPath(@"MenuImages/" + file.FileName));
+                uploadImageUser.Attributes.Add("data-src", "MenuImages/" + file.FileName);
             }
         }
     }

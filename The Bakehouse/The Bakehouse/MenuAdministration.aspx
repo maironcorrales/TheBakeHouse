@@ -101,7 +101,7 @@
                             <fieldset>
                                 <label class="name">
                                     Nombre del producto:
-                                    <input type="text" id="Text1" runat="server" name="name" 
+                                    <input type="text" id="productName" runat="server" name="name" 
                                            data-constraints="@Required @JustLetters"/>                
                                     <span class="empty-message">*Este campo es requerido.</span>
                                     <span class="error-message">*Este no es un nombre válido.</span>
@@ -136,7 +136,7 @@
                                     <a class="" runat="server" id="SaveProduct" onserverclick="SaveProduct_ServerClick">Guardar</a>
                                     <asp:Button runat="server" id="processbtn" OnClick="processbtn_Click" Style="visibility:hidden;"/>
                                     <asp:Panel ID="Panel2" Style="display:none" CssClass="modalPopup" align="center" runat="server">
-                                        <p runat="server" id="sendEmailMessage"></p>
+                                        <p runat="server" id="resultMessage"></p>
                                         <hr />
                                         <a id="btnAccept">Aceptar</a>
                                     </asp:Panel>
@@ -146,10 +146,12 @@
                     </div>    
                     <div class="preffix_1 grid_6">
                         <h2>Imagen del Producto</h2>
-                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img runat="server" id="uploadImageUser" data-src="images/placeholder.gif" alt=""></div></div>
+                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img runat="server" id="uploadImageUser"></div></div>
                         <div id="contact-form" class='contact-form'>
                         <div class="btn-wr">
-                            <a class="" runat="server" id="UploadImage" onserverclick="SaveProduct_ServerClick">Subir Imagen</a>
+                            <a class="" runat="server" id="Browse">Buscar Imagen</a>
+                            <a class="" runat="server" id="UploadImage" onserverclick="UploadImage_ServerClick">Subir Imagen</a>
+                            <asp:FileUpload id="ImageUploader" runat="server" style="display:none;"/>
                         </div>
                        </div>
                     </div>
@@ -220,7 +222,7 @@
                 padding-top: 10px;
                 padding-left: 10px;
                 width: 300px;
-                height: 180px;
+                height: 200px;
             }
         </style>
 </body>
