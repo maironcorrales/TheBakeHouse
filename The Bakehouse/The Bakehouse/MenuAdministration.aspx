@@ -109,10 +109,8 @@
                 
                                 <label class="email">
                                     Precio:
-                                    <input type="text" id="price" runat="server"
-                                           data-constraints="@Required @Email"/>                
+                                    <input type="text" id="price" runat="server"/>                
                                     <span class="empty-message">*Este campo es requerido.</span>
-                                    <span class="error-message">*Este no es un correo electrónico válido.</span>
                                 </label>
                 
                                 <label class="Subject">
@@ -138,7 +136,7 @@
                                     <asp:Panel ID="Panel2" Style="display:none" CssClass="modalPopup" align="center" runat="server">
                                         <p runat="server" id="resultMessage"></p>
                                         <hr />
-                                        <a id="btnAccept">Aceptar</a>
+                                        <a id="btnAccept" runat="server">Aceptar</a>
                                     </asp:Panel>
                                 </div>
                             </fieldset>
@@ -199,6 +197,14 @@
                                 Drag="true"
                                 BackgroundCssClass="modalBackgroundDelete">
                             </asp:ModalPopupExtender>
+
+                             <asp:ModalPopupExtender runat="server" ID="EditPopUp" TargetControlID="updateProcess"
+                                CancelControlID="btnCancelEdit"
+                                PopupControlID="PanelEdit"
+                                Drag="true"
+                                BackgroundCssClass="modalBackgroundEdit">
+                            </asp:ModalPopupExtender>
+
                         </ItemTemplate>
                     </asp:Repeater>
                      <!-- fin del repeater -->
@@ -213,6 +219,55 @@
                          <a id="btnCancel">Cancelar</a>
                         </div>
                              </div>
+                    </asp:Panel>
+
+                    <asp:Panel ID="PanelEdit" Style="display:none" CssClass="modalPopupEdit" align="center" runat="server">
+                         <h3 runat="server" id="updateMessage"></h3>
+                         <hr />
+                         <div id="contact-form" class='contact-form' >
+                         <div class="btn-wr">
+                             
+                            <fieldset>
+                                <label class="name">
+                                    Nombre del producto:
+                                    </label>
+                                    <input type="text" id="updateName" runat="server" name="name"  style="width:75%"
+                                           data-constraints="@Required @JustLetters"/>                
+                                    <span class="empty-message">*Este campo es requerido.</span>
+                                    <span class="error-message">*Este no es un nombre válido.</span>
+                                
+                
+                                <label class="email"> 
+                                    Precio:
+                                    </label>
+                                    <input type="text" id="updatePrice" runat="server" style="width:75%" />                
+                                    <span class="empty-message">*Este campo es requerido.</span>
+                               
+                
+                                <label class="Subject">
+                                    Cantidad en Existencia:
+                                    </label>
+                                    <input type="text" id="updateAmount" runat="server" style="width:75%"
+                                           data-constraints="@Required"/>                
+                                    <span class="empty-message">*Este campo es requerido.</span>
+                                    <span class="error-message">*Este no es un teléfono válido.</span>
+                                
+                
+                                <label class="message">
+                                    Descripcion del Producto:
+                                    </label>
+                                    <textarea name="message"  id="updateDescription" runat="server" style="width:75%"
+                                              data-constraints='@Required'></textarea>                
+                                    <span class="empty-message">*Este campo es requerido.</span>
+                                    <span class="error-message">*El mensaje es demasiado corto.</span>
+                                
+                            </fieldset>
+                        
+                             <a id="UpdateAccept" runat="server" onserverclick="UpdateAccept_ServerClick" >Editar</a>
+                             <a id="btnCancelEdit">Cancelar</a>
+                             </div>
+                        </div>
+                             
                     </asp:Panel>
                     <!--end delete Panel and modal -->
                     <!-- Edit Pop up and modal -->
@@ -264,6 +319,24 @@
                 padding-left: 10px;
                 width: 300px;
                 height: 200px;
+            }
+        </style>
+    <style type="text/css">
+            .modalBackgroundEdit {
+                background-color: Black;
+                filter: alpha(opacity=90);
+                opacity: 0.8;
+            }
+
+            .modalPopupEdit {
+                background-color: #FFFFFF;
+                border-width: 3px;
+                border-style: solid;
+                border-color: black;
+                padding-top: 10px;
+                padding-left: 10px;
+                width: 75%;
+                height: 100%;
             }
         </style>
 </body>

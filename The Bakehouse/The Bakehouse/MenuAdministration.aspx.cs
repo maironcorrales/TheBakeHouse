@@ -111,7 +111,7 @@ namespace The_Bakehouse
         protected void btnAcceptDelete_ServerClick(object sender, EventArgs e)
         {
             resultMessage.InnerText = menuService.DeleteProductFromMenuService(Convert.ToInt32(Session["PRODUCTID"]));
-            ModalPopupExtender.Show();
+            Response.Redirect("MenuAdministration.aspx");
         }
 
         protected void productRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
@@ -124,6 +124,21 @@ namespace The_Bakehouse
                 DeleteQuestion.InnerText = "¿Desea elimnar el producto seleccionado?";
                 popup.Show();
             }
+            if (e.CommandName == "EditProduct")
+            {
+                ModalPopupExtender updatePopup = (ModalPopupExtender)e.Item.FindControl("EditPopUp");
+                HiddenField id = (HiddenField)e.Item.FindControl("productID");
+                Session["PRODUCTID"] = id.Value;
+                updateMessage.InnerText = "Edite el producto. Use los espacios provistos para introducir los nuevos datos.";
+                updatePopup.Show();
+            }
+        }
+
+        protected void UpdateAccept_ServerClick(object sender, EventArgs e)
+        {
+            Catalogue productToUpdate = new Catalogue(Convert.ToInt32(Session["PRODUCTID"]), updateName.Value, updateDescription.Value, Convert.ToInt32(updatePrice.Value), Convert.ToInt32(updateAmount.Value));
+            resultMessage.InnerText = menuService.ChangeProductCharacteristicsService(productToUpdate);
+            Response.Redirect("MenuAdministration.aspx");
         }
     }
 }

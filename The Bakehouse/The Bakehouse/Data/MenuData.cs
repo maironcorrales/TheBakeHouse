@@ -72,12 +72,11 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("UPDATE menu SET nombre = @name, descripcion = @description, precio = @price, cantidad = @quantity, foto = @photo WHERE idProducto = @id;", Conn);
+                MySqlCommand query = new MySqlCommand("UPDATE menu SET nombre = @name, descripcion = @description, precio = @price, cantidad = @quantity WHERE idProducto = @id;", Conn);
                 query.Parameters.AddWithValue("@name", catalogue.Name);
                 query.Parameters.AddWithValue("@description", catalogue.Description);
                 query.Parameters.AddWithValue("@price", catalogue.Price);
                 query.Parameters.AddWithValue("@quantity", catalogue.Quantity);
-                query.Parameters.AddWithValue("@photo", catalogue.Photo);
                 query.Parameters.AddWithValue("@id", catalogue.IdProducto);
                 Conn.Open();
                 query.ExecuteNonQuery();
