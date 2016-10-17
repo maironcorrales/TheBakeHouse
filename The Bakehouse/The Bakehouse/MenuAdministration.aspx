@@ -175,7 +175,7 @@
                 <h2>Todos los Productos</h2>
                 <div class="row box-2">
                     <!-- Este es el repeater que me sirve para poder tener los datos de los productos -->
-                    <asp:Repeater ID="productRepeater" runat ="server" OnItemDataBound="productRepeater_ItemDataBound">
+                    <asp:Repeater ID="productRepeater" runat ="server" OnItemDataBound="productRepeater_ItemDataBound" OnItemCommand="productRepeater_ItemCommand" >
                         <ItemTemplate>
                             <div class="grid_4">
                                 <div class="img"><div class="lazy-img"style="padding-bottom: 76.21621621621622%;" > <img ID="productImg" runat="server" /></div></div>
@@ -183,16 +183,39 @@
                                 <p runat="server" id="productDescription"></p>
                                 <h3 runat="server" id="price"></h3>
                                 <p runat="server" id="amount"></p>
+                                <asp:HiddenField runat ="server" ID="productID" />
                                 <div id="contact-form" class='contact-form' >
                                  <div class="btn-wr">
-                                    <a id="EditBtn" runat="server" onserverclick="EditBtn_ServerClick">Editar</a>
-                                    <a id="DeleteBtn" runat="server" onserverclick="DeleteBtn_ServerClick">Eliminar</a>
+                                    <asp:LinkButton Visible="true" ID="EditBtn" runat="server" CommandName="EditProduct" Text="Editar"></asp:LinkButton>
+                                     <asp:LinkButton visible="true" ID="DeleteBtn" runat="server" CommandName="deleteProduct" Text="Eliminar"></asp:LinkButton>
+                                     <asp:Button runat ="server" ID="updateProcess" OnClick="deleteProcess_Click" Style="visibility:hidden;"  />
+                                     <asp:Button runat ="server" ID="deleteProcess" OnClick="deleteProcess_Click" Style="visibility:hidden;"  />
                                 </div>
                                 </div>
                             </div>
+                            <asp:ModalPopupExtender runat="server" ID="deletePopUp" TargetControlID="deleteProcess"
+                                CancelControlID="btnCancel"
+                                PopupControlID="PanelDelete"
+                                Drag="true"
+                                BackgroundCssClass="modalBackgroundDelete">
+                            </asp:ModalPopupExtender>
                         </ItemTemplate>
                     </asp:Repeater>
                      <!-- fin del repeater -->
+                    <!--delete Panel and modal -->
+                    
+                    <asp:Panel ID="PanelDelete" Style="display:none" CssClass="modalPopupDelete" align="center" runat="server">
+                         <p runat="server" id="DeleteQuestion"></p>
+                         <hr />
+                         <div id="contact-form" class='contact-form' >
+                         <div class="btn-wr">
+                         <a id="btnAcceptDelete" runat="server" onserverclick="btnAcceptDelete_ServerClick" >Aceptar</a>
+                         <a id="btnCancel">Cancelar</a>
+                        </div>
+                             </div>
+                    </asp:Panel>
+                    <!--end delete Panel and modal -->
+                    <!-- Edit Pop up and modal -->
            </div>
             </div>
         </section>
@@ -215,6 +238,24 @@
             }
 
             .modalPopup {
+                background-color: #FFFFFF;
+                border-width: 3px;
+                border-style: solid;
+                border-color: black;
+                padding-top: 10px;
+                padding-left: 10px;
+                width: 300px;
+                height: 200px;
+            }
+        </style>
+    <style type="text/css">
+            .modalBackgroundDelete {
+                background-color: Black;
+                filter: alpha(opacity=90);
+                opacity: 0.8;
+            }
+
+            .modalPopupDelete {
                 background-color: #FFFFFF;
                 border-width: 3px;
                 border-style: solid;

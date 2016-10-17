@@ -1,6 +1,6 @@
-﻿using System;
+﻿using AjaxControlToolkit;
+using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI.HtmlControls;
@@ -55,15 +55,6 @@ namespace The_Bakehouse
 
         }
 
-        protected void EditBtn_ServerClick(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void DeleteBtn_ServerClick(object sender, EventArgs e)
-        {
-
-        }
 
         protected void productRepeater_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
@@ -79,6 +70,8 @@ namespace The_Bakehouse
                 productAmount.InnerText = "Cantidad: " + productList.ElementAt(i).Quantity.ToString();
                 HtmlImage productImage = (HtmlImage)e.Item.FindControl("productImg");
                 productImage.Attributes.Add("data-src", productList.ElementAt(i).Photo);
+                HiddenField id = (HiddenField)e.Item.FindControl("productID");
+                id.Value = productList.ElementAt(i).IdProducto.ToString(); 
                 i++;
             }
         }
@@ -107,6 +100,29 @@ namespace The_Bakehouse
                 Session["IMAGE"] = file;
                 file.SaveAs(Server.MapPath(@"MenuImages/" + file.FileName));
                 uploadImageUser.Attributes.Add("data-src", "MenuImages/" + file.FileName);
+            }
+        }
+
+        protected void deleteProcess_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnAcceptDelete_ServerClick(object sender, EventArgs e)
+        {
+            resultMessage.InnerText = menuService.DeleteProductFromMenuService(Convert.ToInt32(Session["PRODUCTID"]));
+            ModalPopupExtender.Show();
+        }
+
+        protected void productRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName == "deleteProduct")
+            {
+                ModalPopupExtender popup = (ModalPopupExtender)e.Item.FindControl("deletePopUp");
+                HiddenField id = (HiddenField)e.Item.FindControl("productID");
+                Session["PRODUCTID"] = id.Value;
+                DeleteQuestion.InnerText = "¿Desea elimnar el producto seleccionado?";
+                popup.Show();
             }
         }
     }
