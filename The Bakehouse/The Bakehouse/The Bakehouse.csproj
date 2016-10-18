@@ -83,7 +83,6 @@
     <Content Include="css\style.css" />
     <Content Include="css\tableStyle.css" />
     <Content Include="Homepage.aspx" />
-    <Content Include="images\bell.png" />
     <Content Include="images\blank.gif" />
     <Content Include="images\camera-loader.gif" />
     <Content Include="images\fancybox_loading%402x.gif" />
@@ -142,6 +141,7 @@
     <Content Include="images\parallax03.jpg" />
     <Content Include="images\parallax04.jpg" />
     <Content Include="images\parallax05.jpg" />
+    <Content Include="images\placeholder.gif" />
     <Content Include="images\select.png" />
     <Content Include="images\slide01.jpg" />
     <Content Include="images\slide01_thumb.jpg" />
@@ -280,7 +280,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="TempImgs\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

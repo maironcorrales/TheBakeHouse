@@ -16,9 +16,8 @@ namespace The_Bakehouse
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
             productList = menuService.GetAllProductsInMenu();
-           productRepeater.DataSource = productList;
+            productRepeater.DataSource = productList;
             productRepeater.DataBind();
         }
 
@@ -36,7 +35,9 @@ namespace The_Bakehouse
                 HtmlGenericControl productDescriptionP = (HtmlGenericControl)e.Item.FindControl("productDescription");
                 productDescriptionP.InnerText = productList.ElementAt(i).Description;
                 HtmlGenericControl productPriceH3 = (HtmlGenericControl)e.Item.FindControl("price");
-                productPriceH3.InnerHtml = productList.ElementAt(i).Price.ToString();
+                productPriceH3.InnerHtml = "Precio:₡ " + productList.ElementAt(i).Price.ToString();
+                HtmlGenericControl productAmount = (HtmlGenericControl)e.Item.FindControl("amount");
+                productAmount.InnerText = "Cantidad: "+ productList.ElementAt(i).Quantity.ToString();
                 HtmlImage productImage = (HtmlImage)e.Item.FindControl("productImg");
                 productImage.Attributes.Add("data-src", productList.ElementAt(i).Photo);
                 i++;

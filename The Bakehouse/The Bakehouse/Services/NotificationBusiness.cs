@@ -39,7 +39,18 @@ namespace The_Bakehouse.Services
             if (data.deleteNotification(id))
                 result = "Se ha eliminado la notificacion con éxito";
             else
-                result = "Ha ocurrido un erros. Intentalo más tarde.";
+                result = "Ha ocurrido un error. Intentalo más tarde.";
+            return result;
+        }
+
+        //Delete all the notification
+        public string DeleteAllNotificationService()
+        {
+            string result = "";
+            if (data.deleteAllNotification())
+                result = "Se han eliminado todas las notificaciones";
+            else
+                result = "Ha ocurrido un error. Intentelo de nuevo.";
             return result;
         }
 

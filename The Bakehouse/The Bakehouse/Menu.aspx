@@ -98,7 +98,8 @@
                                 <div class="img"><div class="lazy-img"style="padding-bottom: 76.21621621621622%;" > <img ID="productImg" runat="server" /></div></div>
                                 <h3 runat ="server" id="productName"></h3>
                                 <p runat="server" id="productDescription"></p>
-                                <h3>Precio:₡ <h3 runat="server" id="price"></h3></h3>
+                                <h3 runat="server" id="price"></h3>
+                                <p runat="server" id="amount"></p>
                                 <div id="contact-form" class='contact-form' >
                                  <div class="btn-wr">
                                     <a id="BuyBtn" runat="server" onserverclick="BuyBtn_Click">Comprar</a>

@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminNotification.aspx.cs" Inherits="The_Bakehouse.AdminNotification" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <!DOCTYPE html>
 
@@ -54,7 +55,7 @@
                                         <a href="AdminAdministration.aspx">Administradores</a>
                                     </li>
                                     <li>
-                                        <a href="MenuAdministration.aspx">Menú y Catalogo</a>
+                                        <a href="MenuAdministration.aspx">Menú y Catálogo</a>
 
                                     </li>
                                     <li>
@@ -96,23 +97,107 @@
         <div class="container">
            <div id="content">
                 <table cellspacing="0">
-                    <tr><th>Notificacion</th><th>Individuo</th><th>Estado</th></tr>
-                    <tr><td>Se subscribio a TheBakeHouse</td><td>Mairon Corrales</td><td>Leido</td></tr>
-                    <tr><td>Le interesa un producto</td><td>Daniel Corrales</td><td>Sin Leer</td></tr>
+                    <tr>
+                        <th>Notificacion</th>
+                        <th>Individuo</th>
+                        <th>Estado</th>
+
+                    </tr>
+                        <asp:Repeater id="AllNotification" runat="server" OnItemDataBound="AllNotification_ItemDataBound" OnItemCommand="AllNotification_ItemCommand">
+                        <ItemTemplate>
+                            <tr runat="server">
+                                <td><asp:Label runat="server" ID="Idlbl"/></td>
+                                <td><asp:Label runat="server" ID="Notificationlbl"/></td>
+                                <td><asp:Label runat="server" ID="SeenNotlbl"/></td>
+                            </tr>
+                        </ItemTemplate>
+                        </asp:Repeater>                   
                 </table>
             </div>
             <div class="button-action">
                 <div id="contact-form" class='contact-form'>
                  <fieldset>
                     <div class="btn-wr">  
-                        <a class="" href="#" runat="server" id="btnSinAccion" data-type="reset">Eliminar todas las notificaciones</a>                                    
-                        <a class="" runat="server" id="btnSendEmail">Enviar</a>              
+                        <a class="" runat="server" id="btnConfirmToDelete" onserverclick="btnConfirmToDelete_ServerClick">Eliminar todas las notificaciones</a>    
+                        <a class="" runat="server" id="btnSendEmail">Boton</a>  
+                        <asp:Button runat="server" id="processbtn" OnClick="processbtn_Click" Style="visibility:hidden;" />    
                     </div> 
                  </fieldset>  
+                 <asp:ModalPopupExtender id="ModalPopupExtender" runat="server"
+                    TargetControlID="processbtn"
+                    cancelcontrolid="btnCancel"
+                    PopupControlID="Panel1"
+                    drag="true"
+                    backgroundcssclass="modalBackground1">                 
+                  </asp:ModalPopupExtender>
+                  <asp:ModalPopupExtender id="ModalPopupExtender1" runat="server" 
+                    TargetControlID="processbtn"
+                    cancelcontrolid="btnCancel2" 
+	                PopupControlID="Panel2"
+	                drag="true" 
+	                backgroundcssclass="modalBackground">
+
+                 </asp:ModalPopupExtender>
+                    <asp:Panel ID="Panel1" style="display:none" CssClass="modalPopup" align="center" runat="server">
+                        <p>Para eliminar todas las notificaciones debe ingresar sus credenciales de administrador</p>
+                        <hr />
+                        <asp:TextBox runat="server" ID="txtUsername" placeholder="Usuario"></asp:TextBox>
+                        <br />
+                        <asp:TextBox runat="server" ID="txtPassword" placeholder="Clave" TextMode="Password"></asp:TextBox>
+                        <br />
+                        <hr />
+                        <asp:Button runat="server" ID="btnDeleteNotification" OnClick="btnDeleteNotification_Click" Text="Aceptar"/>
+                        <input id="btnCancel" type="button" value="Cancelar"/>
+                    </asp:Panel>
+                    <asp:panel id="Panel2" style="display: none" CssClass="modalPopup2" align="center" runat="server">
+                        <p runat="server" id="message"></p>
+                        <hr />
+                        <input id="btnCancel2" type="button" value="Aceptar" />
+                    </asp:panel>
                 </div>
             </div>            
          </div>                 
        </section>
+        <style type="text/css">
+            .modalBackground1
+            {
+                background-color: Black;
+                filter: alpha(opacity=90);
+                opacity: 0.8;
+            }
+            .modalPopup
+            {
+                background-color: #FFFFFF;
+                border-width: 3px;
+                border-style: solid;
+                border-color: black;
+                padding-top: 20px;
+                padding-left: 10px;
+                padding-right: 10px;
+                width: 425px;
+                height: 350px;
+            }
+        </style>
+        <style type="text/css">
+            .modalBackground
+    {
+        background-color: Black;
+        filter: alpha(opacity=90);
+        opacity: 0.8;
+    }
+    .modalPopup2
+    {
+        background-color: #FFFFFF;
+        border-width: 3px;
+        border-style: solid;
+        border-color: black;
+        padding-top: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 350px;
+        height: 120px;
+    }
+        </style>
       </form>
      </main>
         <!--========================================================

@@ -55,7 +55,7 @@
                                 <a href="AdminAdministration.aspx">Administradores</a>
                             </li>
                              <li>
-                                <a href="MenuAdministration.aspx">Menú y Catalogo</a>
+                                <a href="MenuAdministration.aspx">Menú y Catálogo</a>
                                 
                             </li>
                              <li>

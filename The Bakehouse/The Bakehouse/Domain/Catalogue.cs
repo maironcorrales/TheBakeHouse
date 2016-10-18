@@ -22,6 +22,15 @@
             this.photo = photo;
         }
 
+        public Catalogue(int idProducto, string name, string description, int price, int quantity)
+        {
+            this.idProducto = idProducto;
+            this.name = name;
+            this.description = description;
+            this.price = price;
+            this.quantity = quantity;
+        }
+
         //Constructor
         public Catalogue(string name, string description, int price, int quantity, string photo)
         {

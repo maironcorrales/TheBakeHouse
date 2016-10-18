@@ -19,7 +19,7 @@ namespace The_Bakehouse.Data
                 MySqlDataReader reader = query.ExecuteReader();
                 while (reader.Read())
                 {
-                    Notification notification = new Notification(reader.GetInt32(0), reader.GetString(1), reader.GetBoolean(3));
+                    Notification notification = new Notification(reader.GetInt32(0), reader.GetString(1), reader.GetBoolean(2));
                     list.Add(notification);
                 }
                 
@@ -73,7 +73,7 @@ namespace The_Bakehouse.Data
                 MySqlDataReader reader = query.ExecuteReader();
                 while (reader.Read())
                 {
-                    Notification notification = new Notification(reader.GetInt32(0), reader.GetString(1), reader.GetBoolean(3));
+                    Notification notification = new Notification(reader.GetInt32(0), reader.GetString(1), reader.GetBoolean(2));
                     list.Add(notification);
                 }
 
@@ -123,7 +123,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("DELETE FROM notificaciones WHERE idNotificacion = id;", Conn);
+                MySqlCommand query = new MySqlCommand("DELETE FROM notificaciones WHERE idNotificacion = @id;", Conn);
                 query.Parameters.AddWithValue("@id", idNot);
                 Conn.Open();
                 query.ExecuteNonQuery();
@@ -135,6 +135,27 @@ namespace The_Bakehouse.Data
             }
             finally
             {
+                disconnectDB();
+                Conn.Close();
+            }
+            return flag;
+        }
+
+        public bool deleteAllNotification()
+        {
+            bool flag = false;
+            try
+            {
+                ConnectDB();
+                MySqlCommand query = new MySqlCommand("DELETE FROM notificaciones;", Conn);
+                Conn.Open();
+                query.ExecuteNonQuery();
+                flag = true;
+            }
+            catch(MySqlException e){
+                Console.WriteLine(e.Message);
+            }
+            finally{
                 disconnectDB();
                 Conn.Close();
             }
