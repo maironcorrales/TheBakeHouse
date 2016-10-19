@@ -63,9 +63,7 @@ namespace The_Bakehouse
         {
             if (txtUsername.Text.Equals(username) && txtPassword.Text.Equals(password))
             {
-                //Aqui se llama el metodo que elimina todas las notificaciones
                 NBusiness.DeleteAllNotificationService();
-                //Se recarga la pagina
                 Response.Redirect("AdminNotification.aspx");
             }
             else

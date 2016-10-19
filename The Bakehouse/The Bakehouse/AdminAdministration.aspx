@@ -150,14 +150,126 @@
                        <div id="content">
                             <table cellspacing="0">
                                 <tr><th>Id de administrador</th><th>Nommbre de usuario</th><th>Editar</th><th>Eliminar</th></tr>
-                                <tr><td>1</td><td>mai</td><td> <asp:Button runat="server" ID="EditBtn" Text ="Editar" OnClick="EditBtn_Click" /> </td><td><asp:Button runat="server" ID="DeleteBtn" Text ="Eliminar" OnClick="DeleteBtn_Click" /></td> </tr>
-                                <tr><td>2</td><td>daniel</td><td> <asp:Button runat="server" ID="Button1" Text ="Editar" OnClick="EditBtn_Click" /> </td><td><asp:Button runat="server" ID="Button2" Text ="Eliminar" OnClick="DeleteBtn_Click" /></td> </tr>
+                                <asp:Repeater runat="server" ID="administratorList" OnItemDataBound="administratorList_ItemDataBound" OnItemCommand="administratorList_ItemCommand">
+                                    <ItemTemplate>
+                                        <tr runat="server">
+                                            <td><asp:Label runat="server" ID="lbl_Id_admin"/></td>
+                                            <td><asp:Label runat="server" ID="lbl_User_admin"/></td>
+                                            <td>
+                                                <asp:LinkButton visible="true" runat="server" ID="btn_Edit" Text="Editar" CommandName="editItem" />
+                                                <asp:Button runat="server" ID="processbtn" OnClick="processbtn_Click1" Style="visibility:hidden;" />
+                                            </td>
+                                            <td>
+                                                <asp:LinkButton visible="true" runat="server" ID="btn_Delete" Text="Eliminar" CommandName="deleteItem" />
+                                                <asp:Button runat="server" ID="processbtn2" OnClick="processbtn2_Click" Style="visibility:hidden;" />
+                                            </td>
+                                        </tr>
+                                        <asp:ModalPopupExtender ID="ModalPopupExtender3" runat="server"
+                                            TargetControlID="processbtn"
+                                            CancelControlID="btnCancelEdit"
+                                            PopupControlID="Panel3"
+                                            drag="true"
+                                            BackgroundCssClass="modalBackground3">                                         
+                                        </asp:ModalPopupExtender>
+                                        <asp:ModalPopupExtender id="ModalPopupExtender2" runat="server" 
+                                            TargetControlID="processbtn2"
+                                            cancelcontrolid="btnCancelDelete" 
+	                                        PopupControlID="Panel2"
+	                                        drag="true" 
+	                                        backgroundcssclass="modalBackground1">
+                                        </asp:ModalPopupExtender>
+                                    </ItemTemplate>
+                                </asp:Repeater>
                             </table>
+                           <asp:Panel ID="Panel3" style="display: none" CssClass="modalPopup3" align="center" runat="server">
+                               <a>Id de Admin: </a><asp:Label runat="server" ID="Admin_ID"></asp:Label> 
+                               <br />
+                               <asp:Label runat="server" ID="userLabel"></asp:Label>
+                               <input runat="server" id ="nameToEdit" />
+                               <br />
+                               <hr/>
+                               <asp:Label runat="server" ID="currentPassLabel"></asp:Label>
+                               <input runat="server" id="currentPassToEdit" type="password"/>
+                               <br/>
+                               <asp:Label runat="server" ID="newPassLabel"></asp:Label>
+                               <input runat="server" id="newPassEdited" type="password"/>
+                               <br />
+                               <asp:Button runat="server" ID="btnUpdateAdmin" OnClick="btnUpdateAdmin_Click" Text="Actualizar"/>
+                               <input id="btnCancelEdit" type="button" value="Cancelar"/>     
+                           </asp:Panel>
+                           <asp:panel id="Panel2" style="display: none" CssClass="modalPopup1" align="center" runat="server">
+                               <p>ID de Administrador: <asp:Label runat="server" ID="admin_Info"></asp:Label></p>
+                               <br />
+                               <p>Para eliminar un admininstrador existente por favor indique sus credenciales de administrador en los espacios que se le proveen</p>
+                               <hr />
+                               <asp:TextBox runat="server" ID="usernameToConfirm" placeholder="nombre de usuario"></asp:TextBox>
+                               <br />
+                               <asp:TextBox runat="server" ID ="passToConfirm" placeholder ="contraseña" TextMode="Password"></asp:TextBox> 
+                               <hr />
+                               <asp:Button runat="server" ID="deleteAdmin" OnClick="deleteAdmin_Click" Text ="Aceptar"/>
+                               <input id="btnCancelDelete" type="button" value="Cancelar" />
+                            </asp:panel>
                         </div>
                     </div>
                 </section>
             </main>
         </form>
+<style type="text/css">
+    .modalBackground
+    {
+        background-color: Black;
+        filter: alpha(opacity=90);
+        opacity: 0.8;
+    }
+    .modalPopup
+    {
+        background-color: #FFFFFF;
+        border-width: 3px;
+        border-style: solid;
+        border-color: black;
+        padding-top: 10px;
+        padding-left: 10px;
+        width: 300px;
+        height: 160px;
+    }
+</style>
+<style type="text/css">
+    .modalBackground1
+    {
+        background-color: Black;
+        filter: alpha(opacity=90);
+        opacity: 0.8;
+    }
+    .modalPopup1
+    {
+        background-color: #FFFFFF;
+        border-width: 3px;
+        border-style: solid;
+        border-color: black;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 400px;
+        height: 400px;
+    }
+</style>
+<style type="text/css">
+    .modalBackground3{
+        background-color: Black;
+        filter: alpha(opacity=90);
+        opacity: 0.8;
+    }
+    .modalPopup3{
+        background-color: #FFFFFF;
+        border-width: 3px;
+        border-style: solid;
+        border-color: black;
+        padding-top: 10px;
+        padding-left: 10px;
+        width: 50%;
+        height: 55%;
+    }
+</style>
     <!--========================================================
                               FOOTER
     =========================================================-->

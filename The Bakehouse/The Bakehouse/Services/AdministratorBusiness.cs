@@ -76,5 +76,12 @@ namespace The_Bakehouse.Services
                 result = "El intento ha fallado, por favor intentelo más tarde";
             return result;
         }
+
+        public bool ComparePassword(Administrator admin)
+        {
+            bool result = false;
+            result = data.verificateAdmin(admin.Username.ToString(), EncryptCredentials(admin.Password));
+            return result;
+        }
     }
 }
