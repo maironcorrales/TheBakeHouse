@@ -171,6 +171,7 @@
                                             drag="true"
                                             BackgroundCssClass="modalBackground3">                                         
                                         </asp:ModalPopupExtender>
+
                                         <asp:ModalPopupExtender id="ModalPopupExtender2" runat="server" 
                                             TargetControlID="processbtn2"
                                             cancelcontrolid="btnCancelDelete" 
@@ -181,34 +182,50 @@
                                     </ItemTemplate>
                                 </asp:Repeater>
                             </table>
-                           <asp:Panel ID="Panel3" style="display: none" CssClass="modalPopup3" align="center" runat="server">
-                               <a>Id de Admin: </a><asp:Label runat="server" ID="Admin_ID"></asp:Label> 
-                               <br />
-                               <asp:Label runat="server" ID="userLabel"></asp:Label>
-                               <input runat="server" id ="nameToEdit" />
-                               <br />
-                               <hr/>
-                               <asp:Label runat="server" ID="currentPassLabel"></asp:Label>
-                               <input runat="server" id="currentPassToEdit" type="password"/>
-                               <br/>
-                               <asp:Label runat="server" ID="newPassLabel"></asp:Label>
-                               <input runat="server" id="newPassEdited" type="password"/>
-                               <br />
-                               <asp:Button runat="server" ID="btnUpdateAdmin" OnClick="btnUpdateAdmin_Click" Text="Actualizar"/>
-                               <input id="btnCancelEdit" type="button" value="Cancelar"/>     
-                           </asp:Panel>
+
                            <asp:panel id="Panel2" style="display: none" CssClass="modalPopup1" align="center" runat="server">
+                               <div id="contact-form" class='contact-form' >
                                <p>ID de Administrador: <asp:Label runat="server" ID="admin_Info"></asp:Label></p>
-                               <br />
                                <p>Para eliminar un admininstrador existente por favor indique sus credenciales de administrador en los espacios que se le proveen</p>
                                <hr />
                                <asp:TextBox runat="server" ID="usernameToConfirm" placeholder="nombre de usuario"></asp:TextBox>
                                <br />
                                <asp:TextBox runat="server" ID ="passToConfirm" placeholder ="contraseña" TextMode="Password"></asp:TextBox> 
                                <hr />
-                               <asp:Button runat="server" ID="deleteAdmin" OnClick="deleteAdmin_Click" Text ="Aceptar"/>
-                               <input id="btnCancelDelete" type="button" value="Cancelar" />
+                               <div class="btn-wr">
+                               <a runat="server" id="deleteAdminConfirm" onserverclick="deleteAdminConfirm_ServerClick">Eliminar</a>
+                               <a id="btnCancelDelete">Cancelar</a>
+                              </div>
+                                </div>
                             </asp:panel>
+
+                           <asp:Panel ID="Panel3" style="display: none" CssClass="modalPopup3" align="center" runat="server">
+                               <div id="contact-form" class='contact-form' >
+                               <a>Id de Admin: </a><asp:Label runat="server" ID="Admin_ID"></asp:Label> 
+                               <br />
+                                   <fieldset>
+                                <asp:Label runat="server" ID="userLabel"></asp:Label>
+                                   <input runat="server" id ="nameToEdit" style="width:75%"/>
+                               <br />
+                               <hr/>
+                                <asp:Label runat="server" ID="currentPassLabel"></asp:Label>
+                                    <input runat="server" id="currentPassToEdit" type="password" style="width:75%"/>
+                               <br/>
+                               <asp:Label runat="server" ID="newPassLabel"></asp:Label>
+                               <input runat="server" id="newPassEdited" type="password" style="width:75%"/>
+                               <br />
+                               <asp:Label runat="server" ID="repeatPassword"></asp:Label>
+                               <input runat="server" id="PasswordEditRepeat" type="password" style="width:75%"/>
+                               <br />
+                            </fieldset>
+                                   <div class="btn-wr">
+                               <a runat="server" id="btnUpdateAdmin1" onserverclick="btnUpdateAdmin_ServerClick">Editar</a>
+                               <a id="btnCancelEdit">Cancelar</a>   
+                                       <div />  
+                               </div>
+                           </asp:Panel>
+
+                           
                         </div>
                     </div>
                 </section>
@@ -267,7 +284,7 @@
         padding-top: 10px;
         padding-left: 10px;
         width: 50%;
-        height: 55%;
+        height: 70%;
     }
 </style>
     <!--========================================================

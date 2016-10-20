@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using The_Bakehouse.Domain;
 using The_Bakehouse.Services;
@@ -39,7 +37,14 @@ namespace The_Bakehouse
 
         protected void Cancel_ServerClick(object sender, EventArgs e)
         {
+            ClearSpaces();
+        }
 
+        private void ClearSpaces()
+        {
+            username.Value = "";
+            password.Value = "";
+            passwordRepeat.Value = "";
         }
 
         protected void CreateBtn_ServerClick(object sender, EventArgs e)
@@ -57,7 +62,7 @@ namespace The_Bakehouse
                     adminList = admBusiness.GetAdministrators();
                     administratorList.DataSource = adminList;
                     administratorList.DataBind();
-                    message.InnerText = "Administrador: " + username.Value + ", contraseña: " + password.Value + " agregado con exito!";
+                    message.InnerText = "Administrador: " + username.Value + ", contraseña: " + "*********" + " agregado con exito!";
                     username.Value = "";
                     password.Value = "";
                     passwordRepeat.Value = "";
@@ -65,7 +70,7 @@ namespace The_Bakehouse
                 }
                 else
                 {
-                    message.InnerText = "Contraseñas no coinciden";
+                    message.InnerText = "Las contraseñas no coinciden";
                     ModalPopupExtender.Show();
                 }
             }
@@ -110,9 +115,10 @@ namespace The_Bakehouse
                 Label username = (Label)e.Item.FindControl("lbl_User_admin");
                 Label id = (Label)e.Item.FindControl("lbl_Id_admin");
                 int idToUpdate = Convert.ToInt32(id.Text);
-                userLabel.Text = "Nombre de usuario";
+                userLabel.Text = "Nombre de usuario actual";
                 currentPassLabel.Text = "Digite su contraseña actual";
                 newPassLabel.Text = "Digite la nueva contraseña";
+                repeatPassword.Text = "Repita la nueva contraseña";
                 nameToEdit.Value = username.Text;
                 Admin_ID.Text = idToUpdate.ToString();
                 popup.Show();
@@ -124,7 +130,43 @@ namespace The_Bakehouse
 
         }
 
-        protected void deleteAdmin_Click(object sender, EventArgs e)
+        protected void processbtn2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnUpdateAdmin_ServerClick(object sender, EventArgs e)
+        {
+            //Primero vamos a comparar la contrasena que ingresamos la encriptamos 
+            string currentUser = nameAdmin.Text;
+            Administrator admin = new Administrator(currentUser, currentPassToEdit.Value);
+            if (admBusiness.ComparePassword(admin))
+            {
+                if (newPassEdited.Value.ToString().Equals(PasswordEditRepeat.Value.ToString()))
+                {
+                    Administrator admin1 = new Administrator(nameToEdit.Value, admBusiness.EncryptCredentials(newPassEdited.Value));
+                    admBusiness.UpdateAdministrator(admin1);
+                    currentPassToEdit.Value = "";
+                    newPassEdited.Value = "";
+                    message.InnerText = "El usuario ha sido actualizado con éxito.";
+                    ModalPopupExtender.Show();
+                }
+                else
+                {
+                    message.InnerText = "Las contraseña nuevas no coinciden.";
+                    ModalPopupExtender.Show();
+                }
+            }
+            else
+            {
+                currentPassToEdit.Value = "";
+                newPassEdited.Value = "";
+                message.InnerText = "La contraseña actual no es la correcta.";
+                ModalPopupExtender.Show();
+            }
+        }
+
+        protected void deleteAdminConfirm_ServerClick(object sender, EventArgs e)
         {
             if (usernameToConfirm.Text.Equals(user) && passToConfirm.Text.Equals(pass))
             {
@@ -146,31 +188,5 @@ namespace The_Bakehouse
                 ModalPopupExtender.Show();
             }
         }
-
-        protected void processbtn2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnUpdateAdmin_Click(object sender, EventArgs e)
-        {
-            //Primero vamos a comparar la contrasena que ingresamos la encriptamos 
-            string currentUser = nameAdmin.ToString(); 
-            Administrator admin = new Administrator(currentUser, currentPassToEdit.Value);
-            if(admBusiness.ComparePassword(admin)){
-                Administrator admin1 = new Administrator(nameToEdit.Value, admBusiness.EncryptCredentials(newPassEdited.Value));
-                admBusiness.UpdateAdministrator(admin1);
-                currentPassToEdit.Value = "";
-                newPassEdited.Value = "";
-                message.InnerText = "El usuario ha sido actualizado con éxito.";
-                ModalPopupExtender.Show();
-            }
-            else{
-                currentPassToEdit.Value = "";
-                newPassEdited.Value = "";
-                message.InnerText = "La contraseña actual no es la correcta.";
-                ModalPopupExtender.Show();
-            }
-        }       
     }
 }
