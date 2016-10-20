@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdministrationPanel.aspx.cs" Inherits="The_Bakehouse.AdministrationPanel" %>
+
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <!DOCTYPE html>
@@ -6,18 +7,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Panel de Admninistración</title>
-    <meta charset="utf-8"/>
-    <meta name="format-detection" content="telephone=no"/>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="css/grid.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/camera.css"/>
-    <link rel="stylesheet" href="css/jquery.fancybox.css"/>
-    <link rel="stylesheet" href="css/contact-form.css"/>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/grid.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/camera.css" />
+    <link rel="stylesheet" href="css/jquery.fancybox.css" />
+    <link rel="stylesheet" href="css/contact-form.css" />
+    <link rel="stylesheet" href="css/notification.css" />
 
     <script src="js/jquery.js"></script>
     <script src="js/jquery-migrate-1.2.1.js"></script>
-     <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <!--[if lt IE 9]>
     <html class="lt-ie9">
     <div style=' clear: both; text-align:center; position: relative;'>
         <a href="http://windows.microsoft.com/en-US/internet-explorer/..">
@@ -27,60 +30,183 @@
     </div>
     <script src="js/html5shiv.js"></script>
     <![endif]-->
- 
+
     <script src='js/device.min.js'></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#notificationLink").click(function () {
+                $("#notificationContainer").fadeToggle(300);
+                $("#notification_count").fadeOut("slow");
+                return false;
+            });
+
+            //Document Click
+            $(document).click(function () {
+                $("#notificationContainer").hide();
+            });
+            //Popup Click
+            $("#notificationContainer").click(function () {
+                return false
+            });
+
+        });
+    </script>
+    <style>
+        body {
+            background-color: #dedede;
+            font-family: arial;
+        }
+
+        #nav {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+
+            #nav li {
+                float: left;
+                margin-right: 20px;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+                #nav li a {
+                    color: #333333;
+                    text-decoration: none;
+                }
+
+                    #nav li a:hover {
+                        color: #006699;
+                        text-decoration: none;
+                    }
+
+        #notification_li {
+            position: relative;
+        }
+
+        #notificationContainer {
+            background-color: #fff;
+            border: 1px solid rgba(100, 100, 100, .4);
+            -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+            overflow: visible;
+            position: absolute;
+            top: 30px;
+            margin-left: -170px;
+            width: 400px;
+            z-index: -1;
+            display: none;
+        }
+
+            #notificationContainer:before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 0;
+                height: 0;
+                color: transparent;
+                border: 10px solid black;
+                border-color: transparent transparent white;
+                margin-top: -20px;
+                margin-left: 188px;
+            }
+
+        #notificationTitle {
+            z-index: 1000;
+            font-weight: bold;
+            padding: 8px;
+            font-size: 13px;
+            background-color: #ffffff;
+            width: 384px;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        #notificationsBody {
+            padding: 33px 0px 0px 0px !important;
+            min-height: 300px;
+        }
+
+        #notificationFooter {
+            background-color: #e9eaed;
+            text-align: center;
+            font-weight: bold;
+            padding: 8px;
+            font-size: 12px;
+            border-top: 1px solid #dddddd;
+        }
+
+        #notification_count {
+            padding: 3px 7px 3px 7px;
+            background: #cc0000;
+            color: #ffffff;
+            font-weight: bold;
+            margin-left: 77px;
+            border-radius: 9px;
+            position: absolute;
+            margin-top: -11px;
+            font-size: 11px;
+        }
+    </style>
 </head>
 <body>
-    <div class =" page">
-         <!--========================================================
+    <div class=" page">
+        <!--========================================================
                               HEADER
     =========================================================-->
-    <header>
+        <header>
 
-        <div id="stuck_container" class="stuck_container">
-            <div class="container">
+            <div id="stuck_container" class="stuck_container">
+                <div class="container">
 
-                <div class="brand">
-                    <h1 class="brand_name">
-                        <a href="AdministrationPanel.aspx">Administración</a>
-                    </h1>
-                </div>
+                    <div class="brand">
+                        <h1 class="brand_name">
+                            <a href="AdministrationPanel.aspx">Administración</a>
+                        </h1>
+                    </div>
 
-                <nav class="nav">
-                    <ul class="sf-menu">
-                        <li>
-                        <a href="AdministrationPanel.aspx">Administración</a>
-                        <ul>
+                    <nav class="nav">
+                        <ul class="sf-menu">
                             <li>
-                                <a href="AdminAdministration.aspx">Administradores</a>
+                                <a href="AdministrationPanel.aspx">Administración</a>
+                                <ul>
+                                    <li>
+                                        <a href="AdminAdministration.aspx">Administradores</a>
+                                    </li>
+                                    <li>
+                                        <a href="MenuAdministration.aspx">Menú y Catálogo</a>
+
+                                    </li>
+                                    <li>
+                                        <a href="AdminNotification.aspx">Notificaciones</a>
+                                    </li>
+                                    <li>
+                                        <a href="BillingAdministration.aspx">Facturación</a>
+                                    </li>
+                                </ul>
                             </li>
-                             <li>
-                                <a href="MenuAdministration.aspx">Menú y Catálogo</a>
-                                
-                            </li>
-                             <li>
-                                <a href="AdminNotification.aspx">Notificaciones</a>
-                             </li>
                             <li>
-                                <a href="BillingAdministration.aspx">Facturación</a>
-                             </li>
+                                <a href="MessageSuscriptor.aspx">Escribir A Suscriptores</a>
+                            </li>
+                            <li>
+                                <a href="Homepage.aspx">Cerrar Sesión</a>
+                            </li>
+                            <li id="notification_li">
+
+                                <span id="notification_count">4</span>
+                                <a href="AdminNotification.aspx" id="notificationLink">
+                                    <img src="images/notification.png" /></a>
+                                <div id="notificationContainer">
+                                    <div id="notificationTitle">Notifications</div>
+                                    <div id="notificationsBody" class="notifications">
+                                    </div>
+                                    <div id="notificationFooter"><a href="#">See All</a></div>
+                                </div>
+                            </li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="MessageSuscriptor.aspx">Escribir A Suscriptores</a>
-                    </li>
-                    <li>
-                        <a href="Homepage.aspx">Cerrar Sesión</a>
-                    </li>
-                    <li>
-                        <a href="AdminNotification.aspx"><img src="images/notification.png" /></a>
-                    </li>
-                    </ul>
-                </nav>
+                    </nav>
+                </div>
             </div>
-        </div>
 
-    </header>
+        </header>
 
         <!-- Fin del header -->
 
@@ -173,19 +299,20 @@
 
         <!--Contact Web masters end -->
 
-         <!--========================================================
+        <!--========================================================
                               FOOTER
     =========================================================-->
 
-    <footer>
-        <div class="container">
-            <div class="copyright">© <span id="copyright-year"></span> |
+        <footer>
+            <div class="container">
+                <div class="copyright">
+                    © <span id="copyright-year"></span>|
                 <a>The Bakehouse Gluten Free</a>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
     </div>
-    
-     <script src="js/script.js"></script>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -80,6 +80,7 @@
     <Content Include="css\google-map.css" />
     <Content Include="css\grid.css" />
     <Content Include="css\jquery.fancybox.css" />
+    <Content Include="css\notification.css" />
     <Content Include="css\style.css" />
     <Content Include="css\tableStyle.css" />
     <Content Include="Homepage.aspx" />
@@ -152,6 +153,7 @@
     <Content Include="images\TM_logo.png" />
     <Content Include="js\camera.js" />
     <Content Include="js\device.min.js" />
+    <Content Include="js\file.js" />
     <Content Include="js\html5shiv.js" />
     <Content Include="js\jquery-migrate-1.2.1.js" />
     <Content Include="js\jquery.cookie.js" />
@@ -161,6 +163,7 @@
     <Content Include="js\jquery.fancybox-media.js" />
     <Content Include="js\jquery.fancybox.js" />
     <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.min.js" />
     <Content Include="js\jquery.mobile.customized.min.js" />
     <Content Include="js\jquery.mobilemenu.js" />
     <Content Include="js\jquery.mousewheel.min.js" />
