@@ -15,11 +15,10 @@
     <link rel="stylesheet" href="css/camera.css" />
     <link rel="stylesheet" href="css/jquery.fancybox.css" />
     <link rel="stylesheet" href="css/contact-form.css" />
-    <link rel="stylesheet" href="css/notification.css" />
 
     <script src="js/jquery.js"></script>
     <script src="js/jquery-migrate-1.2.1.js"></script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>    
     <!--[if lt IE 9]>
     <html class="lt-ie9">
     <div style=' clear: both; text-align:center; position: relative;'>
@@ -32,120 +31,7 @@
     <![endif]-->
 
     <script src='js/device.min.js'></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#notificationLink").click(function () {
-                $("#notificationContainer").fadeToggle(300);
-                $("#notification_count").fadeOut("slow");
-                return false;
-            });
-
-            //Document Click
-            $(document).click(function () {
-                $("#notificationContainer").hide();
-            });
-            //Popup Click
-            $("#notificationContainer").click(function () {
-                return false
-            });
-
-        });
-    </script>
-    <style>
-        body {
-            background-color: #dedede;
-            font-family: arial;
-        }
-
-        #nav {
-            list-style: none;
-            margin: 0px;
-            padding: 0px;
-        }
-
-            #nav li {
-                float: left;
-                margin-right: 20px;
-                font-size: 14px;
-                font-weight: bold;
-            }
-
-                #nav li a {
-                    color: #333333;
-                    text-decoration: none;
-                }
-
-                    #nav li a:hover {
-                        color: #006699;
-                        text-decoration: none;
-                    }
-
-        #notification_li {
-            position: relative;
-        }
-
-        #notificationContainer {
-            background-color: #fff;
-            border: 1px solid rgba(100, 100, 100, .4);
-            -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
-            overflow: visible;
-            position: absolute;
-            top: 30px;
-            margin-left: -170px;
-            width: 400px;
-            z-index: -1;
-            display: none;
-        }
-
-            #notificationContainer:before {
-                content: '';
-                display: block;
-                position: absolute;
-                width: 0;
-                height: 0;
-                color: transparent;
-                border: 10px solid black;
-                border-color: transparent transparent white;
-                margin-top: -20px;
-                margin-left: 188px;
-            }
-
-        #notificationTitle {
-            z-index: 1000;
-            font-weight: bold;
-            padding: 8px;
-            font-size: 13px;
-            background-color: #ffffff;
-            width: 384px;
-            border-bottom: 1px solid #dddddd;
-        }
-
-        #notificationsBody {
-            padding: 33px 0px 0px 0px !important;
-            min-height: 300px;
-        }
-
-        #notificationFooter {
-            background-color: #e9eaed;
-            text-align: center;
-            font-weight: bold;
-            padding: 8px;
-            font-size: 12px;
-            border-top: 1px solid #dddddd;
-        }
-
-        #notification_count {
-            padding: 3px 7px 3px 7px;
-            background: #cc0000;
-            color: #ffffff;
-            font-weight: bold;
-            margin-left: 77px;
-            border-radius: 9px;
-            position: absolute;
-            margin-top: -11px;
-            font-size: 11px;
-        }
-    </style>
+    
 </head>
 <body>
     <div class=" page">
@@ -189,16 +75,14 @@
                             <li>
                                 <a href="Homepage.aspx">Cerrar Sesión</a>
                             </li>
-                            <li id="notification_li">
-
-                                <span id="notification_count">4</span>
-                                <a href="AdminNotification.aspx" id="notificationLink">
+                            <li id="noti_Container">
+                                <div id="noti_Counter"></div>   <!--SHOW NOTIFICATIONS COUNT.-->
+                                <a href="AdminNotification.aspx" id="noti_Button">
                                     <img src="images/notification.png" /></a>
-                                <div id="notificationContainer">
-                                    <div id="notificationTitle">Notifications</div>
-                                    <div id="notificationsBody" class="notifications">
-                                    </div>
-                                    <div id="notificationFooter"><a href="#">See All</a></div>
+                                <div id="notifications">
+                                    <h3>Notificationes</h3>
+                                    <div style="height:300px;"></div>
+                                    <div class="seeAll"><a href="AdminNotification.aspx">Ver Todo</a></div>
                                 </div>
                             </li>
                         </ul>
@@ -218,6 +102,120 @@
 
         <!-- Fin del Fact del Fact-->
         <form id="form1" runat="server">
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                // ANIMATEDLY DISPLAY THE NOTIFICATION COUNTER.
+                $('#noti_Counter')
+                    .css({ opacity: 0 })
+                    .text('7')              // ADD DYNAMIC VALUE (YOU CAN EXTRACT DATA FROM DATABASE OR XML).
+                    .css({ top: '-10px' })
+                    .animate({ top: '-2px', opacity: 1 }, 500);
+
+                $('#noti_Button').click(function () {
+
+                    // TOGGLE (SHOW OR HIDE) NOTIFICATION WINDOW.
+                    $('#notifications').fadeToggle('fast', 'linear', function () {
+                        if ($('#notifications').is(':hidden')) {
+                            $('#noti_Button').css('background-color', '#a95858');
+                        }
+                        else $('#noti_Button').css('background-color', '#a95858');        // CHANGE BACKGROUND COLOR OF THE BUTTON.
+                    });
+
+                    $('#noti_Counter').fadeOut('slow');                 // HIDE THE COUNTER.
+
+                    return false;
+                });
+
+                // HIDE NOTIFICATIONS WHEN CLICKED ANYWHERE ON THE PAGE.
+                $(document).click(function () {
+                    $('#notifications').hide();
+
+                    // CHECK IF NOTIFICATION COUNTER IS HIDDEN.
+                    if ($('#noti_Counter').is(':hidden')) {
+                        // CHANGE BACKGROUND COLOR OF THE BUTTON.
+                        $('#noti_Button').css('background-color', '#a95858');
+                    }
+                });
+
+                $('#notifications').click(function () {
+                    return false;       // DO NOTHING WHEN CONTAINER IS CLICKED.
+                });
+            });
+    </script>
+    <style>        
+    #noti_Container {
+        position:relative;
+    }
+    
+        
+    /* THE POPULAR RED NOTIFICATIONS COUNTER. */
+    #noti_Counter {
+        display:block;
+        position:absolute;
+        background:#E1141E;
+        color:#FFF;
+        font-size:16px;
+        font-weight:normal;
+        padding:1px 3px;
+        margin:-8px 0 0 25px;
+        border-radius:2px;
+        -moz-border-radius:2px; 
+        -webkit-border-radius:2px;
+        z-index:1;
+    }
+        
+    /* THE NOTIFICAIONS WINDOW. THIS REMAINS HIDDEN WHEN THE PAGE LOADS. */
+    #notifications {
+        display:none;
+        width:430px;
+        position:absolute;
+        top:38px;
+        right:-28px;
+        background:#FFF;
+        border:solid 1px rgba(100, 100, 100, .20);
+        -webkit-box-shadow:0 3px 8px rgba(0, 0, 0, .20);
+        z-index: 0;
+    }
+    /* AN ARROW LIKE STRUCTURE JUST OVER THE NOTIFICATIONS WINDOW */
+    #notifications:before {         
+        content: '';
+        display:block;
+        width:0;
+        height:0;
+        color:transparent;
+        border:10px solid #CCC;
+        border-color:transparent transparent #FFF;
+        margin-top:-20px;
+        margin-left:375px;
+    }
+        
+    h3 {
+        display:block;
+        color:#333; 
+        background:#FFF;
+        font-weight:bold;
+        font-size:13px;    
+        padding:8px;
+        margin:0;
+        border-bottom:solid 1px rgba(100, 100, 100, .30);
+    }
+        
+    .seeAll {
+        padding:8px;
+        font-size:12px;
+        font-weight:bold;
+        border-top:solid 1px rgba(100, 100, 100, .30);
+        text-align:center;
+    }
+    .seeAll a {
+        color:#a95858;
+    }
+    .seeAll a:hover {
+        color:#a95858;
+        text-decoration:underline;
+    }
+    </style>
         
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
