@@ -4,7 +4,6 @@ using The_Bakehouse.Domain;
 using The_Bakehouse.Services;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI.WebControls;
 
 namespace The_Bakehouse
@@ -16,6 +15,9 @@ namespace The_Bakehouse
         private int i = 0;
         private string username;
         private string password;
+        private List<Notification> list_NotificationPopUp;
+        public int count_Notification;
+        private int j = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -50,20 +52,6 @@ namespace The_Bakehouse
 
         }
  
-        protected void btnDeleteNotification_Click(object sender, EventArgs e)
-        {
-            if (txtUsername.Text.Equals(username) && txtPassword.Text.Equals(password))
-            {
-                NBusiness.DeleteAllNotificationService();
-                Response.Redirect("AdminNotification.aspx");
-            }
-            else
-            {
-                message.InnerText = "Credenciales Incorrectas.";
-                ModalPopupExtender1.Show();
-            }
-            
-        }
 
         protected void btnConfirmToDelete_ServerClick(object sender, EventArgs e)
         {
@@ -75,6 +63,28 @@ namespace The_Bakehouse
 
         }
 
-        
+        protected void popup_Notifications_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                Label notification = (Label)e.Item.FindControl("lbl_Notification_Popup");
+                notification.Text = list_Notification.ElementAt(j).Notificate;
+                j++;
+            }
+        }
+
+        protected void btnDeleteNotification_ServerClick(object sender, EventArgs e)
+        {
+            if (txtUsername.Text.Equals(username) && txtPassword.Text.Equals(password))
+            {
+                NBusiness.DeleteAllNotificationService();
+                Response.Redirect("AdminNotification.aspx");
+            }
+            else
+            {
+                message.InnerText = "Credenciales Incorrectas.";
+                ModalPopupExtender1.Show();
+            }
+        }
     }
 }

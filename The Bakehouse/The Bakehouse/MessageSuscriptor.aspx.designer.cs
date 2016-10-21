@@ -13,6 +13,15 @@ namespace The_Bakehouse {
     public partial class MessageSuscriptor {
         
         /// <summary>
+        /// popup_Notifications control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater popup_Notifications;
+        
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>

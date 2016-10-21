@@ -66,7 +66,7 @@
                                         <a href="AdminNotification.aspx">Notificaciones</a>
                                     </li>
                                     <li>
-                                        <a href="BillingAdministration.aspx">Facturación</a>
+                                        <a href="Billing.aspx">Facturación</a>
                                     </li>
                                 </ul>
                             </li>
@@ -106,7 +106,48 @@
         <main>
         <!-- Inicio del Fact-->
          <section class="parallax parallax1" data-parallax-speed="-0.4">
-
+             <div class="container">
+                <h2><em>Preguntas</em>Frecuentes</h2>
+                <div class="row">
+                    <div class="grid_6">
+                        <h2>Admininstración</h2>
+                        <p class="indents-3">Esta sección permite al adminintrador controlar el contenido del sitio que se mostrará, el menú y darse cuenta de lo que acontece en la aplicación, por ejemplo en el panel de notificaciones podrá ver las suscripciones, los pedidos efectuados y las compras realizadas.<br><br>En esta pequeña sección se le daran "tips" necesarios para que pueda ubicar cada uno de los elementos y sepa como administrar el contenido del sitio.</p>                        
+                    </div>
+                    <div class="grid_6">
+                         <h2>Administradores</h2>
+                        <p class="indents-3">En la pestaña de administradores podrá crear nuevos administradores llenando el formulario y ver los existentes. Podrá editar o eliminar un usuario, pero debe proveer sus credenciales de usuario administrador antes de hacerlo.<br><br>El punto anterior es necesario ya que de esa manera se mantiene la integridad de los datos almacenados en la aplicación y la seguridad de la misma.</p>
+                    </div>
+                </div>
+                 </div>
+                 </section>
+            <section class="parallax parallax4" data-parallax-speed="-0.4">
+             <div class="container">
+                 <div class="row">
+                    <div class="grid_6">
+                        <h2>Menú</h2>
+                        <p class="indents-3">En la sección de admininistración de menú puede crear un producto, ver todos los productos en el menú, editarlos o eliminarlos. Para crear un un producto nuevo debe llenar los espacios correspondientes y subir una imagen del producto que desea crear.<br><br>Es necesario escoger la foto antes de subirla, luego de escogerla y subirla se puede guardar el producto nuevo.</p>                        
+                    </div>
+                    <div class="grid_6">
+                         <h2>Notificaciones</h2>
+                        <p class="indents-3">En el panel de menú vera una campanita que le indicará la cantidad de notificaciones no leidas que haya. Al tocarla le desplegará el panel de notificaciones. Si desea verlas todas puede ir a la pestaña "notificaciones" de la barra de navegación o tocar "ver todas" en el panel de la campanita.<br><br>En la página de administración de notificaciones las vera todas y tiene la opción de eliminarlas, si ya no desea tenerlas en almacenamiento.</p>
+                    </div>
+                </div>
+                 </div>
+                 </section>
+           
+            <section class="parallax parallax2" data-parallax-speed="-0.4">
+             <div class="container">
+                <div class="row">
+                    <div class="grid_6">
+                        <h2>Facturación</h2>
+                        <p class="indents-3">Es una sección de la administración diseñada para que se pueda llevar un control de las ventas realizadas por medio de la web. Se podrá ver el detalle de lo comprado y el monto total de una compra así como los datos de quien lo haya realizado.<br><br>Podrá también realizar un cierre de caja virtual que le permitira cerrar las facturas de un día completo. Asimismo la sección permite la creación de facturas virtuales.</p>                        
+                    </div>
+                    <div class="grid_6">
+                         <h2>Suscriptores</h2>
+                        <p class="indents-3">Esta es una sección diseñada para qeu el admininstrador escriba a tods los suscriptores de The Bakehouse Gluten Free al llenar el formulario con el asunto y mensaje que quiere transmitir a los suscriptores.<br><br>Es un metodo sencillo de hacerles llegar a todos aquellos que lo desean ofertas, novedades, nuevos productos, etc... que tenga The Bakehouse Gluten Free.</p>
+                    </div>
+                </div>
+            </div>
          </section>
 
         <!-- Fin del Fact del Fact-->
@@ -303,8 +344,8 @@
                     </div>    
                     <div class="preffix_1 grid_6">
                         <h2>Contacto Especializado</h2>
-                        <h3>Al Admininstrador. Debe tener en cuenta que este espacio está disponible para que contacte al proovedor de servicios de la aplicación en caso de que no se entienda como gestionar o administrar ciertas areas de la misma, o en caso de que los "tips" antes listados no le queden claros o no le den toda la información que usted considera necesaria para la gestión del panel de control de la administración."</h3>
-                        <h3>Encontrará un lugar donde poner sus datos y el asunto al cual quiere referirse. Por favor en el mensage que va a enviar, sea conciso y abarque el problema de manera ordenada, esto con el fin de facilitar su comprension por parte del web master que lo vaya a atender. Por último esperamos que su uso sea sencillo y en general que disfrute del manejo ágil que le permitee la aplicación en sus diferentes áreas.</h3>
+                        <h3>Al Admininstrador. Debe tener en cuenta que este espacio está disponible para que contacte al proveedor de servicios de la aplicación en caso de que no se entienda como gestionar o administrar ciertas areas de la misma, o en caso de que los "tips" antes listados no le queden claros o no le den toda la información que usted considera necesaria para la gestión del panel de control de la administración."</h3>
+                        <h3>Encontrará un lugar donde poner sus datos y el asunto al cual quiere referirse. Por favor en el mensage que va a enviar, sea conciso y abarque el problema de manera ordenada, esto con el fin de facilitar su comprensión por parte del web master que lo vaya a atender. Por último esperamos que su uso sea sencillo y en general que disfrute del manejo ágil que le permite la aplicación en sus diferentes áreas.</h3>
                     </div>
                     <asp:ModalPopupExtender ID="ModalPopupExtender" runat="server"
                         TargetControlID="processbtn"

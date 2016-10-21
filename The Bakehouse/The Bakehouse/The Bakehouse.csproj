@@ -74,6 +74,7 @@
     <Content Include="AdminAdministration.aspx" />
     <Content Include="AdministrationPanel.aspx" />
     <Content Include="AdminNotification.aspx" />
+    <Content Include="Billing.aspx" />
     <Content Include="css\animate.css" />
     <Content Include="css\camera.css" />
     <Content Include="css\contact-form.css" />
@@ -151,6 +152,7 @@
     <Content Include="images\slide03.jpg" />
     <Content Include="images\slide03_thumb.jpg" />
     <Content Include="images\TM_logo.png" />
+    <Content Include="images\underDevelope.png" />
     <Content Include="js\camera.js" />
     <Content Include="js\device.min.js" />
     <Content Include="js\file.js" />
@@ -207,6 +209,13 @@
     </Compile>
     <Compile Include="AdminNotification.aspx.designer.cs">
       <DependentUpon>AdminNotification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Billing.aspx.cs">
+      <DependentUpon>Billing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Billing.aspx.designer.cs">
+      <DependentUpon>Billing.aspx</DependentUpon>
     </Compile>
     <Compile Include="Data\AdministratorData.cs" />
     <Compile Include="Data\BillData.cs" />

@@ -64,7 +64,7 @@
                                 <a href="AdminNotification.aspx">Notificaciones</a>
                              </li>
                             <li>
-                                <a href="BillingAdministration.aspx">Facturación</a>
+                                <a href="Billing.aspx">Facturación</a>
                              </li>
                         </ul>
                     </li>
