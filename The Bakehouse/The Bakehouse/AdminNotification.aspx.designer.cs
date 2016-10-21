@@ -49,15 +49,6 @@ namespace The_Bakehouse {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor btnConfirmToDelete;
         
         /// <summary>
-        /// Control processbtn.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button processbtn;
-        
-        /// <summary>
         /// Control btnSendEmail.
         /// </summary>
         /// <remarks>
@@ -65,6 +56,15 @@ namespace The_Bakehouse {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor btnSendEmail;
+        
+        /// <summary>
+        /// Control processbtn.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button processbtn;
         
         /// <summary>
         /// Control ModalPopupExtender.

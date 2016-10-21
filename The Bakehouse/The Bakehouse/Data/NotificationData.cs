@@ -91,15 +91,13 @@ namespace The_Bakehouse.Data
         }
 
         //update Notif
-        public bool updateNotification(Notification notification)
+        public bool updateNotification()
         {
             bool flag = false;
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("UPDATE notificaciones SET notificacion = @notification, visto = @seen;", Conn);
-                query.Parameters.AddWithValue("@notification", notification.Notificate);
-                query.Parameters.AddWithValue("@seen", notification.Seen);
+                MySqlCommand query = new MySqlCommand("UPDATE notificaciones SET visto = true WHERE visto = false;", Conn);
                 Conn.Open();
                 query.ExecuteNonQuery();
                 flag = true;
@@ -161,5 +159,7 @@ namespace The_Bakehouse.Data
             }
             return flag;
         }
+
+
     }
 }

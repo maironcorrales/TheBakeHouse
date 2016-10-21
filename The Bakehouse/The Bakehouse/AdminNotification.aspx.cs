@@ -25,9 +25,10 @@ namespace The_Bakehouse
             }
             username = Session["USER"].ToString();
             password = Session["PASS"].ToString();
-            list_Notification = NBusiness.GetUnreadNotificationService();
+            list_Notification = NBusiness.GetAllNotificationService();
             AllNotification.DataSource = list_Notification;
             AllNotification.DataBind();
+            NBusiness.NotificationRead();
         }
 
         protected void AllNotification_ItemDataBound(object sender, System.Web.UI.WebControls.RepeaterItemEventArgs e)
@@ -48,17 +49,7 @@ namespace The_Bakehouse
         {
 
         }
-
-        public void paintRow()
-        {
-            Notification notification = new Notification();
-            bool unread = NBusiness.GetAllNotificationService().ElementAt(2).Seen;
-            if (unread == false)
-            {
-               
-            }
-        }
-        
+ 
         protected void btnDeleteNotification_Click(object sender, EventArgs e)
         {
             if (txtUsername.Text.Equals(username) && txtPassword.Text.Equals(password))
@@ -83,5 +74,7 @@ namespace The_Bakehouse
         {
 
         }
+
+        
     }
 }

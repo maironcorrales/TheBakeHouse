@@ -11,6 +11,9 @@
     <form id="form1" runat="server">
     <div>
      <asp:Button runat="server" ID="btnTester" Text="Tester" OnClick="btnTester_Click"/>
+    <br />
+        <br />
+        <asp:Label ID="lbl_count" runat="server"></asp:Label>
     </div>
     </form>
 </body>

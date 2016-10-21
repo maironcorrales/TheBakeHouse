@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="css/tableStyle.css"/>
 
     <script src="js/jquery.js"></script>
-    <script src="js/jquery-migrate-1.2.1.js"></script>
+    <script src="js/jquery-migrate-1.2.1.js"></script>    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>    
      <!--[if lt IE 9]>
     <html class="lt-ie9">
     <div style=' clear: both; text-align:center; position: relative;'>
@@ -73,9 +74,25 @@
                     <li>
                         <a href="Homepage.aspx">Cerrar Sesión</a>
                     </li>
-                    <li>
-                        <a href="AdminNotification.aspx"><img src="images/notification.png" /></a>
-                    </li>
+                    <li id="noti_Container">
+                                <div id="noti_Counter"></div>   
+                                <a href="AdminNotification.aspx" id="noti_Button">
+                                    <img src="images/notification.png"/></a>
+                                <div id="notifications">
+                                    <h3>Notificationes</h3>
+                                    <div style="height:300px;">
+                                        <asp:Repeater runat="server" ID="popup_Notifications" OnItemDataBound="popup_Notifications_ItemDataBound">
+                                            <ItemTemplate>
+                                                <div id="noti_Item">
+                                                    <a><asp:Label runat="server" ID="lbl_Notification_Popup"></asp:Label></a>
+                                                    <hr />
+                                                </div>
+                                            </ItemTemplate>
+                                        </asp:Repeater>                                        
+                                    </div>
+                                    <div class="seeAll"><a href="AdminNotification.aspx">Ver Todo</a></div>
+                                </div>
+                            </li>
                     </ul>
                 </nav>
             </div>
@@ -85,6 +102,135 @@
 
         <!-- Fin del header -->
         <form id="form1" runat="server">
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    // ANIMATEDLY DISPLAY THE NOTIFICATION COUNTER.
+                    $('#noti_Counter')
+                        .css({ opacity: 0 })
+                        .text('<%=count_Notification%>')              // ADD DYNAMIC VALUE (YOU CAN EXTRACT DATA FROM DATABASE OR XML).
+                    .css({ top: '-10px' })
+                    .animate({ top: '-2px', opacity: 1 }, 500);
+
+                $('#noti_Button').click(function () {
+
+                    // TOGGLE (SHOW OR HIDE) NOTIFICATION WINDOW.
+                    $('#notifications').fadeToggle('fast', 'linear', function () {
+                        if ($('#notifications').is(':hidden')) {
+                            $('#noti_Button').css('background-color', '#a95858');
+                        }
+                        else $('#noti_Button').css('background-color', '#a95858');        // CHANGE BACKGROUND COLOR OF THE BUTTON.
+                    });
+
+                    $('#noti_Counter').fadeOut('slow');                 // HIDE THE COUNTER.
+
+                    return false;
+                });
+
+                // HIDE NOTIFICATIONS WHEN CLICKED ANYWHERE ON THE PAGE.
+                $(document).click(function () {
+                    $('#notifications').hide();
+
+                    // CHECK IF NOTIFICATION COUNTER IS HIDDEN.
+                    if ($('#noti_Counter').is(':hidden')) {
+                        // CHANGE BACKGROUND COLOR OF THE BUTTON.
+                        $('#noti_Button').css('background-color', '#a95858');
+                    }
+                });
+
+                $('#notifications').click(function () {
+                    return false;       // DO NOTHING WHEN CONTAINER IS CLICKED.
+                });
+            });
+    </script>
+    <style>        
+    #noti_Container {
+        position:relative;
+    }
+    
+        
+    /* THE POPULAR RED NOTIFICATIONS COUNTER. */
+    #noti_Counter {
+        display:block;
+        position:absolute;
+        background:#E1141E;
+        color:#FFF;
+        font-size:16px;
+        font-weight:normal;
+        padding:1px 3px;
+        margin:-8px 0 0 25px;
+        border-radius:2px;
+        -moz-border-radius:2px; 
+        -webkit-border-radius:2px;
+        z-index:1;
+    }
+        
+    /* THE NOTIFICAIONS WINDOW. THIS REMAINS HIDDEN WHEN THE PAGE LOADS. */
+    #notifications {
+        display:none;
+        width:430px;
+        position:absolute;
+        top:38px;
+        right:-28px;
+        background:#FFF;
+        border:solid 1px rgba(100, 100, 100, .20);
+        -webkit-box-shadow:0 3px 8px rgba(0, 0, 0, .20);
+        z-index: 0;
+    }
+    /* AN ARROW LIKE STRUCTURE JUST OVER THE NOTIFICATIONS WINDOW */
+    #notifications:before {         
+        content: 'ddd';
+        display:block;
+        width:0;
+        height:0;
+        color:transparent;
+        border:10px solid #CCC;
+        border-color:transparent transparent #FFF;
+        margin-top:-20px;
+        margin-left:375px;
+    }
+
+    #noti_Item{
+        height:40px;
+        font-size:14px;
+       /* border-bottom:solid 1px rgba(100, 100, 100, .30);*/
+        padding-left:0.2em;
+        padding-right:0.2em;
+    }
+
+    #noti_Item a{
+        padding-left:0.5em;
+        padding-right:0.5em;
+        padding-top:0.5em;        
+        color:black;
+    }
+        
+    h3 {
+        display:block;
+        color:#333; 
+        background:#FFF;
+        font-weight:bold;
+        font-size:13px;    
+        padding:8px;
+        margin:0;
+        border-bottom:solid 1px rgba(100, 100, 100, .30);
+    }
+        
+    .seeAll {
+        padding:8px;
+        font-size:12px;
+        font-weight:bold;
+        border-top:solid 1px rgba(100, 100, 100, .30);
+        text-align:center;
+    }
+    .seeAll a {
+        color:#a95858;
+    }
+    .seeAll a:hover {
+        color:#a95858;
+        text-decoration:underline;
+    }
+    </style>
             <main>
                 <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                 <section class="parallax parallax1" data-parallax-speed="-0.4">     

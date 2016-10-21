@@ -13,6 +13,15 @@ namespace The_Bakehouse {
     public partial class AdministrationPanel {
         
         /// <summary>
+        /// Control popup_Notifications.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater popup_Notifications;
+        
+        /// <summary>
         /// Control form1.
         /// </summary>
         /// <remarks>

@@ -13,9 +13,14 @@ namespace The_Bakehouse
     public partial class MenuAdministration : System.Web.UI.Page
     {
         MenuBusiness menuService = new MenuBusiness();
+        NotificationBusiness nBusiness = new NotificationBusiness();
         private int i = 0;
+        public int count_Notification;
+        private int j = 0;
         private List<Catalogue> productList;
+        private List<Notification> list_Notification;
         HttpPostedFile fileToSave;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Browse.Attributes.Add("onclick", "document.getElementById('" + ImageUploader.ClientID + "').click();");
@@ -26,6 +31,11 @@ namespace The_Bakehouse
                 uploadImageUser.Attributes.Add("data-src", "images/placeholder.gif");
             else
                 fileToSave = (HttpPostedFile)Session["IMAGE"];
+
+            count_Notification = nBusiness.countUnreadNotification();
+            list_Notification = nBusiness.GetUnreadNotificationService();
+            popup_Notifications.DataSource = list_Notification;
+            popup_Notifications.DataBind();
         }
 
         protected void cancelBtn_ServerClick(object sender, EventArgs e)
@@ -139,6 +149,16 @@ namespace The_Bakehouse
             Catalogue productToUpdate = new Catalogue(Convert.ToInt32(Session["PRODUCTID"]), updateName.Value, updateDescription.Value, Convert.ToInt32(updatePrice.Value), Convert.ToInt32(updateAmount.Value));
             resultMessage.InnerText = menuService.ChangeProductCharacteristicsService(productToUpdate);
             Response.Redirect("MenuAdministration.aspx");
+        }
+
+        protected void popup_Notifications_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                Label notification = (Label)e.Item.FindControl("lbl_Notification_Popup");
+                notification.Text = list_Notification.ElementAt(j).Notificate;
+                j++;
+            }
         }
     }
 }

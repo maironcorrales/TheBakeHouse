@@ -31,6 +31,7 @@
     <![endif]-->
 
     <script src='js/device.min.js'></script>
+
     
 </head>
 <body>
@@ -76,12 +77,21 @@
                                 <a href="Homepage.aspx">Cerrar Sesión</a>
                             </li>
                             <li id="noti_Container">
-                                <div id="noti_Counter"></div>   <!--SHOW NOTIFICATIONS COUNT.-->
+                                <div id="noti_Counter"></div>   
                                 <a href="AdminNotification.aspx" id="noti_Button">
-                                    <img src="images/notification.png" /></a>
+                                    <img src="images/notification.png"/></a>
                                 <div id="notifications">
                                     <h3>Notificationes</h3>
-                                    <div style="height:300px;"></div>
+                                    <div style="height:300px;">
+                                        <asp:Repeater runat="server" ID="popup_Notifications" OnItemDataBound="popup_Notifications_ItemDataBound">
+                                            <ItemTemplate>
+                                                <div id="noti_Item">
+                                                    <a><asp:Label runat="server" ID="lbl_Notification_Popup"></asp:Label></a>
+                                                    <hr />
+                                                </div>
+                                            </ItemTemplate>
+                                        </asp:Repeater>                                        
+                                    </div>
                                     <div class="seeAll"><a href="AdminNotification.aspx">Ver Todo</a></div>
                                 </div>
                             </li>
@@ -89,7 +99,6 @@
                     </nav>
                 </div>
             </div>
-
         </header>
 
         <!-- Fin del header -->
@@ -108,7 +117,7 @@
                 // ANIMATEDLY DISPLAY THE NOTIFICATION COUNTER.
                 $('#noti_Counter')
                     .css({ opacity: 0 })
-                    .text('7')              // ADD DYNAMIC VALUE (YOU CAN EXTRACT DATA FROM DATABASE OR XML).
+                    .text('<%=count_Notification%>')              // ADD DYNAMIC VALUE (YOU CAN EXTRACT DATA FROM DATABASE OR XML).
                     .css({ top: '-10px' })
                     .animate({ top: '-2px', opacity: 1 }, 500);
 
@@ -118,6 +127,7 @@
                     $('#notifications').fadeToggle('fast', 'linear', function () {
                         if ($('#notifications').is(':hidden')) {
                             $('#noti_Button').css('background-color', '#a95858');
+                            $('#noti_Counter').fadeOut('slow');
                         }
                         else $('#noti_Button').css('background-color', '#a95858');        // CHANGE BACKGROUND COLOR OF THE BUTTON.
                     });
@@ -130,7 +140,7 @@
                 // HIDE NOTIFICATIONS WHEN CLICKED ANYWHERE ON THE PAGE.
                 $(document).click(function () {
                     $('#notifications').hide();
-
+                    $('#noti_Counter').fadeOut('slow');
                     // CHECK IF NOTIFICATION COUNTER IS HIDDEN.
                     if ($('#noti_Counter').is(':hidden')) {
                         // CHANGE BACKGROUND COLOR OF THE BUTTON.
@@ -139,6 +149,7 @@
                 });
 
                 $('#notifications').click(function () {
+                    $('#noti_Counter').fadeOut('slow');
                     return false;       // DO NOTHING WHEN CONTAINER IS CLICKED.
                 });
             });
@@ -179,7 +190,7 @@
     }
     /* AN ARROW LIKE STRUCTURE JUST OVER THE NOTIFICATIONS WINDOW */
     #notifications:before {         
-        content: '';
+        content: 'ddd';
         display:block;
         width:0;
         height:0;
@@ -188,6 +199,21 @@
         border-color:transparent transparent #FFF;
         margin-top:-20px;
         margin-left:375px;
+    }
+
+    #noti_Item{
+        height:40px;
+        font-size:14px;
+       /* border-bottom:solid 1px rgba(100, 100, 100, .30);*/
+        padding-left:0.2em;
+        padding-right:0.2em;
+    }
+
+    #noti_Item a{
+        padding-left:0.5em;
+        padding-right:0.5em;
+        padding-top:0.5em;        
+        color:black;
     }
         
     h3 {

@@ -27,10 +27,10 @@ namespace The_Bakehouse.Services
         }
 
         // this change the state of every reaad notificaction
-        public bool UpdateNotificationToReadService(Notification notification)
-        {
-            return data.updateNotification(notification);
-        }
+      //  public bool UpdateNotificationToReadService(Notification notification)
+      //  {
+      //      return data.updateNotification(notification);
+      //  }
 
         // delete the unwanted notification.
         public string DeleteNotificationService(int id) 
@@ -52,6 +52,23 @@ namespace The_Bakehouse.Services
             else
                 result = "Ha ocurrido un error. Intentelo de nuevo.";
             return result;
+        }
+
+        //Return quantity unread notification
+        public int countUnreadNotification()
+        {
+            int quantity;
+            List<Notification> notificationList = new List<Notification>();
+            notificationList = GetUnreadNotificationService();
+            quantity = (int)notificationList.Count;
+            return quantity;   
+            
+        }
+
+        //Update the unread to read the notification
+        public void NotificationRead()
+        {
+            data.updateNotification();
         }
 
     }

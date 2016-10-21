@@ -14,16 +14,35 @@ namespace The_Bakehouse
     {
         AdministratorBusiness data = new AdministratorBusiness();
         Administrator admin = null;
+        NotificationBusiness nBusiness = new NotificationBusiness();
+        Notification notification = null;
+        Notification notification1 = null;
+        Notification notification2 = null;
+        Notification notification3 = null;
+        Notification notification4 = null;
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            int unreadCount = nBusiness.countUnreadNotification();
+            lbl_count.Text = unreadCount.ToString();
+            //lbl_count.Text = "Hola";
         }
 
         protected void btnTester_Click(object sender, EventArgs e)
         {
-            admin = new Administrator("dan", "123");
-            data.AddAdmininstrator(admin);
+            notification = new Notification("Test 1", false);
+            notification1 = new Notification("Test 2", false);
+            notification2 = new Notification("Test 3", false);
+            notification3 = new Notification("Test 4", true);
+            notification4 = new Notification("Test 5", false);
+            nBusiness.AddNotificationService(notification);
+            nBusiness.AddNotificationService(notification1);
+            nBusiness.AddNotificationService(notification2);
+            nBusiness.AddNotificationService(notification3);
+            nBusiness.AddNotificationService(notification4);
+
+            
+            
         }
     }
 }

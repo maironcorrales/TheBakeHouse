@@ -11,12 +11,16 @@ namespace The_Bakehouse
     public partial class AdminAdministration : System.Web.UI.Page
     {
         AdministratorBusiness admBusiness = new AdministratorBusiness();
+        NotificationBusiness nBusiness = new NotificationBusiness();
         private List<Administrator> adminList;
+        private List<Notification> list_Notification;
         private int i = 0;
+        private int j = 0;
+        public int count_Notification;
         private string user;
         private string pass;
-        Label nameAdmin;
-
+        Label nameAdmin;            
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["USER"] == null)
@@ -28,6 +32,10 @@ namespace The_Bakehouse
             adminList = admBusiness.GetAdministrators();
             administratorList.DataSource = adminList;
             administratorList.DataBind();
+            count_Notification = nBusiness.countUnreadNotification();
+            list_Notification = nBusiness.GetUnreadNotificationService();
+            popup_Notifications.DataSource = list_Notification;
+            popup_Notifications.DataBind();
         }
 
         protected void processbtn_Click(object sender, EventArgs e)
@@ -186,6 +194,16 @@ namespace The_Bakehouse
                 usernameToConfirm.Text = "";
                 passToConfirm.Text = "";
                 ModalPopupExtender.Show();
+            }
+        }
+
+        protected void popup_Notifications_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                Label notification = (Label)e.Item.FindControl("lbl_Notification_Popup");
+                notification.Text = list_Notification.ElementAt(j).Notificate;
+                j++;
             }
         }
     }

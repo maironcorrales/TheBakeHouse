@@ -74,7 +74,7 @@
                             </li>
                             <li>
                                 <a href="AdminNotification.aspx">
-                                    <img src="images/notification.png" /><span class="badge">5</span></a>
+                                    <img src="images/notification.png" /></a>
                             </li>
                         </ul>
                     </nav>
