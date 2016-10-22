@@ -41,17 +41,9 @@ namespace The_Bakehouse
                 id.Text = Convert.ToString(list_Notification.ElementAt(i).IdNotification);
                 Label notification = (Label)e.Item.FindControl("Notificationlbl");
                 notification.Text = list_Notification.ElementAt(i).Notificate;
-                Label seen = (Label)e.Item.FindControl("SeenNotlbl");
-                seen.Text = Convert.ToString(list_Notification.ElementAt(i).Seen);
                 i++;
             }
         }
-
-        protected void AllNotification_ItemCommand(object source, System.Web.UI.WebControls.RepeaterCommandEventArgs e)
-        {
-
-        }
- 
 
         protected void btnConfirmToDelete_ServerClick(object sender, EventArgs e)
         {

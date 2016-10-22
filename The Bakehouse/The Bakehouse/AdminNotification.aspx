@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="css/tableStyle.css"/>
     <link rel="stylesheet" href="css/jquery.fancybox.css" />
     <link rel="stylesheet" href="css/contact-form.css" />
-
     <script src="js/jquery.js"></script>
     <script src="js/jquery-migrate-1.2.1.js"></script>
     <!--[if lt IE 9]>
@@ -248,17 +247,14 @@
            <div id="content">
                 <table cellspacing="0">
                     <tr>
-                        <th>Notificacion</th>
-                        <th>Individuo</th>
-                        <th>Estado</th>
-
+                        <th style="width:10%">Id</th>
+                        <th style="width:90%">Notificacion</th>
                     </tr>
-                        <asp:Repeater id="AllNotification" runat="server" OnItemDataBound="AllNotification_ItemDataBound" OnItemCommand="AllNotification_ItemCommand">
+                        <asp:Repeater id="AllNotification" runat="server" OnItemDataBound="AllNotification_ItemDataBound">
                         <ItemTemplate>
                             <tr runat="server">
                                 <td><asp:Label runat="server" ID="Idlbl"/></td>
                                 <td><asp:Label runat="server" ID="Notificationlbl"/></td>
-                                <td><asp:Label runat="server" ID="SeenNotlbl"/></td>
                             </tr>
                         </ItemTemplate>
                         </asp:Repeater>                   
