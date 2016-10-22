@@ -90,7 +90,7 @@
                                             </ItemTemplate>
                                         </asp:Repeater>                                        
                                     </div>
-                                    <div class="seeAll"><a href="AdminNotification.aspx">Ver Todo</a></div>
+                                    <div class="seeAll" ><a href="AdminNotification.aspx">Ver Todo</a></div>
                                 </div>
                             </li>
                     </ul>
@@ -99,6 +99,8 @@
         </div>
 
     </header>
+
+
 
         <!-- Fin del header -->
         <form id="form1" runat="server">
@@ -120,6 +122,10 @@
                             $('#noti_Button').css('background-color', '#a95858');
                         }
                         else $('#noti_Button').css('background-color', '#a95858');        // CHANGE BACKGROUND COLOR OF THE BUTTON.
+                    });
+
+                    $('.seeAll').click(function () {
+                        location.href = "AdminNotification.aspx";
                     });
 
                     $('#noti_Counter').fadeOut('slow');                 // HIDE THE COUNTER.
@@ -175,7 +181,7 @@
         background:#FFF;
         border:solid 1px rgba(100, 100, 100, .20);
         -webkit-box-shadow:0 3px 8px rgba(0, 0, 0, .20);
-        z-index: 0;
+        z-index: 100;
     }
     /* AN ARROW LIKE STRUCTURE JUST OVER THE NOTIFICATIONS WINDOW */
     #notifications:before {         

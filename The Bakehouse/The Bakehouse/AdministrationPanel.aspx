@@ -92,9 +92,11 @@
                                             </ItemTemplate>
                                         </asp:Repeater>                                        
                                     </div>
-                                    <div class="seeAll"><a href="AdminNotification.aspx">Ver Todo</a></div>
+                                     <div class="seeAll"><a onclick="" href="AdminNotification.aspx">Ver Todo</a></div>
                                 </div>
+
                             </li>
+
                         </ul>
                     </nav>
                 </div>
@@ -108,9 +110,10 @@
          <section class="parallax parallax1" data-parallax-speed="-0.4">
              <div class="container">
                 <h2><em>Preguntas</em>Frecuentes</h2>
+                
                 <div class="row">
                     <div class="grid_6">
-                        <h2>Admininstración</h2>
+                        <h2>Administración</h2>
                         <p class="indents-3">Esta sección permite al adminintrador controlar el contenido del sitio que se mostrará, el menú y darse cuenta de lo que acontece en la aplicación, por ejemplo en el panel de notificaciones podrá ver las suscripciones, los pedidos efectuados y las compras realizadas.<br><br>En esta pequeña sección se le daran "tips" necesarios para que pueda ubicar cada uno de los elementos y sepa como administrar el contenido del sitio.</p>                        
                     </div>
                     <div class="grid_6">
@@ -189,6 +192,10 @@
                     }
                 });
 
+                $('.seeAll').click(function(){
+                    location.href= "AdminNotification.aspx";    
+                });
+
                 $('#notifications').click(function () {
                     $('#noti_Counter').fadeOut('slow');
                     return false;       // DO NOTHING WHEN CONTAINER IS CLICKED.
@@ -227,7 +234,7 @@
         background:#FFF;
         border:solid 1px rgba(100, 100, 100, .20);
         -webkit-box-shadow:0 3px 8px rgba(0, 0, 0, .20);
-        z-index: 0;
+        z-index: 100;
     }
     /* AN ARROW LIKE STRUCTURE JUST OVER THE NOTIFICATIONS WINDOW */
     #notifications:before {         
@@ -274,6 +281,7 @@
         font-weight:bold;
         border-top:solid 1px rgba(100, 100, 100, .30);
         text-align:center;
+        
     }
     .seeAll a {
         color:#a95858;

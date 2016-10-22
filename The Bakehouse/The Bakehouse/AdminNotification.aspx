@@ -116,6 +116,10 @@
                     .css({ top: '-10px' })
                     .animate({ top: '-2px', opacity: 1 }, 500);
 
+                $('.seeAll').click(function () {
+                    location.href = "AdminNotification.aspx";
+                });
+
                 $('#noti_Button').click(function () {
 
                     // TOGGLE (SHOW OR HIDE) NOTIFICATION WINDOW.
@@ -181,7 +185,7 @@
         background:#FFF;
         border:solid 1px rgba(100, 100, 100, .20);
         -webkit-box-shadow:0 3px 8px rgba(0, 0, 0, .20);
-        z-index: 0;
+        z-index: 100;
     }
     /* AN ARROW LIKE STRUCTURE JUST OVER THE NOTIFICATIONS WINDOW */
     #notifications:before {         
