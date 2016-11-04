@@ -66,9 +66,6 @@
                                 <a href="Homepage.aspx#Ubication">Nuestra Ubicacíon</a>
                              </li>
                              <li>
-                                 <a href="Homepage.aspx#AboutUs">Conocenos</a>
-                             </li>
-                             <li>
                                  <a href="Homepage.aspx#SuscribeToTheBakehouse">Suscribete</a>
                             </li>
                             <li>

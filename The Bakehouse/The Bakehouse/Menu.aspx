@@ -63,9 +63,6 @@
                                 <a href="Homepage.aspx#Ubication">Nuestra Ubicacíon</a>
                              </li>
                              <li>
-                                 <a href="Homepage.aspx#AboutUs">Conocenos</a>
-                             </li>
-                             <li>
                                  <a href="Homepage.aspx#SuscribeToTheBakehouse">Suscribete</a>
                             </li>
                             <li>
@@ -101,99 +98,17 @@
                                 <h3 runat="server" id="price"></h3>
                                 <p runat="server" id="amount"></p>
                                 <div id="contact-form" class='contact-form' >
-                                 <div class="btn-wr">
+                                    <div class="btn-wr">
+                                    <a href="Homepage.aspx#ContactUs">Haz tu Pedido</a>
+                                        </div> 
+                                 <!--<div class="btn-wr">
                                     <a id="BuyBtn" runat="server" onserverclick="BuyBtn_Click">Comprar</a>
-                                </div>
+                                </div> -->
                                 </div>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
                      <!-- fin del repeater -->
-                     <!--A continuacion muestra de como se veria el producto final  -->
-                    <%--<div class="grid_4">
-                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img data-src="images/page-4_img01.jpg" alt=""></div></div>
-                        <h3>Anteger convallis orci vel mi nelaoreet, at ornare lorem consequat. </h3>
-                        <p>Vestibulum volutpatturpis ut massa commodo, quis aliquam massa facilisis.Integer convavel miberto merlonelaoreet, at ornare lorem consequat.</p>
-                        <h3>Precio:₡ 2500</h3>
-                        <div class="btn-wr">
-                                    <asp:Button CssClass="button" ID="Button8" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
-                                </div>
-                    </div>
-                    <div class="grid_4">
-                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img data-src="images/page-4_img02.jpg" alt=""></div></div>
-                        <h3>Genteger convallis orci vel mi nelaoreet, at ornare lorem consequat.</h3>
-                        <p>Meestibulum volutpatturpis ut massa commodo, quis aliquam massa facilisis.Integer convavel miberto merlonelaoreet, at ornare lorem consequatre. </p>
-                        <p>Precio:₡ 2500</p>
-                        <asp:Button CssClass="button" ID="BuyBtn" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
-                    </div>
-                    <div class="grid_4">
-                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img data-src="images/page-4_img03.jpg" alt=""></div></div>
-                        <h3>Ternteger convallis orci vel mi nelaoreet, at ornare lorem consequat. </h3>
-                        <p>Testibulum volutpatturpis ut massa commodo, quis aliquam massa facilisis.Integer convavel miberto merlonelaoreet, at ornare lorem consequ.</p>
-                        <p>Precio:₡ 2500</p>
-                        <div class="btn-wr">
-                                    <asp:Button CssClass="button" ID="Button1" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
-                                </div>
-                    </div>
-                </div>
-                <div class="row box-2">
-                    <div class="grid_4">
-                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img data-src="images/page-4_img04.jpg" alt=""></div></div>
-                        <h3>Onteger convallis orci vel mi nelaoreet, at ornare lorem consequate. </h3>
-                        <p>Testibulum volutpatturpis ut massa commodo, quis aliquam massa facilisis.Integer convavel miberto merlonelaoreet, at ornare lorem consequa.</p>
-                        <p>Precio:₡ 2500</p>
-                        <div class="btn-wr">
-                                    <asp:Button CssClass="button" ID="Button2" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
-                                </div>
-                    </div>
-                    <div class="grid_4">
-                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img data-src="images/page-4_img05.jpg" alt=""></div></div>
-                        <h3>Fenteger convallis orci vel mi nelaoreet, at ornare lorem consequat. </h3>
-                        <p>Vestibulum volutp turpis ut massa commodo, quis aliquam massa facilisis.Vestibulum volutpat turpis ut massa commodo, quis aliquam massa facilisis.</p>
-                        <p>Precio:₡ 2500</p>
-                        <div class="btn-wr">
-                                    <asp:Button CssClass="button" ID="Button3" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
-                                </div>
-                    </div>
-                    <div class="grid_4">
-                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img data-src="images/page-4_img06.jpg" alt=""></div></div>
-                        <h3>Dernteger convallis orci vel mi nelaoreet, at ornare lorem consequat. </h3>
-                        <p>Testibulum volutpatturpis ut massa commodo, quis aliquam massa facilisis.Integer convavel miberto merlonelaoreet, at ornare lorem conseasellus era nisl. </p>
-                        <p>Precio:₡ 2500</p>
-                        <div class="btn-wr">
-                                    <asp:Button CssClass="button" ID="Button4" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
-                                </div>
-                    </div>
-                </div>
-                <div class="row box-2">
-                    <div class="grid_4">
-                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img data-src="images/page-4_img07.jpg" alt=""></div></div>
-                        <h3>Anteger convallis orci vel mi nelaoreet, at ornare lorem consequat. </h3>
-                        <p>Vestibulum volutpatturpis ut massa commodo, quis aliquam massa facilisis.Integer convavel miberto merlonelaoreet, at ornare lorem consequat.</p>
-                        <p>Precio:₡ 2500</p>
-                        <div class="btn-wr">
-                                    <asp:Button CssClass="button" ID="Button5" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
-                                </div>
-                    </div>
-                    <div class="grid_4">
-                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img data-src="images/page-4_img08.jpg" alt=""></div></div>
-                        <h3>Genteger convallis orci vel mi nelaoreet, at ornare lorem consequat.</h3>
-                        <p>Meestibulum volutpatturpis ut massa commodo, quis aliquam massa facilisis.Integer convavel miberto merlonelaoreet, at ornare lorem consequatre. </p>
-                        <p>Precio:₡ 2500</p>
-                        <div class="btn-wr">
-                                    <asp:Button CssClass="button" ID="Button6" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
-                                </div>
-                    </div>
-                    <div class="grid_4">
-                        <div class="img"><div class="lazy-img" style="padding-bottom: 76.21621621621622%;"><img data-src="images/page-4_img09.jpg" alt=""></div></div>
-                        <h3>Ternteger convallis orci vel mi nelaoreet, at ornare lorem consequat. </h3>
-                        <p>Testibulum volutpatturpis ut massa commodo, quis aliquam massa facilisis.Integer convavel miberto merlonelaoreet, at ornare lorem consequ.</p>
-                        <p>Precio: ₡ 2500</p>
-                        <div class="btn-wr">
-                                    <asp:Button CssClass="button" ID="Button7" runat="server" Text ="Comprar" OnClick="BuyBtn_Click" />
-                                </div>
-                    </div>--%>
-                    <!--Fin de la demostracion  -->
                 </div>
             </div>
         </section>
