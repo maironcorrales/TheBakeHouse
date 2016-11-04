@@ -56,9 +56,11 @@
             </div>
 
             <div class="brand wow fadeIn">
-                <h1 class="brand_name">
+                <h3 class="brand_name">
                     <a href="Homepage.aspx">The Bakehouse</a>
-                </h1>
+                </h3>
+                </br>
+                <img src="images/BakeHouseLogo.jpg" style="width:15%;height:15%;" />
             </div>
         </div>
         
@@ -266,13 +268,13 @@
                     </div>    
                     <div class="preffix_1 grid_6">
                         <h2>Información de Contacto</h2>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur orci sed Curabitur vel lorem sit amet nulla ullamcorper fermentum. In vitae varius augue, eu consectetur ligula. Etiam dui eros, laoreet sit amet est vel</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur orci sed Curabitur vel lorem sit amet nulla ullamcorper fermentum. In vitae varius augue, eu consectetur ligula. Etiam dui eros, laoreet sit amet est vel, commodo venenatis eros.Lamus at magna non nunc tristique rhoncuseri tym.<br><br>Etiam dui eros, laoreet sit amet est vel, commodo venenatis eros.Lamus at magna non nunc tristique rhoncuseri tym. Etiam dui eros, laoreet sit amet est vel, commodo venenatis eros.Lamus at magna non nunc tristique.</p>
+                        <h3>Nos dedicamos al 100% a la pastelería,envasados sin gluten para cualquier evento. Para garantizar la frescura del producto trabajamos contra pedido, gracias.</h3>
+                        <p>Utilice el espacio de la izquierda para jacer sus pedidos de cualquier producto. O puede utilizarlo para contactarnos y hacernos saber su opinión acerca de nuestros productos.</p>
                         <address class="address-2">
                             <div class="address_container"><p>Tres Ríos, La Unión, Cartago. Residencial Sierras de la Unión,  casa H-13.</p></div>
                             <dl>
                                 <dt>Teléfono:</dt> <dd>+506 87304841</dd> <br/>
-                                <dt>Fax:</dt> <dd>+1 800 899 9898</dd> <br/>
+                                <dt>Teléfono:</dt> <dd>+506 22780408</dd> <br/>
                                 <dt>E-mail:</dt> <br /> <dd><a href="https://www.google.com/gmail/">thebakehoueseglutenfree@gmail.com </a></dd>
                             </dl>                        
                         </address>
@@ -297,40 +299,8 @@
         <!-- Contact End -->
 
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <!--About Us Start -->
-        <section class="well well__offset-1 bg-1" id="AboutUs">
-            <div class="container">
-                <h2><em>Conoce </em>Nuestros Cocineros</h2>
-                <div class="row row__offset-1">
-                    <div class="grid_4">
-                        <figure>
-                            <div class="img lazy-img" style="padding-bottom: 101.0810810810811%;"><img data-src="images/page-1_img12.jpg" alt=""/></div>
-                            <figcaption>Kevin Grey</figcaption>
-                        </figure>
-                        <h3>Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl </h3>
-                        <p>Vestibulum volutpat turpis ut massa commodo, quis aliquam massa facilisis.Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl auctor vel veliterol. sed,pharetra venenatis nulla.</p>
-                    </div>
-                    <div class="grid_4">
-                        <figure>
-                            <div class="img lazy-img" style="padding-bottom: 101.0810810810811%;"><img data-src="images/page-1_img13.jpg" alt=""/></div>
-                            <figcaption>Linda Klein</figcaption>
-                        </figure>
-                        <h3>Oeteger convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl </h3>
-                        <p>Vestibulum volutpat turpis ut massa commodo, quis aliquam massa facilisis.Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl auctor vel veliterol. sed,pharetra venenatis nulla.</p>
-                    </div>
-                    <div class="grid_4">
-                        <figure>
-                            <div class="img lazy-img" style="padding-bottom: 101.0810810810811%;"><img data-src="images/page-1_img14.jpg" alt=""/></div>
-                            <figcaption>Ann Shelton</figcaption>
-                        </figure>
-                        <h3>Koteger convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl </h3>
-                        <p>Vestibulum volutpat turpis ut massa commodo, quis aliquam massa facilisis.Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl auctor vel veliterol. sed,pharetra venenatis nulla.</p>
-                    </div>
-                </div>
-                <div class="decoration"> </div>
-            </div>
-        </section>
-        <!--About Us End -->
+    
+       
 
         <!--Suscribe to Bakehouse start-->
         <section class="well well__offset-2" id="SuscribeToTheBakehouse">
@@ -383,9 +353,8 @@
                     </div>    
                     <div class="preffix_1 grid_6">
                         <h2>Información de Suscripción</h2>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur orci sed Curabitur vel lorem sit amet nulla ullamcorper fermentum. In vitae varius augue, eu consectetur ligula. Etiam dui eros, laoreet sit amet est vel</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur orci sed Curabitur vel lorem sit amet nulla ullamcorper fermentum. In vitae varius augue, eu consectetur ligula. Etiam dui eros, laoreet sit amet est vel, commodo venenatis eros.Lamus at magna non nunc tristique rhoncuseri tym.<br><br>Etiam dui eros, laoreet sit amet est vel, commodo venenatis eros.Lamus at magna non nunc tristique rhoncuseri tym. Etiam dui eros, laoreet sit amet est vel, commodo venenatis eros.Lamus at magna non nunc tristique.</p>
-                    </div>
+                        <h3>Al suscribirte a The Bakehouse Gluten Free, recibiras todas las noticias relevantes acerca de eventos especiales, ofertas y mucho más. Te esperamos!</h3>
+                        <p>Puede utilizar el espacio provisto a la izquierda para proporcionarnos sus datos. Lo contactaremos por medio de su correo, pero esto no quiere decir que le vayamos a hacer spam.<br><br>Tenga en cuenta que usted está aceptando que le contactemos, ya que desea darse cuenta de nuestras actividades y ofertas relevantes. Esperamos que disfrute de nuestros deliciosos y frescos productos.</p>                   </div>
                     <asp:ModalPopupExtender ID="ModalPopupExtender" runat="server"
                         TargetControlID="processbtn"
                         CancelControlID="btnCancel"
