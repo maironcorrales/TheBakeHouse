@@ -25,7 +25,7 @@ h2 {
   font-size: 62px;
   line-height: 82px;
   font-weight: 300;
-  color: #823f3f;
+  color: #f2be2a;
 }
 @media (max-width: 767px) {
   h2 {
@@ -224,7 +224,7 @@ a[href^="tel:"] {
   width: 235px;
   margin-top: 30px;
   padding: 0;
-  background: #e6e6e6;
+  background: #5e5e5e;
   z-index: 2;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -242,8 +242,8 @@ a[href^="tel:"] {
 }
 .sf-menu ul > li.sfHover > a,
 .sf-menu ul > li > a:hover {
-  color: #ffffff;
-  background: #884646;
+  color: #5e5e5e;
+  background: #f7ecd7;
 }
 .sf-menu ul ul {
   position: static;
@@ -291,7 +291,7 @@ a[href^="tel:"] {
 }
 .toggle-menu-container .nav_title {
   padding: 20px 0;
-  background: #423e3e;
+  background: #5e5e5e;
 }
 .toggle-menu-container .sf-menu-toggle {
   position: fixed;
@@ -302,7 +302,7 @@ a[href^="tel:"] {
   font-size: 60px;
   line-height: 75px;
   color: #fff;
-  background: #adabad;
+  background: #5e5e5e;
   text-align: center;
 }
 .toggle-menu-container .sf-menu-toggle:hover {
@@ -320,7 +320,7 @@ a[href^="tel:"] {
   margin-left: 0;
 }
 .toggle-menu-container .sf-menu > li a {
-  color: #823f3f;
+  color: #F2BE2A;
   background: none;
   padding: 10px 40px;
 }
@@ -330,8 +330,8 @@ a[href^="tel:"] {
 }
 .toggle-menu-container .sf-menu > li.sfHover > a,
 .toggle-menu-container .sf-menu > li a:hover {
-  color: #ffffff;
-  background: #ba7a7a;
+  color: #5e5e5e;
+  background: #f7ecd7;
 }
 .toggle-menu-container .sf-menu ul {
   position: static;
@@ -340,7 +340,7 @@ a[href^="tel:"] {
   width: 100%;
 }
 .toggle-menu-container .sf-menu ul li a {
-  color: #823f3f;
+  color: #F2BE2A;
   background: none;
   padding: 10px 50px;
 }
@@ -350,8 +350,8 @@ a[href^="tel:"] {
 }
 .toggle-menu-container .sf-menu ul li.sfHover > a,
 .toggle-menu-container .sf-menu ul li a:hover {
-  color: #ffffff;
-  background: #ba7a7a;
+  color: #5e5e5e;
+  background: #f7ecd7;
 }
 .toggle-menu-container .sf-menu ul ul a {
   padding: 10px 60px;
@@ -422,7 +422,7 @@ a[href^="tel:"] {
 }
 /*==================  Stuck menu  ======================*/
 .isStuck {
-  background: #994f4f;
+  background: #5e5e5e;
   z-index: 999;
   border-bottom: 1px solid #333333;
 }
@@ -536,7 +536,7 @@ a[href^="tel:"] {
                      HEADER  Section
 =========================================================*/
 header {
-  background: #a95858;
+  background: #5e5e5e;
 }
 header .brand {
   float: left;
@@ -761,7 +761,7 @@ main {
 .gallery em {
   font-size: 36px;
   line-height: 44px;
-  color: #823f3f;
+  color: #f2be2a;
 }
 .gallery_col-1 {
   float: left;
@@ -869,6 +869,7 @@ main {
 footer {
   padding: 78px 0 0 0;
   text-align: center;
+  background:#f7ecd7
 }
 footer .socials {
   display: inline-block;
