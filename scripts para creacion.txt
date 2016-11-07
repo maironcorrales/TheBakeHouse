@@ -70,3 +70,4 @@ ENGINE = InnoDB;
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+alter table pedido add fechaSolicitud varchar(255);
