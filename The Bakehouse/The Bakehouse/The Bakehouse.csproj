@@ -304,6 +304,7 @@
     <Compile Include="Services\MailService.cs" />
     <Compile Include="Services\MenuBusiness.cs" />
     <Compile Include="Services\NotificationBusiness.cs" />
+    <Compile Include="Services\PreOrderProductBusiness.cs" />
     <Compile Include="Services\SubscriberBusiness.cs" />
     <Compile Include="Tester.aspx.cs">
       <DependentUpon>Tester.aspx</DependentUpon>

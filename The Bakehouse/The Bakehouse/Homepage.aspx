@@ -60,7 +60,7 @@
                     <a href="Homepage.aspx">The Bakehouse</a>
                 </h3>
                 </br>
-                <img src="images/BakeHouseLogo.jpg" style="width:15%;height:15%;" />
+                <img src="images/LogoBakeHouse.png" style="width:15%;height:15%;" />
             </div>
         </div>
         
@@ -114,93 +114,75 @@
         <!-- Begin Gallery -->
         <section class="well" id="Gallery">
             <div class="container">
-                <h2><em>Conozca</em>Nuestra Cocina</h2>
+                <h2><em>Conozca</em>Nuestros productos</h2>
                 <div class="decoration"></div>
             </div>            
             <div class="gallery">
-                <div class="gallery_col-1">
-                    <a data-fancybox-group="gallery" href="images/page-1_img03_original.jpg" class="gallery_item thumb lazy-img" style="padding-bottom: 93.96551724137931%;">
-                        <img data-src="images/page-1_img03.jpg" alt=""/>
+                <div class="gallery_col-1">                    
+                    <a data-fancybox-group="gallery" href="images/3_original.jpg" class="gallery_item thumb lazy-img" style="padding-bottom: 122%;">
+                        <img data-src="images/3.jpg" alt=""/>
                         <div class="gallery_overlay">
                             <div class="gallery_caption">
-                                <p><em>Lorem Blandit</em></p>
-                                <p>Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl</p>
+                                <p><em>Mermelada de Mango</em></p>
+                                <p>Descripcion</p>
                             </div>
                         </div>
-                    </a>
-                    <a data-fancybox-group="gallery" href="images/page-1_img04_original.jpg" class="gallery_item thumb lazy-img" style="padding-bottom: 74.13793103448276%;">
-                        <img data-src="images/page-1_img04.jpg" alt=""/>
+                    </a>                    
+                    <a data-fancybox-group="gallery" href="images/5_original.jpg" class="gallery_item thumb lazy-img" style="padding-bottom: 122%;">
+                        <img data-src="images/5.jpg" alt=""/>
                         <div class="gallery_overlay">
                             <div class="gallery_caption">
-                                <p><em>Lorem Blandit</em></p>
-                                <p>Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a data-fancybox-group="gallery" href="images/page-1_img05_original.jpg" class="gallery_item thumb lazy-img" style="padding-bottom: 94.6551724137931%;">
-                        <img data-src="images/page-1_img05.jpg" alt=""/>
-                        <div class="gallery_overlay">
-                            <div class="gallery_caption">
-                                <p><em>Lorem Blandit</em></p>
-                                <p>Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl</p>
+                                <p><em>Pesto</em></p>
+                                <p>Descripcion</p>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="gallery_col-2">
-                    <a data-fancybox-group="gallery" href="images/page-1_img06_original.jpg" class="gallery_item thumb lazy-img" style="padding-bottom: 52.48322147651007%;">
-                        <img data-src="images/page-1_img06.jpg" alt=""/>
+                <div class="gallery_col-2">                    
+                    <a data-fancybox-group="gallery" href="images/1_original.jpg" class="gallery_item thumb lazy-img" style="padding-bottom: 63%;">
+                        <img data-src="images/1.jpg" alt=""/>
                         <div class="gallery_overlay">
                             <div class="gallery_caption">
-                                <p><em>Lorem Blandit</em></p>
-                                <p>Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl</p>
+                                <p><em>Cebolla Caramelizada</em></p>
+                                <p>Descripcion</p>
                             </div>
                         </div>
                     </a>
-                    <a data-fancybox-group="gallery" href="images/page-1_img07_original.jpg" class="gallery_item thumb lazy-img" style="padding-bottom: 55.97315436241611%;">
-                        <img data-src="images/page-1_img07.jpg" alt="">
+                    <a data-fancybox-group="gallery" href="images/2_original.jpg" class="gallery_item thumb lazy-img" style="padding-bottom: 60%;">
+                        <img data-src="images/2.jpg" alt=""/>
                         <div class="gallery_overlay">
                             <div class="gallery_caption">
-                                <p><em>Lorem Blandit</em></p>
-                                <p>Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl</p>
+                                <p><em>Tomate Confitado</em></p>
+                                <p>Descripcion</p>
                             </div>
                         </div>
                     </a>
-                    <a data-fancybox-group="gallery" href="images/page-1_img08_original.jpg" class="gallery_item thumb lazy-img" style="padding-bottom: 96.10738255033557%;">
-                        <img data-src="images/page-1_img08.jpg" alt=""/>
+                    <a data-fancybox-group="gallery" href="images/4_original.jpg" class="gallery_item thumb lazy-img" style="padding-bottom: 67.7777777%;">
+                        <img data-src="images/4.jpg" alt=""/>
                         <div class="gallery_overlay">
                             <div class="gallery_caption">
-                                <p><em>Lorem Blandit</em></p>
-                                <p>Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl</p>
+                                <p><em>Mermelada</em></p>
+                                <p>Descripcion</p>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="gallery_col-3">
-                    <a data-fancybox-group="gallery" href="images/page-1_img09_original.jpg" class="gallery_item thumb lazy-img" style="padding-bottom: 93.69676320272572%;">
-                        <img data-src="images/page-1_img09.jpg" alt=""/>
+                    <a data-fancybox-group="gallery" href="6_original.jpg" class="gallery_item thumb lazy-img" style="padding-bottom: 120%;">
+                        <img data-src="images/6.jpg" alt=""/>
                         <div class="gallery_overlay">
                             <div class="gallery_caption">
-                                <p><em>Lorem Blandit</em></p>
-                                <p>Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl</p>
+                                <p><em>Mermelada Ciruela</em></p>
+                                <p>Descripcion</p>
                             </div>
                         </div>
-                    </a>
-                    <a data-fancybox-group="gallery" href="images/page-1_img10_original.jpg" class="gallery_item thumb lazy-img" style="padding-bottom: 72.23168654173765%;">
-                        <img data-src="images/page-1_img10.jpg" alt=""/>
+                    </a>                    
+                    <a data-fancybox-group="gallery" href="images/7_original.jpg" class="gallery_item thumb lazy-img" style="padding-bottom: 121.66666666%;">
+                        <img data-src="images/7.jpg" alt=""/>
                         <div class="gallery_overlay">
                             <div class="gallery_caption">
-                                <p><em>Lorem Blandit</em></p>
-                                <p>Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a data-fancybox-group="gallery" href="images/page-1_img11_original.jpg" class="gallery_item thumb lazy-img" style="padding-bottom: 93.69676320272572%;">
-                        <img data-src="images/page-1_img11.jpg" alt=""/>
-                        <div class="gallery_overlay">
-                            <div class="gallery_caption">
-                                <p><em>Lorem Blandit</em></p>
-                                <p>Integer convallis orci vel mi nelaoreet, at ornare lorem consequat. Phasellus era nisl</p>
+                                <p><em>Mermelada Tomate</em></p>
+                                <p>Descripcion</p>
                             </div>
                         </div>
                     </a>
