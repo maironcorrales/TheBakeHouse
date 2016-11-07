@@ -59,6 +59,10 @@
 
                                     </li>
                                     <li>
+                                <a href="PreorderAdministration.aspx">Productos de Preorden</a>
+                                
+                            </li>
+                                    <li>
                                         <a href="AdminNotification.aspx">Notificaciones</a>
                                     </li>
                                     <li>
@@ -69,6 +73,9 @@
                             <li>
                                 <a href="MessageSuscriptor.aspx">Escribir A Suscriptores</a>
                             </li>
+                            <li>
+                        <a href="Order.aspx">Ordenes</a>
+                    </li>
                             <li>
                                 <a href="Homepage.aspx">Cerrar Sesión</a>
                             </li>

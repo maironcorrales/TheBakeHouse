@@ -186,6 +186,9 @@
     <Content Include="MenuAdministration.aspx" />
     <Content Include="MenuImages\donuts.png" />
     <Content Include="MessageSuscriptor.aspx" />
+    <Content Include="Order.aspx" />
+    <Content Include="PreorderAdministration.aspx" />
+    <Content Include="PreOrderMenu.aspx" />
     <Content Include="Tester.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -267,6 +270,27 @@
     </Compile>
     <Compile Include="MessageSuscriptor.aspx.designer.cs">
       <DependentUpon>MessageSuscriptor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Order.aspx.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Order.aspx.designer.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreorderAdministration.aspx.cs">
+      <DependentUpon>PreorderAdministration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreorderAdministration.aspx.designer.cs">
+      <DependentUpon>PreorderAdministration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreOrderMenu.aspx.cs">
+      <DependentUpon>PreOrderMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreOrderMenu.aspx.designer.cs">
+      <DependentUpon>PreOrderMenu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AdministratorBusiness.cs" />

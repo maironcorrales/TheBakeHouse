@@ -1,0 +1,72 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+-- -----------------------------------------------------
+-- Schema thebakehouse
+-- -----------------------------------------------------
+USE `thebakehouse` ;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`ProductosContraPedido`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `thebakehouse`.`ProductosContraPedido` (
+  `idProducto` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(255) NOT NULL,
+  `descripción` VARCHAR(255) NOT NULL,
+  `precio` DOUBLE NOT NULL,
+  `foto` VARCHAR(255) NOT NULL,
+  `fechacreacion` VARCHAR(255) NOT NULL,
+  `fechatermino` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`idProducto`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Pedido`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `thebakehouse`.`Pedido` (
+  `idPedido` INT NOT NULL,
+  `correodecliente` VARCHAR(255) NOT NULL,
+  `telefonocliente` VARCHAR(255) NOT NULL,
+  `direccionentrega` VARCHAR(255) NOT NULL,
+  `ProductosContraPedido_idProducto` INT NOT NULL,
+  `Cantidadsolicitada` INT NOT NULL,
+  PRIMARY KEY (`idPedido`, `ProductosContraPedido_idProducto`),
+  INDEX `fk_Pedido_ProductosContraPedido_idx` (`ProductosContraPedido_idProducto` ASC),
+  CONSTRAINT `fk_Pedido_ProductosContraPedido`
+    FOREIGN KEY (`ProductosContraPedido_idProducto`)
+    REFERENCES `mydb`.`ProductosContraPedido` (`idProducto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table CREATE TABLE IF NOT EXISTS `thebakehouse`.`factura_has_productoscontrapedido` (
+  `factura_idFactura` INT(11) NOT NULL,
+  `productoscontrapedido_idProducto` INT(11) NOT NULL,
+  PRIMARY KEY (`factura_idFactura`, `productoscontrapedido_idProducto`),
+  INDEX `fk_factura_has_productoscontrapedido_productoscontrapedido1_idx` (`productoscontrapedido_idProducto` ASC),
+  INDEX `fk_factura_has_productoscontrapedido_factura1_idx` (`factura_idFactura` ASC),
+  CONSTRAINT `fk_factura_has_productoscontrapedido_factura1`
+    FOREIGN KEY (`factura_idFactura`)
+    REFERENCES `thebakehouse`.`factura` (`idFactura`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_factura_has_productoscontrapedido_productoscontrapedido1`
+    FOREIGN KEY (`productoscontrapedido_idProducto`)
+    REFERENCES `thebakehouse`.`productoscontrapedido` (`idProducto`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;

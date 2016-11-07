@@ -1,10 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Menu.aspx.cs" Inherits="The_Bakehouse.Menu" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PreOrderMenu.aspx.cs" Inherits="The_Bakehouse.PreOrderMenu" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-     <title>Menú</title>
+    <title>Productos Bajo Pedido</title>
+    
     <meta charset="utf-8"/>
     <meta name="format-detection" content="telephone=no"/>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
@@ -29,7 +30,7 @@
     <script src='js/device.min.js'></script> 
 </head>
 <body>
-    <div class =" page">
+     <div class =" page">
         <!--========================================================
                               HEADER
     =========================================================-->
@@ -89,7 +90,9 @@
             <main>
         <section class="well well__offset-3">
             <div class="container">
-                <h2><em>Nuestro</em>Menú</h2>
+                <h2><em>Productos</em>Contra Pedido</h2>
+                <p>Tenga en cuenta que si ordena de nuestro menú contra pedido, los mismos seran entregados dos días luego de que el pedido se haga, como mínimo. Gracias por su comprensión. Todos los productos que desee ordenar le seran entregados a la dirección y el lugar que usted especifique.</p>
+                <p>Esperamos que disfrute de nuestros fresquisimos productos libres de gluten.</p>
                 <div class="row box-2">
                     <!-- Este es el repeater que me sirve para poder tener los datos de los productos -->
                     <asp:Repeater ID="productRepeater" runat ="server" OnItemDataBound="productRepeater_ItemDataBound">
@@ -105,7 +108,7 @@
                                     <a href="Homepage.aspx#ContactUs">Haz tu Pedido</a>
                                         </div> 
                                  <!--<div class="btn-wr">
-                                    <a id="BuyBtn" runat="server" onserverclick="BuyBtn_Click">Comprar</a>
+                                    <a id="BuyBtn" runat="server" >Comprar</a>
                                 </div> -->
                                 </div>
                             </div>
@@ -137,5 +140,4 @@
 
     <script src="js/script.js"></script>
 </body>
-
 </html>
