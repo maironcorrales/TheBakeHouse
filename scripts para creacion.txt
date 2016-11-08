@@ -57,3 +57,4 @@ CREATE TABLE IF NOT EXISTS `thebakehouse`.`factura_has_productoscontrapedido` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 alter table pedido add fechaSolicitud varchar(255);
+Alter Table pedido modify idPedido int auto_increment;
