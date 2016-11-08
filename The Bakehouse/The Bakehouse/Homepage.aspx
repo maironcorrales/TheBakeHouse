@@ -168,7 +168,7 @@
                     </a>
                 </div>
                 <div class="gallery_col-3">
-                    <a data-fancybox-group="gallery" href="6_original.jpg" class="gallery_item thumb lazy-img" style="padding-bottom: 120%;">
+                    <a data-fancybox-group="gallery" href="images/6_original.jpg" class="gallery_item thumb lazy-img" style="padding-bottom: 120%;">
                         <img data-src="images/6.jpg" alt=""/>
                         <div class="gallery_overlay">
                             <div class="gallery_caption">
