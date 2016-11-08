@@ -13,7 +13,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("Select * from pedido");
+                MySqlCommand query = new MySqlCommand("Select * from pedido", Conn);
                 Conn.Open();
                 MySqlDataReader reader = query.ExecuteReader();
                 while (reader.Read())
@@ -40,13 +40,15 @@ namespace The_Bakehouse.Data
             bool flag = false;
             try
             {
-                MySqlCommand query = new MySqlCommand("insert into pedido (correodecliente,telefonocliente,direccionentrega,ProductosContraPedido_idProducto,Cantidadsolicitada,fechaSolicitud) values (@email,@phone,@address,@productID,@amount,@dueDate);");
+                ConnectDB();
+                MySqlCommand query = new MySqlCommand("insert into thebakehouse.pedido (correodecliente,telefonocliente,direccionentrega,ProductosContraPedido_idProducto,Cantidadsolicitada,fechaSolicitud) values (@email,@phone,@address,@productID,@amount,@dueDate);", Conn);
+                Conn.Open();
                 query.Parameters.AddWithValue("@email",order.ClientMail);
-                query.Parameters.AddWithValue("@",order.ClientPhone);
-                query.Parameters.AddWithValue("@",order.Address);
-                query.Parameters.AddWithValue("@",order.PreOrderProductID);
-                query.Parameters.AddWithValue("@",order.Amount);
-                query.Parameters.AddWithValue("@",order.DueDate);
+                query.Parameters.AddWithValue("@phone",order.ClientPhone);
+                query.Parameters.AddWithValue("@address",order.Address);
+                query.Parameters.AddWithValue("@productID",order.PreOrderProductID);
+                query.Parameters.AddWithValue("@amount",order.ProductQuantity);
+                query.Parameters.AddWithValue("@dueDate",order.DueDate);
                 query.ExecuteNonQuery();
                 flag = true;
             }

@@ -45,5 +45,11 @@ namespace The_Bakehouse.Services
                 result = "Preorder product not deleted";
             return result;
         }
+
+        public string MinimunDateDeliveryService()
+        {
+            string date = DateTime.Now.AddDays(2).ToShortDateString();
+            return date;
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PreOrderMenu.aspx.cs" Inherits="The_Bakehouse.PreOrderMenu" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 
 <!DOCTYPE html>
 
@@ -87,6 +88,7 @@
 
     </header>
         <form id="form1" runat="server">
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
             <main>
         <section class="well well__offset-3">
             <div class="container">
@@ -95,28 +97,76 @@
                 <p>Esperamos que disfrute de nuestros fresquisimos productos libres de gluten.</p>
                 <div class="row box-2">
                     <!-- Este es el repeater que me sirve para poder tener los datos de los productos -->
-                    <asp:Repeater ID="productRepeater" runat ="server" OnItemDataBound="productRepeater_ItemDataBound">
+                    <asp:Repeater ID="productRepeater" runat ="server" OnItemDataBound="productRepeater_ItemDataBound" OnItemCommand="productRepeater_ItemCommand">
                         <ItemTemplate>
                             <div class="grid_4">
                                 <div class="img"><div class="lazy-img"style="padding-bottom: 76.21621621621622%;" > <img ID="productImg" runat="server" /></div></div>
                                 <h3 runat ="server" id="productName"></h3>
                                 <p runat="server" id="productDescription"></p>
                                 <h3 runat="server" id="price"></h3>
-                                <p runat="server" id="amount"></p>
+                                <p runat="server" id="minimunDelivery"></p>
+                                <p runat="server" id="finalDate"></p>
+                                <asp:HiddenField runat="server" ID="ProductID" />
                                 <div id="contact-form" class='contact-form' >
                                     <div class="btn-wr">
-                                    <a href="Homepage.aspx#ContactUs">Haz tu Pedido</a>
-                                        </div> 
+                                    <asp:LinkButton runat="server" ID="MakeOrder" CommandName="MakeOrder" >Haz tu Pedido</asp:LinkButton>
+                                    <asp:Button runat="server" ID="processbtn" Style="visibility:hidden;" />    
+                                    </div> 
                                  <!--<div class="btn-wr">
                                     <a id="BuyBtn" runat="server" >Comprar</a>
                                 </div> -->
                                 </div>
                             </div>
+                            <asp:ModalPopupExtender ID="ModalPopupExtender" runat="server"
+                                        TargetControlID="processbtn"
+                                        
+                                        PopupControlID="Panel1"
+                                        Drag="true"
+                                        BackgroundCssClass="modalBackground">
+                                    </asp:ModalPopupExtender>
                         </ItemTemplate>
                     </asp:Repeater>
                      <!-- fin del repeater -->
+                    <asp:Panel ID="Panel1" Style="display: none" CssClass="modalPopup" align="center" runat="server">
+                                    <p runat="server" id="messageLogin">Llene los datos por favor</p>
+                                    <hr />
+                        <div id="contact-form" class='contact-form'>
+                        <label>Correo:</label>
+                        <input style="width:50%;" type="text" id="usernameTxt" runat="server" value=""
+                                           data-constraints="@Required @JustLetters"/>
+                            <label>Teléfono:</label>
+                        <input style="width:50%;" type="text" id="userPhoneTxt" runat="server" value=""
+                                           data-constraints="@Required @JustLetters"/>   
+                            <label>Dirección Exacta:</label>
+                        <textarea style="width:50%; height:10%;" type="text" id="adressTxt" runat="server" value=""
+                                           data-constraints="@Required @JustLetters"/> 
+                                     <label>Cantidad:</label>
+                        <input style="width:50%;" type="number" id="amountTxt" min="1"  runat="server" value=""
+                                           data-constraints="@Required @JustLetters"/>   
+                            <label>Fecha en la que desea la entrega:</label> 
+                            <input style="width:50%;" type="date" id="datePicker"  runat="server" />
+                            
+                        <div class="btn-wr">
+                                    <a id="MakeOrderAccept" runat="server" onserverclick="MakeOrderAccept_ServerClick">Ordenar</a>
+                            <asp:Button runat="server" ID="processbtn2" Style="visibility:hidden;" />
+                            </div>
+                            </div>
+                                </asp:Panel>
                 </div>
             </div>
+            <asp:ModalPopupExtender ID="ModalPopupExtender1" runat="server"
+                                        TargetControlID="processbtn2"
+                                        CancelControlID="btnCancel"
+                                        PopupControlID="Panel2"
+                                        Drag="true"
+                                        BackgroundCssClass="modalBackground1">
+                                    </asp:ModalPopupExtender>
+            <asp:Panel ID="Panel2" Style="display: none" CssClass="modalPopup1" align="center" runat="server">
+                                    <p runat="server" id="resultMessage"></p>
+                                    <hr />
+                                    <a id="btnCancel">Aceptar</a>
+                                </asp:Panel>
+            
         </section>
     </main>
     
@@ -139,5 +189,41 @@
 </div>
 
     <script src="js/script.js"></script>
+    <style type="text/css">
+            .modalBackground {
+                background-color: Black;
+                filter: alpha(opacity=90);
+                opacity: 0.8;
+            }
+
+            .modalPopup {
+                background-color: #FFFFFF;
+                border-width: 3px;
+                border-style: solid;
+                border-color: black;
+                padding-top: 10px;
+                padding-left: 10px;
+                width: 70%;
+                height: 90%;
+            }
+        </style>
+    <style type="text/css">
+            .modalBackground1 {
+                background-color: Black;
+                filter: alpha(opacity=90);
+                opacity: 0.8;
+            }
+
+            .modalPopup1 {
+                background-color: #FFFFFF;
+                border-width: 3px;
+                border-style: solid;
+                border-color: black;
+                padding-top: 10px;
+                padding-left: 10px;
+                width: 300px;
+                height: 160px;
+            }
+        </style>
 </body>
 </html>

@@ -13,7 +13,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("Select * from productoscontrapedido");
+                MySqlCommand query = new MySqlCommand("Select * from productoscontrapedido",Conn);
                 Conn.Open();
                 MySqlDataReader reader = query.ExecuteReader();
                 while (reader.Read())
@@ -41,7 +41,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("Insert into productoscontrapedido(nombre,descripción,precio,foto,fechacreacion,fechatermino) values(@name,@description,@price,@image,@createDate,@finalDate)");
+                MySqlCommand query = new MySqlCommand("Insert into productoscontrapedido(nombre,descripción,precio,foto,fechacreacion,fechatermino) values(@name,@description,@price,@image,@createDate,@finalDate)", Conn);
                 Conn.Open();
                 query.Parameters.AddWithValue("@name",product.Name);
                 query.Parameters.AddWithValue("@description",product.Description);
@@ -70,7 +70,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("update productoscontrapedido set nombre= @ name descripción=@description and precio = @price and foto=@image and fechacreacion= @createDate and fechatermino=@finalDate where idProducto =@id;");
+                MySqlCommand query = new MySqlCommand("update productoscontrapedido set nombre= @ name descripción=@description and precio = @price and foto=@image and fechacreacion= @createDate and fechatermino=@finalDate where idProducto =@id;", Conn);
                 Conn.Open();
                 query.Parameters.AddWithValue("@name", product.Name);
                 query.Parameters.AddWithValue("@description", product.Description);
@@ -100,7 +100,7 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("delete from productoscontrapedido where idProducto =@id;");
+                MySqlCommand query = new MySqlCommand("delete from productoscontrapedido where idProducto =@id;", Conn);
                 Conn.Open();
                 query.Parameters.AddWithValue("@id", id);
                 query.ExecuteNonQuery();

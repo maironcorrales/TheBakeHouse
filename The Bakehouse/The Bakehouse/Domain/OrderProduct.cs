@@ -8,28 +8,26 @@ namespace The_Bakehouse.Domain
         private string clientPhone;
         private string address;
         private int preOrderProductID;
-        private int amount;
+        private int productQuantity;
         private string dueDate;
 
-        
-        public OrderProduct(string clientMail, string clientPhone, string address, int preOrderProductID, int amount, string dueDate)
-        {
-            this.clientMail = clientMail;
-            this.clientPhone = clientPhone;
-            this.address = address;
-            this.preOrderProductID = preOrderProductID;
-            this.amount = amount;
-            this.dueDate = dueDate;
-        }
-
-        public OrderProduct(int orderID, string clientMail, string clientPhone, string address, int preOrderProductID, int amount, string dueDate)
+        public OrderProduct(int orderID, string clientMail, string clientPhone, string address, int preOrderProductID, int productQuantity, string dueDate)
         {
             this.orderID = orderID;
             this.clientMail = clientMail;
             this.clientPhone = clientPhone;
             this.address = address;
             this.preOrderProductID = preOrderProductID;
-            this.amount = amount;
+            this.productQuantity = productQuantity;
+            this.dueDate = dueDate;
+        }
+        public OrderProduct( string clientMail, string clientPhone, string address, int preOrderProductID, int productQuantity, string dueDate)
+        {
+            this.clientMail = clientMail;
+            this.clientPhone = clientPhone;
+            this.address = address;
+            this.preOrderProductID = preOrderProductID;
+            this.productQuantity = productQuantity;
             this.dueDate = dueDate;
         }
 
@@ -98,18 +96,7 @@ namespace The_Bakehouse.Domain
             }
         }
 
-        public int Amount
-        {
-            get
-            {
-                return Amount;
-            }
-
-            set
-            {
-                Amount = value;
-            }
-        }
+        
 
         public string DueDate
         {
@@ -121,6 +108,19 @@ namespace The_Bakehouse.Domain
             set
             {
                 dueDate = value;
+            }
+        }
+
+        public int ProductQuantity
+        {
+            get
+            {
+                return productQuantity;
+            }
+
+            set
+            {
+                productQuantity = value;
             }
         }
     }
