@@ -1,24 +1,7 @@
--- MySQL Workbench Forward Engineering
 
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
-
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
--- -----------------------------------------------------
--- Schema thebakehouse
--- -----------------------------------------------------
 USE `thebakehouse` ;
 
--- -----------------------------------------------------
--- Table `mydb`.`ProductosContraPedido`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `thebakehouse`.`ProductosContraPedido` (
   `idProducto` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(255) NOT NULL,
@@ -31,9 +14,12 @@ CREATE TABLE IF NOT EXISTS `thebakehouse`.`ProductosContraPedido` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `mydb`.`Pedido`
--- -----------------------------------------------------
+
+
+
+
+
+
 CREATE TABLE IF NOT EXISTS `thebakehouse`.`Pedido` (
   `idPedido` INT NOT NULL,
   `correodecliente` VARCHAR(255) NOT NULL,
@@ -45,14 +31,14 @@ CREATE TABLE IF NOT EXISTS `thebakehouse`.`Pedido` (
   INDEX `fk_Pedido_ProductosContraPedido_idx` (`ProductosContraPedido_idProducto` ASC),
   CONSTRAINT `fk_Pedido_ProductosContraPedido`
     FOREIGN KEY (`ProductosContraPedido_idProducto`)
-    REFERENCES `mydb`.`ProductosContraPedido` (`idProducto`)
+    REFERENCES `thebakehouse`.`ProductosContraPedido` (`idProducto`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table CREATE TABLE IF NOT EXISTS `thebakehouse`.`factura_has_productoscontrapedido` (
+CREATE TABLE IF NOT EXISTS `thebakehouse`.`factura_has_productoscontrapedido` (
   `factura_idFactura` INT(11) NOT NULL,
   `productoscontrapedido_idProducto` INT(11) NOT NULL,
   PRIMARY KEY (`factura_idFactura`, `productoscontrapedido_idProducto`),
