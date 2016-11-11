@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using The_Bakehouse.Domain;
@@ -63,6 +61,9 @@ namespace The_Bakehouse
             if (usernameTxt.Value != null && userPhoneTxt.Value != null && adressTxt.Value != null && amountTxt.Value != null && datePicker.Value != null)
             {
                 OrderProduct order = new OrderProduct(usernameTxt.Value, userPhoneTxt.Value, adressTxt.Value, Convert.ToInt32(Session["IDP"]), Convert.ToInt32(amountTxt.Value), datePicker.Value);
+                Notification notification = new Notification("Se ha realizado un nuevo pedido a nombre de " + usernameTxt.Value + ". Recuerde revisarla cuanto antes.",false);
+                NotificationBusiness notificationBusiness = new NotificationBusiness();
+                notificationBusiness.AddNotificationService(notification); 
                 resultMessage.InnerText = orderBusiness.CreateOrderBusiness(order);
             }
             else

@@ -6,7 +6,6 @@
         private string notificate;       
         private bool seen;
 
-        public Notification() { }
         //Constructor
         public Notification(int idNotification, string notificate, bool seen)
         {
