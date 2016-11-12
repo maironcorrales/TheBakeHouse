@@ -20,9 +20,9 @@ namespace The_Bakehouse.Services
         {
             string result = "";
             if (data.CreatePreOrderProduct(p))
-                result = "Preorder product added";
+                result = "Producto agregado correctamente!";
             else
-                result = "Preorder product not added";
+                result = "Producto no agregado, vuelva a intentar!";
             return result;
         }
 
@@ -30,9 +30,9 @@ namespace The_Bakehouse.Services
         {
             string result = "";
             if (data.UpdatePreOrderProduct(p))
-                result = "Preorder product updated";
+                result = "Producto actualizado correctamente!";
             else
-                result = "Preorder product not updated";
+                result = "Producto no actualizado!";
             return result;
         }
 
@@ -40,9 +40,9 @@ namespace The_Bakehouse.Services
         {
             string result = "";
             if (data.DeletePreOrderProduct(id))
-                result = "Preorder product deleted";
+                result = "Producto eliminado!";
             else
-                result = "Preorder product not deleted";
+                result = "Producto no eliminado, vuelva a intentar!";
             return result;
         }
 

@@ -41,15 +41,15 @@
 
         <div class="camera_container" id="Principal">
             <div id="camera" class="camera_wrap">
-                <div data-thumb="images/slide01_thumb.jpg" data-src="images/slide01.jpg">
+                <div data-thumb="images/sli01_thumb.jpg" data-src="images/sli01.jpg">
                     <div class="camera_caption fadeIn">
                     </div>
                 </div>
-                <div data-thumb="images/slide02_thumb.jpg" data-src="images/slide02.jpg">
+                <div data-thumb="images/sli02_thumb.jpg" data-src="images/sli02.jpg">
                     <div class="camera_caption fadeIn">
                     </div>
                 </div>
-                <div data-thumb="images/slide03_thumb.jpg" data-src="images/slide03.jpg">
+                <div data-thumb="images/sli03_thumb.jpg" data-src="images/sli03.jpg">
                     <div class="camera_caption fadeIn">
                     </div>
                 </div>

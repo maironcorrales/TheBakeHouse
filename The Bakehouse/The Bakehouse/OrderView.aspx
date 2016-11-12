@@ -252,7 +252,7 @@
                         <th style="width:35%">Direccion</th>
                         <th style="width:20%">Productos</th>
                         <th style="width:5%">Cantidad</th>
-                        <th style="width:10%">Fecha Solicitud</th>
+                        <th style="width:10%">Fecha entrega</th>
                     </tr>
                         <asp:Repeater id="AllOrders" runat="server" OnItemDataBound="AllOrders_ItemDataBound">
                         <ItemTemplate>

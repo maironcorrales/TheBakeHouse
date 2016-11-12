@@ -78,7 +78,7 @@
                                 <a href="MessageSuscriptor.aspx">Escribir A Suscriptores</a>
                             </li>
                             <li>
-                        <a href="Order.aspx">Ordenes</a>
+                        <a href="OrderView.aspx">Ordenes</a>
                     </li>
                             <li>
                                 <a href="Homepage.aspx">Cerrar Sesión</a>

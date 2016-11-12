@@ -30,6 +30,16 @@
             this.finalizeDate = finalizeDate;
         }
 
+        public PreOrderProduct(int id, string name, string description, double price, string createDate, string finalizeDate)
+        {
+            this.productID = id;
+            this.name = name;
+            this.description = description;
+            this.price = price;
+            this.createDate = createDate;
+            this.finalizeDate = finalizeDate;
+        }
+
         public int ProductID
         {
             get

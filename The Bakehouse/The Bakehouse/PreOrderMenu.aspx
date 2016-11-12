@@ -128,7 +128,7 @@
                     </asp:Repeater>
                      <!-- fin del repeater -->
                     <asp:Panel ID="Panel1" Style="display: none" CssClass="modalPopup" align="center" runat="server">
-                                    <p runat="server" id="messageLogin">Llene los datos por favor</p>
+                                    <p runat="server" id="messageLogin">Es necesario llenar los espacios</p>
                                     <hr />
                         <div id="contact-form" class='contact-form'>
                         <label>Correo:</label>

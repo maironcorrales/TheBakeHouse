@@ -9,7 +9,6 @@ namespace The_Bakehouse
 
         OrderBusiness orderBusiness = new OrderBusiness();
         OrderProduct order = null;
-        PreOrderProduct pre = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
