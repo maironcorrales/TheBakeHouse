@@ -7,8 +7,9 @@ namespace The_Bakehouse
     public partial class Tester : System.Web.UI.Page
     {
 
-        NotificationBusiness nBusiness = new NotificationBusiness();
-        Notification noti = null;
+        OrderBusiness orderBusiness = new OrderBusiness();
+        OrderProduct order = null;
+        PreOrderProduct pre = null;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -17,8 +18,8 @@ namespace The_Bakehouse
 
         protected void btnTester_Click(object sender, EventArgs e)
         {
-            noti = new Notification("Prueba", false);
-            nBusiness.AddNotificationService(noti);
+            order = new OrderProduct("Dadad@ffff.com", "2228282", "Alajuela", 1, 3, "22/3/22");
+            orderBusiness.CreateOrderBusiness(order);
         }
     }
 }
