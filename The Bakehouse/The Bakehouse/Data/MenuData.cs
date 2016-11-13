@@ -35,6 +35,30 @@ namespace The_Bakehouse.Data
             }
             return listProduct;
         }
+
+        public Catalogue GetProductById(int id)
+        {
+            try
+            {
+                MySqlCommand query = new MySqlCommand("SELECT * FROM menu where idProducto = @id", Conn);
+                query.Parameters.AddWithValue("@id", id);
+                Conn.Open();
+                MySqlDataReader reader = query.ExecuteReader();
+                reader.Read();
+                Catalogue catalogue = new Catalogue(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetInt32(3), reader.GetString(4), reader.GetInt32(5));
+                return catalogue;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                disconnectDB();
+                Conn.Close();
+            }
+            return null;
+        }
         
         //Insert a product
         public bool addProduct(Catalogue catalogue)

@@ -124,6 +124,11 @@ namespace The_Bakehouse
             Response.Redirect("MenuAdministration.aspx");
         }
 
+        private void PopulateEditSpaces()
+        {
+  
+        }
+
         protected void productRepeater_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             if (e.CommandName == "deleteProduct")
@@ -139,6 +144,12 @@ namespace The_Bakehouse
                 ModalPopupExtender updatePopup = (ModalPopupExtender)e.Item.FindControl("EditPopUp");
                 HiddenField id = (HiddenField)e.Item.FindControl("productID");
                 Session["PRODUCTID"] = id.Value;
+                Catalogue prod = new Catalogue();
+                prod = menuService.GetProductByIDservice(Convert.ToInt32(id.Value));
+                updateName.Value = prod.Name;
+                updateDescription.Value = prod.Description;
+                updatePrice.Value = prod.Price.ToString();
+                updateAmount.Value = prod.Quantity.ToString();
                 updateMessage.InnerText = "Edite el producto. Use los espacios provistos para introducir los nuevos datos.";
                 updatePopup.Show();
             }

@@ -45,5 +45,10 @@ namespace The_Bakehouse.Services
                 result = "Se ha producido un error, por favor intentelo de nuevo más tarde.";
             return result;
         }
+
+        public Catalogue GetProductByIDservice(int id)
+        {
+            return data.GetProductById(id);
+        }
     }
 }

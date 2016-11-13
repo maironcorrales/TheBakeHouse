@@ -226,7 +226,7 @@
                 padding-top: 10px;
                 padding-left: 10px;
                 width: 300px;
-                height: 160px;
+                height: 180px;
             }
         </style>
 </body>
