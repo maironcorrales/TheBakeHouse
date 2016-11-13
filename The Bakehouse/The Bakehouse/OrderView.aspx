@@ -249,10 +249,10 @@
                         <th style="width:5%">Id</th>
                         <th style="width:15%">Correo</th>
                         <th style="width:10%">Telefono</th>
-                        <th style="width:35%">Direccion</th>
+                        <th style="width:30%">Direccion</th>
                         <th style="width:20%">Productos</th>
                         <th style="width:5%">Cantidad</th>
-                        <th style="width:10%">Fecha entrega</th>
+                        <th style="width:15%">Fecha entrega</th>
                     </tr>
                         <asp:Repeater id="AllOrders" runat="server" OnItemDataBound="AllOrders_ItemDataBound">
                         <ItemTemplate>
@@ -263,7 +263,7 @@
                                 <td><asp:Label runat="server" ID="Address_lbl"/></td>
                                 <td><asp:Label runat="server" ID="Product_lbl"/></td>
                                 <td><asp:Label runat="server" ID="Quantity_lbl"/></td>
-                                <th><asp:Label runat="server" ID="Date_lbl"/></th>
+                                <td><asp:Label runat="server" ID="Date_lbl"/></td>
                             </tr>
                         </ItemTemplate>
                         </asp:Repeater>                   
@@ -280,7 +280,7 @@
                  <!--- Aqui lo modal popup -->
                     <asp:Panel ID="Panel1" style="display:none" CssClass="modalPopup" align="center" runat="server">
                         <div id="contact-form" class='contact-form' >
-                        <p>Para eliminar todas las notificaciones debe ingresar sus credenciales de administrador</p>
+                        <p>Para eliminar todas las ordenes debe ingresar sus credenciales de administrador</p>
                         <hr />
                         <asp:TextBox runat="server" ID="txtUsername" placeholder="Usuario" Style="text-align:center;"></asp:TextBox>
                         <br />

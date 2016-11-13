@@ -6,10 +6,15 @@ namespace The_Bakehouse
 {
     public partial class Tester : System.Web.UI.Page
     {
-
-        PreOrderProductBusiness pree = new PreOrderProductBusiness();
-
-
+        NotificationBusiness nBusiness = new NotificationBusiness();
+        Notification not1;
+        Notification not2;
+        Notification not3;
+        Notification not4;
+        Notification not5;
+        Notification not6;
+        Notification not7;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -17,8 +22,21 @@ namespace The_Bakehouse
 
         protected void btnTester_Click(object sender, EventArgs e)
         {
-            string r = pree.GetNameProductService(1);
-            lbl_count.Text = r.ToString();
+            not1 = new Notification("hola", false);
+            not2 = new Notification("holwea", false);
+            not3 = new Notification("hodfla", false);
+            not4 = new Notification("hdfdfola", false);
+            not5 = new Notification("hofdfla", false);
+            not6 = new Notification("hofdfla", false);
+            not7 = new Notification("fdffg", false);
+            nBusiness.AddNotificationService(not1);
+            nBusiness.AddNotificationService(not2);
+            nBusiness.AddNotificationService(not3);
+            nBusiness.AddNotificationService(not4);
+            nBusiness.AddNotificationService(not5);
+            nBusiness.AddNotificationService(not6);
+            nBusiness.AddNotificationService(not7);
+            
         }
     }
 }

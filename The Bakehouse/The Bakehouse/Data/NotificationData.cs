@@ -90,6 +90,34 @@ namespace The_Bakehouse.Data
             return list;
         }
 
+        public List<Notification> getLastFiveNotification()
+        {
+            List<Notification> list = new List<Notification>();
+            try
+            {
+                ConnectDB();
+                MySqlCommand query = new MySqlCommand("SELECT * FROM notificaciones ORDER BY visto = false DESC LIMIT 5", Conn);
+                Conn.Open();
+                MySqlDataReader reader = query.ExecuteReader();
+                while (reader.Read())
+                {
+                    Notification notification = new Notification(reader.GetInt32(0), reader.GetString(1), reader.GetBoolean(2));
+                    list.Add(notification);
+                }
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                disconnectDB();
+                Conn.Close();
+            }
+            return list;
+        }
+
         //update Notif
         public bool updateNotification()
         {

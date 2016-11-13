@@ -71,5 +71,10 @@ namespace The_Bakehouse.Services
             data.updateNotification();
         }
 
+        public List<Notification> NotificationsPopup()
+        {
+            return data.getLastFiveNotification();         
+        }
+
     }
 }

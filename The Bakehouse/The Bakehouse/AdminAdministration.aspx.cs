@@ -33,7 +33,7 @@ namespace The_Bakehouse
             administratorList.DataSource = adminList;
             administratorList.DataBind();
             count_Notification = nBusiness.countUnreadNotification();
-            list_Notification = nBusiness.GetUnreadNotificationService();
+            list_Notification = nBusiness.NotificationsPopup();
             popup_Notifications.DataSource = list_Notification;
             popup_Notifications.DataBind();
         }

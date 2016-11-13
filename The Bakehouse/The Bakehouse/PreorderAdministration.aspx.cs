@@ -38,7 +38,7 @@ namespace The_Bakehouse
                 fileToSave = (HttpPostedFile)Session["IMAGE"];
 
             count_Notification = nBusiness.countUnreadNotification();
-            list_Notification = nBusiness.GetUnreadNotificationService();
+            list_Notification = nBusiness.NotificationsPopup();
             popup_Notifications.DataSource = list_Notification;
             popup_Notifications.DataBind();            
         }

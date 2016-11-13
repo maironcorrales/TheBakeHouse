@@ -54,7 +54,7 @@ namespace The_Bakehouse.Data
             }
             catch (MySqlException e)
             {
-                Console.WriteLine("PUTOOOOOOOO PROBLEMA"+e.Message);
+                Console.WriteLine(e.Message);
             }
             finally
             {
