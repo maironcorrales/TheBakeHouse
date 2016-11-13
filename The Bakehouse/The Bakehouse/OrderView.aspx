@@ -271,12 +271,12 @@
             </div>
             <div class="button-action">
                 <div id="contact-form" class='contact-form'>
-                 <fieldset>
+           <!--      <fieldset>
                     <div class="btn-wr">  
                         <a class="" runat="server" id="btnConfirmToDelete">Eliminar todas las ordenes</a>  
                         <asp:Button runat="server" id="processbtn"  Style="visibility:hidden;" />    
                     </div> 
-                 </fieldset>  
+                 </fieldset>  -->
                  <!--- Aqui lo modal popup -->
                     <asp:Panel ID="Panel1" style="display:none" CssClass="modalPopup" align="center" runat="server">
                         <div id="contact-form" class='contact-form' >

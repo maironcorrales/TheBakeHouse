@@ -41,7 +41,7 @@
 
                     <div class="brand">
                         <h1 class="brand_name">
-                            <a href="AdministrationPanel.aspx">Menú</a>
+                            <a href="AdministrationPanel.aspx">Productos Preorden</a>
                         </h1>
                     </div>
 
@@ -341,7 +341,7 @@
                                 <h3 runat="server" id="price"></h3>
                                 <p runat="server" id="date_create"></p>
                                 <p runat="server" id="date_end"></p>
-                                <asp:HiddenField runat ="server" ID="product_ID" />
+                                <asp:HiddenField runat ="server" ID="productID" />
                                 <div id="contact-form" class='contact-form' >
                                  <div class="btn-wr">
                                     <asp:LinkButton Visible="true" ID="EditBtn" runat="server" CommandName="EditProduct" Text="Editar"></asp:LinkButton>

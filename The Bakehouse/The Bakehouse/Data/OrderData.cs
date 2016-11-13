@@ -41,20 +41,20 @@ namespace The_Bakehouse.Data
             try
             {
                 ConnectDB();
-                MySqlCommand query = new MySqlCommand("insert into thebakehouse.pedido (correodecliente,telefonocliente,direccionentrega,ProductosContraPedido_idProducto,Cantidadsolicitada,fechaSolicitud) values (@email,@phone,@address,@productID,@amount,@dueDate);", Conn);
-                Conn.Open();
+                MySqlCommand query = new MySqlCommand("insert into pedido (correodecliente,telefonocliente,direccionentrega,ProductosContraPedido_idProducto,Cantidadsolicitada,fechaSolicitud) values (@email,@phone,@address,@productID,@amount,@dueDate);", Conn);   
                 query.Parameters.AddWithValue("@email",order.ClientMail);
                 query.Parameters.AddWithValue("@phone",order.ClientPhone);
                 query.Parameters.AddWithValue("@address",order.Address);
                 query.Parameters.AddWithValue("@productID",order.PreOrderProductID);
                 query.Parameters.AddWithValue("@amount",order.ProductQuantity);
                 query.Parameters.AddWithValue("@dueDate",order.DueDate);
+                Conn.Open();
                 query.ExecuteNonQuery();
                 flag = true;
             }
-            catch (Exception e)
+            catch (MySqlException e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("PUTOOOOOOOO PROBLEMA"+e.Message);
             }
             finally
             {

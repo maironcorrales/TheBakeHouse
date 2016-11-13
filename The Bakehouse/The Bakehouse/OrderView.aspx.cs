@@ -15,6 +15,7 @@ namespace The_Bakehouse
     {
         NotificationBusiness nBusiness = new NotificationBusiness();
         OrderBusiness orderBusiness = new OrderBusiness();
+        PreOrderProductBusiness preOrderBusiness = new PreOrderProductBusiness();
         private List<Notification> list_Notification;
         private List<OrderProduct> list_OrderProduct;
         public int count_Notification;
@@ -44,6 +45,7 @@ namespace The_Bakehouse
             }
         }
 
+
         protected void AllOrders_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
@@ -57,7 +59,8 @@ namespace The_Bakehouse
                 Label address = (Label)e.Item.FindControl("Address_lbl");
                 address.Text = list_OrderProduct.ElementAt(j).Address;
                 Label product = (Label)e.Item.FindControl("Product_lbl");
-                product.Text = Convert.ToString(list_OrderProduct.ElementAt(j).PreOrderProductID);
+                string productName = Convert.ToString(list_OrderProduct.ElementAt(j).PreOrderProductID);
+                product.Text = preOrderBusiness.GetNameProductService(Convert.ToInt32(productName));
                 Label quantity = (Label)e.Item.FindControl("Quantity_lbl");
                 quantity.Text = Convert.ToString(list_OrderProduct.ElementAt(j).ProductQuantity);
                 Label date = (Label)e.Item.FindControl("Date_lbl");

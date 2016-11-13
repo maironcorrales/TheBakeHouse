@@ -117,5 +117,30 @@ namespace The_Bakehouse.Data
             }
             return flag;
         }
+
+        public string GetProductName(int id)
+        {
+            string result = "";
+            try
+            {
+                ConnectDB();
+                MySqlCommand query = new MySqlCommand("SELECT nombre FROM productoscontrapedido WHERE idProducto = @id;", Conn);
+                query.Parameters.AddWithValue("@id", id);
+                Conn.Open();
+                MySqlDataReader reader = query.ExecuteReader();
+                reader.Read();      
+                result = reader.GetString(0); 
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                disconnectDB();
+                Conn.Close();
+            }
+            return result;
+        }
     }
 }

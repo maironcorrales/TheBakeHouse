@@ -51,5 +51,10 @@ namespace The_Bakehouse.Services
             string date = DateTime.Now.AddDays(2).ToShortDateString();
             return date;
         }
+
+        public string GetNameProductService(int id)
+        {
+            return data.GetProductName(id);
+        }
     }
 }

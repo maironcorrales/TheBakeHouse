@@ -90,9 +90,9 @@
                                 <div id="notifications">
                                     <h3>Notificationes</h3>
                                     <div style="height:300px;">
-                                        <asp:Repeater runat="server" ID="popup_Notifications" OnItemDataBound="popup_Notifications_ItemDataBound">
+                                        <asp:Repeater  runat="server" ID="popup_Notifications" OnItemDataBound="popup_Notifications_ItemDataBound">
                                             <ItemTemplate>
-                                                <div id="noti_Item">
+                                                 <div id="noti_Item">
                                                     <a><asp:Label runat="server" ID="lbl_Notification_Popup"></asp:Label></a>
                                                     <hr />
                                                 </div>
@@ -164,7 +164,6 @@
         <form id="form1" runat="server">
         <script type="text/javascript">
             $(document).ready(function () {
-
                 // ANIMATEDLY DISPLAY THE NOTIFICATION COUNTER.
                 $('#noti_Counter')
                     .css({ opacity: 0 })
@@ -187,7 +186,6 @@
 
                     return false;
                 });
-
                 // HIDE NOTIFICATIONS WHEN CLICKED ANYWHERE ON THE PAGE.
                 $(document).click(function () {
                     $('#notifications').hide();
@@ -212,9 +210,7 @@
     <style>        
     #noti_Container {
         position:relative;
-    }
-    
-        
+    }  
     /* THE POPULAR RED NOTIFICATIONS COUNTER. */
     #noti_Counter {
         display:block;
