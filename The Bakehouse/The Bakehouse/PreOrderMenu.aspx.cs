@@ -34,7 +34,7 @@ namespace The_Bakehouse
                 HtmlImage img = (HtmlImage)e.Item.FindControl("productImg");
                 HiddenField id = (HiddenField)e.Item.FindControl("ProductID");
                 id.Value = list.ElementAt(i).ProductID.ToString();
-                minimunDate.InnerText ="Fecha mínima de entrega: " +list.ElementAt(i).CreateDate;
+                minimunDate.InnerText ="Fecha mínima de entrega: " +product.MinimunDateDeliveryService();
                 finalDate.InnerText = "Fecha máxima para hacer pedido: " + list.ElementAt(i).FinalizeDate;
                 name.InnerText = list.ElementAt(i).Name;
                 description.InnerText = list.ElementAt(i).Description;

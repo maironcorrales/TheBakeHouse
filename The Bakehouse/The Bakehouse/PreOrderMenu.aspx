@@ -164,7 +164,11 @@
             <asp:Panel ID="Panel2" Style="display: none" CssClass="modalPopup1" align="center" runat="server">
                                     <p runat="server" id="resultMessage"></p>
                                     <hr />
+                <div id="contact-form" class='contact-form'>
+                    <div class="btn-wr">
                                     <a id="btnCancel">Aceptar</a>
+                        </div>
+                    </div>
                                 </asp:Panel>
             
         </section>

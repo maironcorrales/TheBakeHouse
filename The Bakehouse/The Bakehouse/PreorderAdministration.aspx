@@ -419,7 +419,7 @@
                                 <label class="message">
                                     Descripcion del Producto:
                                     </label>
-                                    <textarea name="message"  id="updateDescription" runat="server" style="width:75%"
+                                    <textarea name="message"  id="updateDescription" runat="server" style="width:75%; height:30%;"
                                               data-constraints='@Required'></textarea>                
                                     <span class="empty-message">*Este campo es requerido.</span>
                                     <span class="error-message">*El mensaje es demasiado corto.</span>

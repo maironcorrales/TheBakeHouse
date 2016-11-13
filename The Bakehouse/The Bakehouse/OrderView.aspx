@@ -78,7 +78,7 @@
                             <li id="noti_Container">
                                 <div id="noti_Counter"></div>   
                                 <a href="AdminNotification.aspx" id="noti_Button">
-                                    <img src="images/notification.png"/></a>
+                                    <img src="images/notification.png" style="background-color:#5e5e5e;"/></a>
                                 <div id="notifications">
                                     <h3>Notificationes</h3>
                                     <div style="height:300px;">
@@ -233,10 +233,10 @@
         
     }
     .seeAll a {
-        color:#a95858;
+        color:#5e5e5e;
     }
     .seeAll a:hover {
-        color:#a95858;
+        color:#5e5e5e;
         text-decoration:underline;
     }
     </style>
