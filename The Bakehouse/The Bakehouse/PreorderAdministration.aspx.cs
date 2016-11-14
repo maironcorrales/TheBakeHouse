@@ -134,19 +134,17 @@ namespace The_Bakehouse
             {
                 ModalPopupExtender updatePopup = (ModalPopupExtender)e.Item.FindControl("EditPopUp");
                 HiddenField id = (HiddenField)e.Item.FindControl("productID");
-                Session["PRODUCTID"] = id.Value;                
+                Session["PRODUCTID"] = id.Value;
+                PreOrderProduct preorderProduct = new PreOrderProduct();
+                preorderProduct = preorderBusiness.getPreOrderService(Convert.ToInt32(id.Value));
+                updateName.Value = preorderProduct.Name;
+                updateDescription.Value = preorderProduct.Description;
+                updatePrice.Value = preorderProduct.Price.ToString();
+                updateDateCreation.Value = preorderProduct.CreateDate;
+                updateDateEnd.Value = preorderProduct.FinalizeDate;
                 updateMessage.InnerText = "Edite el producto. Use los espacios provistos para introducir los nuevos datos.";
-                updatePopup.Show();
-                HtmlGenericControl productName = (HtmlGenericControl)e.Item.FindControl("product_Name");
-                HtmlGenericControl productDescription = (HtmlGenericControl)e.Item.FindControl("product_Description");
-                HtmlGenericControl productPriceP = (HtmlGenericControl)e.Item.FindControl("price");
-                HtmlGenericControl dateCreate = (HtmlGenericControl)e.Item.FindControl("date_create");
-                HtmlGenericControl dateEnd = (HtmlGenericControl)e.Item.FindControl("date_end");
-                updateName.Value = productName.InnerText;
-                updateDescription.Value = productDescription.InnerText;
-                updatePrice.Value = productPriceP.InnerText;
-                updateDateCreation.Value = dateCreate.InnerText;
-                updateDateEnd.Value = dateEnd.InnerText;
+                updatePopup.Show();              
+                
             }
         }
 
@@ -161,12 +159,11 @@ namespace The_Bakehouse
         }
 
         protected void UpdateAccept_ServerClick(object sender, EventArgs e)
-        {
-            if(Convert.ToInt32(Session["PRODUCTID"]) != null && updateName.Value != null && updateDescription.Value != null && Convert.ToInt32(updatePrice.Value) != null && updateDateCreation.Value != null && updateDateEnd.Value != null){
+        {            
                 PreOrderProduct productToUpdate = new PreOrderProduct(Convert.ToInt32(Session["PRODUCTID"]), updateName.Value, updateDescription.Value, Convert.ToInt32(updatePrice.Value), updateDateCreation.Value, updateDateEnd.Value);
                 resultMessage.InnerText = preorderBusiness.updatePreOrderProductService(productToUpdate);
                 Response.Redirect("PreorderAdministration.aspx");
-            }            
+                    
         }
 
         public void clearSpaces()

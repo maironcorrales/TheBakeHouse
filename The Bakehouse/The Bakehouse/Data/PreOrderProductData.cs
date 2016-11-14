@@ -35,6 +35,31 @@ namespace The_Bakehouse.Data
             return list;
         }
 
+        public PreOrderProduct getPreOrderProduct(int id)
+        {
+            PreOrderProduct preOrderProduct = null;
+            try
+            {
+                MySqlCommand query = new MySqlCommand("SELECT * FROM productoscontrapedido where idProducto = @id", Conn);
+                query.Parameters.AddWithValue("@id", id);
+                Conn.Open();
+                MySqlDataReader reader = query.ExecuteReader();
+                reader.Read();
+                preOrderProduct = new PreOrderProduct(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetDouble(3), reader.GetString(5), reader.GetString(6));
+                return preOrderProduct;
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                disconnectDB();
+                Conn.Close();
+            }
+            return null;
+        }
+
         public bool CreatePreOrderProduct(PreOrderProduct product)
         {
             bool flag = false;

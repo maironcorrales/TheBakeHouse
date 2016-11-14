@@ -56,5 +56,10 @@ namespace The_Bakehouse.Services
         {
             return data.GetProductName(id);
         }
+
+        public PreOrderProduct getPreOrderService(int id)
+        {
+            return data.getPreOrderProduct(id);
+        }
     }
 }

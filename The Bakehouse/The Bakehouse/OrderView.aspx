@@ -81,13 +81,13 @@
                                     <img src="images/notification.png" style="background-color:#5e5e5e;"/></a>
                                 <div id="notifications">
                                     <h3>Notificationes</h3>
-                                    <div style="height:300px;">
-                                        <asp:Repeater runat="server" ID="popup_Notifications" OnItemDataBound="popup_Notifications_ItemDataBound">
+                                    <div style="height:310px;">
+                                        <asp:Repeater  runat="server" ID="popup_Notifications" OnItemDataBound="popup_Notifications_ItemDataBound">
                                             <ItemTemplate>
-                                                <div id="noti_Item">
-                                                    <a><asp:Label runat="server" ID="lbl_Notification_Popup"></asp:Label></a>
-                                                    <hr />
+                                                 <div id="noti_Item" style="height:40px; border-color:gray; margin-top:-2px;">
+                                                    <a><asp:Label runat="server" ID="lbl_Notification_Popup"></asp:Label></a>                                                    
                                                 </div>
+                                                <hr />
                                             </ItemTemplate>
                                         </asp:Repeater>                                        
                                     </div>

@@ -14,7 +14,9 @@ namespace The_Bakehouse
         Notification not5;
         Notification not6;
         Notification not7;
-        
+
+        AdministratorBusiness admbus = new AdministratorBusiness();
+        Administrator admin = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -36,7 +38,7 @@ namespace The_Bakehouse
             nBusiness.AddNotificationService(not5);
             nBusiness.AddNotificationService(not6);
             nBusiness.AddNotificationService(not7);
-            
+
         }
     }
 }

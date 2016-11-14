@@ -10,6 +10,7 @@
         private string createDate;
         private string finalizeDate;
 
+        public PreOrderProduct() { }
         public PreOrderProduct(int productID, string name, string description, double price, string foto, string createDate, string finalizeDate)
         {
             this.productID = productID;
