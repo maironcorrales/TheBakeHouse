@@ -99,7 +99,6 @@
     <Content Include="images\lazy-loader.gif" />
     <Content Include="images\page-1_img01.jpg" />
     <Content Include="images\page-1_img02.jpg" />
-    <Content Include="images\page-1_img03.jpg" />
     <Content Include="images\page-1_img03_original.jpg" />
     <Content Include="images\page-1_img04.jpg" />
     <Content Include="images\page-1_img04_origianl.jpg" />
@@ -317,6 +316,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\TheBakehouse.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

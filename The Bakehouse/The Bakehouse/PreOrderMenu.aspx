@@ -94,7 +94,7 @@
             <div class="container">
                 <h2><em>Productos</em>Contra Pedido</h2>
                 <p>Tenga en cuenta que si ordena de nuestro menú contra pedido, los mismos seran entregados dos días luego de que el pedido se haga, como mínimo. Gracias por su comprensión. Todos los productos que desee ordenar le seran entregados a la dirección y el lugar que usted especifique.</p>
-                <p>Esperamos que disfrute de nuestros fresquisimos productos libres de gluten.</p>
+                <p>Además recuerden que nuestro transporte de pedidos por el momento abarca San Pedro, Curridabat, Tres Ríos, San Francisco de Dos Ríos y Cartago Centro. Esperamos que disfrute de nuestros fresquisimos productos libres de gluten.</p>
                 <div class="row box-2">
                     <!-- Este es el repeater que me sirve para poder tener los datos de los productos -->
                     <asp:Repeater ID="productRepeater" runat ="server" OnItemDataBound="productRepeater_ItemDataBound" OnItemCommand="productRepeater_ItemCommand">

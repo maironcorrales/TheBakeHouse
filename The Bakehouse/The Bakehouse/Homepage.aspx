@@ -124,7 +124,7 @@
                         <div class="gallery_overlay">
                             <div class="gallery_caption">
                                 <p><em>Mermelada de Mango</em></p>
-                                <p>Descripcion</p>
+                                <p>Mermelada de mango jengibre y almendras, a base de jarabe de agave orgánico, lo cual hace que el uso de azúcar no sea necesario. </p>
                             </div>
                         </div>
                     </a>                    
@@ -133,7 +133,7 @@
                         <div class="gallery_overlay">
                             <div class="gallery_caption">
                                 <p><em>Pesto</em></p>
-                                <p>Descripcion</p>
+                                <p>De los mejores chiles morrones, se hace el delicioso pesto de The bakehouse.</p>
                             </div>
                         </div>
                     </a>
@@ -144,7 +144,7 @@
                         <div class="gallery_overlay">
                             <div class="gallery_caption">
                                 <p><em>Cebolla Caramelizada</em></p>
-                                <p>Descripcion</p>
+                                <p>Pruebe su sabor agridulce, un gusto al paladar.</p>
                             </div>
                         </div>
                     </a>
@@ -153,7 +153,7 @@
                         <div class="gallery_overlay">
                             <div class="gallery_caption">
                                 <p><em>Tomate Confitado</em></p>
-                                <p>Descripcion</p>
+                                <p>Hecho a base de tomate hidroponico con un sabor dulce y único.</p>
                             </div>
                         </div>
                     </a>
@@ -162,7 +162,7 @@
                         <div class="gallery_overlay">
                             <div class="gallery_caption">
                                 <p><em>Mermelada</em></p>
-                                <p>Descripcion</p>
+                                <p>Tenemos sabores muy diferentes como kiwi, maracuya, fresa-arandanos y limoncello. Pruebalos todos.</p>
                             </div>
                         </div>
                     </a>
@@ -173,7 +173,7 @@
                         <div class="gallery_overlay">
                             <div class="gallery_caption">
                                 <p><em>Mermelada Ciruela</em></p>
-                                <p>Descripcion</p>
+                                <p>Hecha con ciruelas frescas y ron. Excelente para acompañar sus tardes de café.</p>
                             </div>
                         </div>
                     </a>                    
@@ -182,7 +182,7 @@
                         <div class="gallery_overlay">
                             <div class="gallery_caption">
                                 <p><em>Mermelada Tomate</em></p>
-                                <p>Descripcion</p>
+                                <p>Un gusto al paladar, con un pequeño picante que no opaca su dulce sabor.</p>
                             </div>
                         </div>
                     </a>
