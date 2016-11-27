@@ -100,13 +100,22 @@
                     <asp:Repeater ID="productRepeater" runat ="server" OnItemDataBound="productRepeater_ItemDataBound" OnItemCommand="productRepeater_ItemCommand">
                         <ItemTemplate>
                             <div class="grid_4">
+                                <a data-fancybox-group="gallery"  class="gallery_item thumb lazy-img" style="padding-bottom: 122%;">
                                 <div class="img"><div class="lazy-img"style="padding-bottom: 76.21621621621622%;" > <img ID="productImg" runat="server" /></div></div>
                                 <h3 runat ="server" id="productName"></h3>
+                                    <div class="gallery">
+                                    <div class="gallery_overlay">
+                            <div class="gallery_caption">
                                 <p runat="server" id="productDescription"></p>
+                                </div>
+                                        </div>
+                                </div>
+                                
                                 <h3 runat="server" id="price"></h3>
                                 <p runat="server" id="minimunDelivery"></p>
                                 <p runat="server" id="finalDate"></p>
                                 <asp:HiddenField runat="server" ID="ProductID" />
+                                    </a>
                                 <div id="contact-form" class='contact-form' >
                                     <div class="btn-wr">
                                     <asp:LinkButton runat="server" ID="MakeOrder" CommandName="MakeOrder" >Haz tu Pedido</asp:LinkButton>

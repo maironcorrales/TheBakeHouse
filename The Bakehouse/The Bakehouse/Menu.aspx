@@ -95,11 +95,19 @@
                     <asp:Repeater ID="productRepeater" runat ="server" OnItemDataBound="productRepeater_ItemDataBound">
                         <ItemTemplate>
                             <div class="grid_4">
+                                <a data-fancybox-group="gallery"  class="gallery_item thumb lazy-img" style="padding-bottom: 122%;">
                                 <div class="img"><div class="lazy-img"style="padding-bottom: 76.21621621621622%;" > <img ID="productImg" runat="server" /></div></div>
                                 <h3 runat ="server" id="productName"></h3>
+                                <div class="gallery">
+                                    <div class="gallery_overlay">
+                            <div class="gallery_caption">
                                 <p runat="server" id="productDescription"></p>
+                                </div>
+                                        </div>
+                                </div>
                                 <h3 runat="server" id="price"></h3>
                                 <p runat="server" id="amount"></p>
+                                    </a>
                                 <div id="contact-form" class='contact-form' >
                                     <div class="btn-wr">
                                     <a href="Homepage.aspx#ContactUs">Haz tu Pedido</a>
@@ -108,6 +116,7 @@
                                     <a id="BuyBtn" runat="server" onserverclick="BuyBtn_Click">Comprar</a>
                                 </div> -->
                                 </div>
+                                    
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
